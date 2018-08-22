@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCDA7A49211BCCED00891460 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A48211BCCED00891460 /* LoginViewController.swift */; };
+		BCDA7A4C211BCCED00891460 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCDA7A4A211BCCED00891460 /* Main.storyboard */; };
+		BCDA7A4E211BCCF000891460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDA7A4D211BCCF000891460 /* Assets.xcassets */; };
+		BCDA7A51211BCCF000891460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCDA7A4F211BCCF000891460 /* LaunchScreen.storyboard */; };
+		BCDA7A59211E778200891460 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A58211E778200891460 /* ForgotPassword.swift */; };
+		BCDA7A5B2120DB8B00891460 /* ForgotConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A5A2120DB8A00891460 /* ForgotConfirmation.swift */; };
+		BCDA7A5D2120E67C00891460 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A5C2120E67C00891460 /* SignUp.swift */; };
+		BCDA7A5F2120E97C00891460 /* InviteHousemates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A5E2120E97C00891460 /* InviteHousemates.swift */; };
+		BCDA7A632125040D00891460 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A622125040D00891460 /* Home.swift */; };
+		BCDA7A6521251B7200891460 /* Icons in Resources */ = {isa = PBXBuildFile; fileRef = BCDA7A6421251B7200891460 /* Icons */; };
+		BCDA7A6D21251C0B00891460 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A6C21251C0B00891460 /* AppDelegate.swift */; };
+		BCDA7A6F21253ED300891460 /* AddNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A6E21253ED300891460 /* AddNew.swift */; };
+		BCDA7A732125524A00891460 /* CreateTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A722125524A00891460 /* CreateTask.swift */; };
+		BCDA7A752125525D00891460 /* AddUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A742125525D00891460 /* AddUtility.swift */; };
+		BCDA7A772126565500891460 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A762126565500891460 /* Settings.swift */; };
+		BCDA7A792126567000891460 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A782126567000891460 /* Calendar.swift */; };
+		BCDA7A7B21277ADB00891460 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A7A21277ADB00891460 /* ToDo.swift */; };
+		BCDA7A7D21277AF500891460 /* InProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A7C21277AF500891460 /* InProgress.swift */; };
+		BCDA7A7F21277B2000891460 /* ChoresDone.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A7E21277B2000891460 /* ChoresDone.swift */; };
+		BCDA7A8121277F3400891460 /* CompletedTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A8021277F3400891460 /* CompletedTask.swift */; };
+		BCDA7A8321277F6400891460 /* Approval.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A8221277F6400891460 /* Approval.swift */; };
+		BCDA7A852127803200891460 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A842127803200891460 /* Notifications.swift */; };
+		BCDA7A872127805E00891460 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A862127805E00891460 /* Chart.swift */; };
+		C705E54CBEE4524B3731FAF8 /* Pods_Broomies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF7F831C32DA2ECB3E66FDA1 /* Pods_Broomies.framework */; };
+		D4CD41282123F18A001043D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4CD41272123F18A001043D2 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AF7F831C32DA2ECB3E66FDA1 /* Pods_Broomies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Broomies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCDA7A43211BCCED00891460 /* Broomies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broomies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCDA7A48211BCCED00891460 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BCDA7A4B211BCCED00891460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BCDA7A4D211BCCF000891460 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCDA7A50211BCCF000891460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BCDA7A52211BCCF000891460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCDA7A58211E778200891460 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		BCDA7A5A2120DB8A00891460 /* ForgotConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotConfirmation.swift; sourceTree = "<group>"; };
+		BCDA7A5C2120E67C00891460 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		BCDA7A5E2120E97C00891460 /* InviteHousemates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteHousemates.swift; sourceTree = "<group>"; };
+		BCDA7A622125040D00891460 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		BCDA7A6421251B7200891460 /* Icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Icons; path = ../../Icons; sourceTree = "<group>"; };
+		BCDA7A6C21251C0B00891460 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BCDA7A6E21253ED300891460 /* AddNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNew.swift; sourceTree = "<group>"; };
+		BCDA7A722125524A00891460 /* CreateTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTask.swift; sourceTree = "<group>"; };
+		BCDA7A742125525D00891460 /* AddUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUtility.swift; sourceTree = "<group>"; };
+		BCDA7A762126565500891460 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		BCDA7A782126567000891460 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		BCDA7A7A21277ADB00891460 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		BCDA7A7C21277AF500891460 /* InProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgress.swift; sourceTree = "<group>"; };
+		BCDA7A7E21277B2000891460 /* ChoresDone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoresDone.swift; sourceTree = "<group>"; };
+		BCDA7A8021277F3400891460 /* CompletedTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTask.swift; sourceTree = "<group>"; };
+		BCDA7A8221277F6400891460 /* Approval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Approval.swift; sourceTree = "<group>"; };
+		BCDA7A842127803200891460 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		BCDA7A862127805E00891460 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		CDAE6C739A4313C8EB15ABB7 /* Pods-Broomies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Broomies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Broomies/Pods-Broomies.debug.xcconfig"; sourceTree = "<group>"; };
+		D4CD41272123F18A001043D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EBAB2E42B0612B476D045D0D /* Pods-Broomies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Broomies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Broomies/Pods-Broomies.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCDA7A40211BCCED00891460 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C705E54CBEE4524B3731FAF8 /* Pods_Broomies.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FACE08C6CDCAA6C97B3E15D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF7F831C32DA2ECB3E66FDA1 /* Pods_Broomies.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A31E88F8C0A6A9BA2E57B28D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CDAE6C739A4313C8EB15ABB7 /* Pods-Broomies.debug.xcconfig */,
+				EBAB2E42B0612B476D045D0D /* Pods-Broomies.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BCDA7A3A211BCCED00891460 = {
+			isa = PBXGroup;
+			children = (
+				BCDA7A45211BCCED00891460 /* Roomies */,
+				BCDA7A44211BCCED00891460 /* Products */,
+				A31E88F8C0A6A9BA2E57B28D /* Pods */,
+				3FACE08C6CDCAA6C97B3E15D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BCDA7A44211BCCED00891460 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCDA7A43211BCCED00891460 /* Broomies.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCDA7A45211BCCED00891460 /* Roomies */ = {
+			isa = PBXGroup;
+			children = (
+				BCDA7A6421251B7200891460 /* Icons */,
+				BCDA7A4A211BCCED00891460 /* Main.storyboard */,
+				BCDA7A6C21251C0B00891460 /* AppDelegate.swift */,
+				BCDA7A48211BCCED00891460 /* LoginViewController.swift */,
+				BCDA7A58211E778200891460 /* ForgotPassword.swift */,
+				BCDA7A5A2120DB8A00891460 /* ForgotConfirmation.swift */,
+				BCDA7A5C2120E67C00891460 /* SignUp.swift */,
+				BCDA7A5E2120E97C00891460 /* InviteHousemates.swift */,
+				BCDA7A842127803200891460 /* Notifications.swift */,
+				BCDA7A8221277F6400891460 /* Approval.swift */,
+				BCDA7A622125040D00891460 /* Home.swift */,
+				BCDA7A6E21253ED300891460 /* AddNew.swift */,
+				BCDA7A862127805E00891460 /* Chart.swift */,
+				BCDA7A722125524A00891460 /* CreateTask.swift */,
+				BCDA7A8021277F3400891460 /* CompletedTask.swift */,
+				BCDA7A7C21277AF500891460 /* InProgress.swift */,
+				BCDA7A7E21277B2000891460 /* ChoresDone.swift */,
+				BCDA7A7A21277ADB00891460 /* ToDo.swift */,
+				BCDA7A762126565500891460 /* Settings.swift */,
+				BCDA7A742125525D00891460 /* AddUtility.swift */,
+				BCDA7A782126567000891460 /* Calendar.swift */,
+				BCDA7A4F211BCCF000891460 /* LaunchScreen.storyboard */,
+				BCDA7A4D211BCCF000891460 /* Assets.xcassets */,
+				BCDA7A52211BCCF000891460 /* Info.plist */,
+				D4CD41272123F18A001043D2 /* GoogleService-Info.plist */,
+			);
+			path = Roomies;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCDA7A42211BCCED00891460 /* Broomies */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCDA7A55211BCCF000891460 /* Build configuration list for PBXNativeTarget "Broomies" */;
+			buildPhases = (
+				55AE94976C3F086F46D87F8F /* [CP] Check Pods Manifest.lock */,
+				BCDA7A3F211BCCED00891460 /* Sources */,
+				BCDA7A40211BCCED00891460 /* Frameworks */,
+				BCDA7A41211BCCED00891460 /* Resources */,
+				88E7A9E5968354E46E586A45 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Broomies;
+			productName = Roomies;
+			productReference = BCDA7A43211BCCED00891460 /* Broomies.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCDA7A3B211BCCED00891460 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Nathan Tu";
+				TargetAttributes = {
+					BCDA7A42211BCCED00891460 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = BCDA7A3E211BCCED00891460 /* Build configuration list for PBXProject "Broomies" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BCDA7A3A211BCCED00891460;
+			productRefGroup = BCDA7A44211BCCED00891460 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCDA7A42211BCCED00891460 /* Broomies */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCDA7A41211BCCED00891460 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCDA7A51211BCCF000891460 /* LaunchScreen.storyboard in Resources */,
+				D4CD41282123F18A001043D2 /* GoogleService-Info.plist in Resources */,
+				BCDA7A6521251B7200891460 /* Icons in Resources */,
+				BCDA7A4E211BCCF000891460 /* Assets.xcassets in Resources */,
+				BCDA7A4C211BCCED00891460 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55AE94976C3F086F46D87F8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Broomies-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88E7A9E5968354E46E586A45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Broomies/Pods-Broomies-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Broomies/Pods-Broomies-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCDA7A3F211BCCED00891460 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCDA7A872127805E00891460 /* Chart.swift in Sources */,
+				BCDA7A49211BCCED00891460 /* LoginViewController.swift in Sources */,
+				BCDA7A5B2120DB8B00891460 /* ForgotConfirmation.swift in Sources */,
+				BCDA7A6F21253ED300891460 /* AddNew.swift in Sources */,
+				BCDA7A5F2120E97C00891460 /* InviteHousemates.swift in Sources */,
+				BCDA7A59211E778200891460 /* ForgotPassword.swift in Sources */,
+				BCDA7A6D21251C0B00891460 /* AppDelegate.swift in Sources */,
+				BCDA7A5D2120E67C00891460 /* SignUp.swift in Sources */,
+				BCDA7A792126567000891460 /* Calendar.swift in Sources */,
+				BCDA7A7F21277B2000891460 /* ChoresDone.swift in Sources */,
+				BCDA7A732125524A00891460 /* CreateTask.swift in Sources */,
+				BCDA7A8321277F6400891460 /* Approval.swift in Sources */,
+				BCDA7A752125525D00891460 /* AddUtility.swift in Sources */,
+				BCDA7A852127803200891460 /* Notifications.swift in Sources */,
+				BCDA7A772126565500891460 /* Settings.swift in Sources */,
+				BCDA7A7B21277ADB00891460 /* ToDo.swift in Sources */,
+				BCDA7A632125040D00891460 /* Home.swift in Sources */,
+				BCDA7A8121277F3400891460 /* CompletedTask.swift in Sources */,
+				BCDA7A7D21277AF500891460 /* InProgress.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BCDA7A4A211BCCED00891460 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCDA7A4B211BCCED00891460 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BCDA7A4F211BCCF000891460 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCDA7A50211BCCF000891460 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BCDA7A53211BCCF000891460 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BCDA7A54211BCCF000891460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BCDA7A56211BCCF000891460 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDAE6C739A4313C8EB15ABB7 /* Pods-Broomies.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SBUYVW78P7;
+				INFOPLIST_FILE = Roomies/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.broomies;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BCDA7A57211BCCF000891460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBAB2E42B0612B476D045D0D /* Pods-Broomies.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SBUYVW78P7;
+				INFOPLIST_FILE = Roomies/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.broomies;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCDA7A3E211BCCED00891460 /* Build configuration list for PBXProject "Broomies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCDA7A53211BCCF000891460 /* Debug */,
+				BCDA7A54211BCCF000891460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCDA7A55211BCCF000891460 /* Build configuration list for PBXNativeTarget "Broomies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCDA7A56211BCCF000891460 /* Debug */,
+				BCDA7A57211BCCF000891460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BCDA7A3B211BCCED00891460 /* Project object */;
+}
