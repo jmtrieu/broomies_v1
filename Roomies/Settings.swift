@@ -35,6 +35,21 @@ class Settings: UIViewController {
         self.performSegue(withIdentifier: "SettingsToNotificationsSegue", sender: self)
     }
     
+    @IBAction func ChangeHouseButtonPressed(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "SettingsToChangePasswordSegue", sender: self)
+    }
+    
+    @IBAction func ChangeEmailButtonPressed(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "SettingsToChangeEmailSegue", sender: self)
+    }
+    
+    @IBAction func ChangePasswordButtonPressed(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "SettingsToChangePasswordSegue", sender: self)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

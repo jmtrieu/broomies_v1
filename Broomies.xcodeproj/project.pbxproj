@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC25A2082137B28B0075322F /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC25A2072137B28B0075322F /* ChangePassword.swift */; };
+		BC25A20A2137B2D20075322F /* ChangeEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC25A2092137B2D20075322F /* ChangeEmail.swift */; };
+		BC25A20C2137B2E70075322F /* ChangeHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC25A20B2137B2E70075322F /* ChangeHouse.swift */; };
 		BCDA7A49211BCCED00891460 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A48211BCCED00891460 /* LoginViewController.swift */; };
 		BCDA7A4C211BCCED00891460 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCDA7A4A211BCCED00891460 /* Main.storyboard */; };
 		BCDA7A4E211BCCF000891460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDA7A4D211BCCF000891460 /* Assets.xcassets */; };
@@ -36,6 +39,9 @@
 
 /* Begin PBXFileReference section */
 		AF7F831C32DA2ECB3E66FDA1 /* Pods_Broomies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Broomies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC25A2072137B28B0075322F /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
+		BC25A2092137B2D20075322F /* ChangeEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmail.swift; sourceTree = "<group>"; };
+		BC25A20B2137B2E70075322F /* ChangeHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHouse.swift; sourceTree = "<group>"; };
 		BCDA7A43211BCCED00891460 /* Broomies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broomies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDA7A48211BCCED00891460 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BCDA7A4B211BCCED00891460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,11 +128,14 @@
 				BCDA7A48211BCCED00891460 /* LoginViewController.swift */,
 				BCDA7A58211E778200891460 /* ForgotPassword.swift */,
 				BCDA7A5A2120DB8A00891460 /* ForgotConfirmation.swift */,
+				BC25A2072137B28B0075322F /* ChangePassword.swift */,
 				BCDA7A5C2120E67C00891460 /* SignUp.swift */,
+				BC25A2092137B2D20075322F /* ChangeEmail.swift */,
 				BCDA7A5E2120E97C00891460 /* InviteHousemates.swift */,
 				BCDA7A842127803200891460 /* Notifications.swift */,
 				BCDA7A8221277F6400891460 /* Approval.swift */,
 				BCDA7A622125040D00891460 /* Home.swift */,
+				BC25A20B2137B2E70075322F /* ChangeHouse.swift */,
 				BCDA7A6E21253ED300891460 /* AddNew.swift */,
 				BCDA7A862127805E00891460 /* Chart.swift */,
 				BCDA7A722125524A00891460 /* CreateTask.swift */,
@@ -277,6 +286,7 @@
 			files = (
 				BCDA7A872127805E00891460 /* Chart.swift in Sources */,
 				BCDA7A49211BCCED00891460 /* LoginViewController.swift in Sources */,
+				BC25A20C2137B2E70075322F /* ChangeHouse.swift in Sources */,
 				BCDA7A5B2120DB8B00891460 /* ForgotConfirmation.swift in Sources */,
 				BCDA7A6F21253ED300891460 /* AddNew.swift in Sources */,
 				BCDA7A5F2120E97C00891460 /* InviteHousemates.swift in Sources */,
@@ -287,6 +297,7 @@
 				BCDA7A7F21277B2000891460 /* ChoresDone.swift in Sources */,
 				BCDA7A732125524A00891460 /* CreateTask.swift in Sources */,
 				BCDA7A8321277F6400891460 /* Approval.swift in Sources */,
+				BC25A2082137B28B0075322F /* ChangePassword.swift in Sources */,
 				BCDA7A752125525D00891460 /* AddUtility.swift in Sources */,
 				BCDA7A852127803200891460 /* Notifications.swift in Sources */,
 				BCDA7A772126565500891460 /* Settings.swift in Sources */,
@@ -294,6 +305,7 @@
 				BCDA7A632125040D00891460 /* Home.swift in Sources */,
 				BCDA7A8121277F3400891460 /* CompletedTask.swift in Sources */,
 				BCDA7A7D21277AF500891460 /* InProgress.swift in Sources */,
+				BC25A20A2137B2D20075322F /* ChangeEmail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

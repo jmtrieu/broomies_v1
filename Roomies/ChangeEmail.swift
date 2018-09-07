@@ -1,16 +1,19 @@
 //
-//  InProgress.swift
+//  ChangeEmail.swift
 //  Broomies
 //
-//  Created by Nathan Tu on 8/17/18.
+//  Created by Nathan Tu on 8/29/18.
 //  Copyright © 2018 Nathan Tu. All rights reserved.
 //
 
 import UIKit
 
-class InProgress: UIViewController {
+class ChangeEmail: UIViewController {
     
-    
+    @IBAction func DoneButtonPressed(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "ChangeEmailToSettingsSegue", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,4 @@ class InProgress: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }

@@ -42,7 +42,7 @@ class CompletedTask: UIViewController {
     
     @IBAction func CompleteButtonPressed(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "CompletedToHomeSegue", sender: self)
+        self.performSegue(withIdentifier: "CompletedToApprovalSegue", sender: self)
     }
     
     override func viewDidLoad() {
