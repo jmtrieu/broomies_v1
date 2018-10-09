@@ -8,13 +8,20 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func ForgotPasswordButtonPressed(_ sender: Any) {
         
         print("Forgot Password Button Pressed")
         self.performSegue(withIdentifier: "ForgotPasswordSegue", sender: self)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target:
+            self.view, action: #selector(UIView.endEditing(_:))))
+    }
+    
     
     @IBAction func SignUpButtonPressed(_ sender: Any) {
         
@@ -25,12 +32,6 @@ class LoginViewController: UIViewController {
     @IBAction func SignInButtonPressed(_ sender: Any) {
         print("Sign In Button Pressed")
         self.performSegue(withIdentifier: "SignInSegue", sender: self)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
     }
     
     override func didReceiveMemoryWarning() {

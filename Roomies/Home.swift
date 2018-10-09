@@ -34,7 +34,7 @@ class Home: UIViewController {
     
     @IBAction func NotificationsButtonPressed(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "HomeToNotificiationsSegue", sender: self)
+        self.performSegue(withIdentifier: "HomeToNotificationsSegue", sender: self)
     }
     
     @IBAction func DoneButtonPressed(_ sender: Any) {

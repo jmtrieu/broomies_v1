@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="QhJ-dv-1XV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="QhJ-dv-1XV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKI-g6-iR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-302.5" y="-996.50000000000011"/>
+            <point key="canvasLocation" x="-484" y="-896.40179910044992"/>
         </scene>
         <!--To Do-->
         <scene sceneID="iGP-Tv-r3U">
@@ -160,7 +160,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="In Progress"/>
                                 <connections>
-                                    <action selector="AddTaskButtonPressed:" destination="ZEG-4b-RoF" eventType="touchUpInside" id="05j-kN-PAA"/>
                                     <action selector="InProgressButtonPressed:" destination="cfP-as-mOU" eventType="touchUpInside" id="UwH-x2-Wf8"/>
                                     <action selector="NextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M1s-st-uxV"/>
                                 </connections>
@@ -178,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fza-aL-uKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-302.5" y="-103.5"/>
+            <point key="canvasLocation" x="-484" y="-93.103448275862078"/>
         </scene>
         <!--In Progress-->
         <scene sceneID="IWc-Xf-Oaw">
@@ -219,7 +218,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Chores Done"/>
                                 <connections>
-                                    <action selector="AddTaskButtonPressed:" destination="ZEG-4b-RoF" eventType="touchUpInside" id="Fut-9w-eNI"/>
                                     <action selector="ChoresDoneButtonPressed:" destination="dCH-Wa-02i" eventType="touchUpInside" id="ePn-rE-pnp"/>
                                     <action selector="NextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1i2-WF-BdB"/>
                                 </connections>
@@ -230,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="706-9H-THQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.625" y="-103.38499999999999"/>
+            <point key="canvasLocation" x="225" y="-93"/>
         </scene>
         <!--Chores Done-->
         <scene sceneID="zKW-eF-prN">
@@ -277,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fam-zF-cbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="578.75" y="-103.38499999999999"/>
+            <point key="canvasLocation" x="926" y="-93"/>
         </scene>
         <!--Forgot Password-->
         <scene sceneID="PSt-lD-uYL">
@@ -321,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQH-sd-Wo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.5" y="-996.50000000000011"/>
+            <point key="canvasLocation" x="224.80000000000001" y="-896.40179910044992"/>
         </scene>
         <!--Forgot Confirmation-->
         <scene sceneID="ghZ-2g-IjD">
@@ -389,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9T-Hy-Tx6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="578.5" y="-996.50000000000011"/>
+            <point key="canvasLocation" x="925.60000000000002" y="-896.40179910044992"/>
         </scene>
         <!--Approval-->
         <scene sceneID="7Hw-sl-T2z">
@@ -427,7 +425,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cNk-5C-3Ev">
-                                <rect key="frame" x="35" y="594" width="48" height="53"/>
+                                <rect key="frame" x="291" y="594" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="notification.png"/>
                                 <connections>
@@ -448,14 +446,6 @@
                                 <state key="normal" title="Button" image="calendar.png"/>
                                 <connections>
                                     <action selector="CalendarButtonPressed:" destination="XJg-zE-L4e" eventType="touchUpInside" id="UiZ-QQ-c81"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="46f-Mr-vDn">
-                                <rect key="frame" x="291" y="594" width="48" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="home.png"/>
-                                <connections>
-                                    <action selector="HomeButtonPressed:" destination="XJg-zE-L4e" eventType="touchUpInside" id="ddw-IM-GSZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3p7-38-fJz">
@@ -500,6 +490,14 @@
                                 <rect key="frame" x="229" y="316" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="46f-Mr-vDn">
+                                <rect key="frame" x="33" y="594" width="48" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="home.png"/>
+                                <connections>
+                                    <action selector="HomeButtonPressed:" destination="XJg-zE-L4e" eventType="touchUpInside" id="ddw-IM-GSZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -514,7 +512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Saw-gn-Uoo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663.75" y="1195.0416666666665"/>
+            <point key="canvasLocation" x="2662" y="1075"/>
         </scene>
         <!--Completed Task-->
         <scene sceneID="eo5-Hw-wcf">
@@ -572,15 +570,6 @@
                                     <action selector="CompleteButtonPressed:" destination="pv9-1g-c0l" eventType="touchUpInside" id="F1d-Mb-V4C"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9m7-ba-qhB">
-                                <rect key="frame" x="35" y="594" width="48" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="notification.png"/>
-                                <connections>
-                                    <action selector="NotificationsButtonPressed:" destination="pv9-1g-c0l" eventType="touchUpInside" id="gJ3-qc-KiG"/>
-                                    <segue destination="F03-hp-v1Y" kind="modal" identifier="CompletedToNotificationsSegue" id="cBD-mJ-pAX"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pIO-tq-nM5">
                                 <rect key="frame" x="115" y="594" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -598,7 +587,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="STK-lt-phR">
-                                <rect key="frame" x="291" y="594" width="48" height="53"/>
+                                <rect key="frame" x="33" y="594" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="home.png"/>
                                 <connections>
@@ -629,6 +618,15 @@
                                 <rect key="frame" x="115" y="157" width="29" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9m7-ba-qhB">
+                                <rect key="frame" x="293" y="594" width="48" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="notification.png"/>
+                                <connections>
+                                    <action selector="NotificationsButtonPressed:" destination="pv9-1g-c0l" eventType="touchUpInside" id="gJ3-qc-KiG"/>
+                                    <segue destination="F03-hp-v1Y" kind="modal" identifier="CompletedToNotificationsSegue" id="cBD-mJ-pAX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -642,7 +640,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16H-kl-ux8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1213.75" y="1195.0416666666665"/>
+            <point key="canvasLocation" x="1942" y="1075"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="tne-QT-ifu">
@@ -701,7 +699,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1213.75" y="-996.05333333333328"/>
+            <point key="canvasLocation" x="1942" y="-896"/>
         </scene>
         <!--Settings-->
         <scene sceneID="fAP-4y-IXs">
@@ -727,7 +725,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="ChangeHouseButtonPressed:" destination="Sag-2N-83c" eventType="touchUpInside" id="wXY-If-Rgd"/>
+                                    <segue destination="pUC-PR-3mi" kind="modal" identifier="SettingsToChangeHouseSegue" id="p3h-eD-JIC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aBW-gM-Q9l">
@@ -758,7 +756,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PUt-NV-VGf">
-                                <rect key="frame" x="291" y="594" width="48" height="53"/>
+                                <rect key="frame" x="31" y="594" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="home.png"/>
                                 <connections>
@@ -801,7 +799,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="k5V-wC-cUA">
-                                <rect key="frame" x="32" y="594" width="48" height="53"/>
+                                <rect key="frame" x="291" y="594" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="notification.png"/>
                                 <connections>
@@ -819,12 +817,11 @@
                         <segue destination="go1-mH-eht" kind="modal" identifier="SettingsToChartsSegue" id="4p7-dA-uHj"/>
                         <segue destination="to7-RA-669" kind="modal" identifier="SettingsToChangePasswordSegue" id="VdI-X7-KWB"/>
                         <segue destination="CGR-je-D4b" kind="modal" identifier="SettingsToChangeEmailSegue" id="KQY-7U-Yoy"/>
-                        <segue destination="pUC-PR-3mi" kind="modal" identifier="SettingsToChangeHouseSegue" id="O6U-wZ-iTR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLD-ed-tcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127.5" y="726.5"/>
+            <point key="canvasLocation" x="-204" y="653.52323838080963"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="S3H-h1-J1h">
@@ -903,7 +900,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N0D-lm-R2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-303.5" y="1557.5"/>
+            <point key="canvasLocation" x="-485.60000000000002" y="1401.049475262369"/>
         </scene>
         <!--Change Email-->
         <scene sceneID="KhH-oR-ZJl">
@@ -968,7 +965,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obn-39-grZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159" y="1558.0000000000002"/>
+            <point key="canvasLocation" x="254.40000000000001" y="1401.4992503748128"/>
         </scene>
         <!--Change House-->
         <scene sceneID="nXT-sm-68G">
@@ -1029,7 +1026,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbw-jN-8cX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="629.5" y="1557.5"/>
+            <point key="canvasLocation" x="1007.2" y="1401.049475262369"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="RlN-dZ-XWW">
@@ -1067,14 +1064,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jGf-6x-GEC">
-                                <rect key="frame" x="35" y="594" width="48" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="notification.png"/>
-                                <connections>
-                                    <action selector="NotificationsButtonPressed:" destination="ReH-0K-gAA" eventType="touchUpInside" id="Dj3-C3-CLv"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LIg-Ba-dmc">
                                 <rect key="frame" x="115" y="594" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1089,7 +1078,7 @@
                                 <state key="normal" title="Button" image="calendar.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7wy-SC-Nbn">
-                                <rect key="frame" x="291" y="594" width="48" height="53"/>
+                                <rect key="frame" x="27" y="594" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="home.png"/>
                                 <connections>
@@ -1114,6 +1103,14 @@
                                     <action selector="SettingsButtonPressed:" destination="ReH-0K-gAA" eventType="touchUpInside" id="ze5-k0-Zkz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jGf-6x-GEC">
+                                <rect key="frame" x="292" y="594" width="48" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="notification.png"/>
+                                <connections>
+                                    <action selector="NotificationsButtonPressed:" destination="ReH-0K-gAA" eventType="touchUpInside" id="Dj3-C3-CLv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -1130,7 +1127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOm-Oj-e4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="353.5" y="726.5"/>
+            <point key="canvasLocation" x="565.60000000000002" y="653.52323838080963"/>
         </scene>
         <!--Invite Housemates-->
         <scene sceneID="rab-FI-fvz">
@@ -1200,7 +1197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9wC-F7-j5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663.75" y="-996.05333333333328"/>
+            <point key="canvasLocation" x="2662" y="-896"/>
         </scene>
         <!--Home-->
         <scene sceneID="abz-Jb-t0Y">
@@ -1218,17 +1215,15 @@
                                     <action selector="AddButtonPressed:" destination="f6B-LX-D03" eventType="touchUpInside" id="tK3-f7-PSi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qRa-qB-qfn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qRa-qB-qfn">
                                 <rect key="frame" x="16" y="28" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="menu"/>
                                 <connections>
-                                    <action selector="AddButtonPressed:" destination="f6B-LX-D03" eventType="touchUpInside" id="ZZz-7I-SZX"/>
                                     <action selector="SettingsButtonPressed:" destination="f6B-LX-D03" eventType="touchUpInside" id="60Q-Wy-mXN"/>
-                                    <action selector="SettingsButtonPressed:" destination="h3c-rJ-hE7" eventType="touchUpInside" id="qEX-9O-wgp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o2X-FF-Aop">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o2X-FF-Aop">
                                 <rect key="frame" x="16" y="73" width="343" height="218"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1236,7 +1231,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lb2-FQ-F5I">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lb2-FQ-F5I">
                                 <rect key="frame" x="37" y="171" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.6217387915" green="0.68232399229999996" blue="0.69922524689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1244,7 +1239,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g9g-IA-xUf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g9g-IA-xUf">
                                 <rect key="frame" x="16" y="299" width="343" height="218"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1252,7 +1247,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p6i-mT-Cqh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p6i-mT-Cqh">
                                 <rect key="frame" x="37" y="400" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.6217387915" green="0.68232399229999996" blue="0.69922524689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1260,7 +1255,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PAA-iE-ohU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PAA-iE-ohU">
                                 <rect key="frame" x="37" y="453" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.6217387915" green="0.68232399229999996" blue="0.69922524689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1268,7 +1263,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hwz-YW-JhF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hwz-YW-JhF">
                                 <rect key="frame" x="37" y="347" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.6217387915" green="0.68232399229999996" blue="0.69922524689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1276,7 +1271,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bdF-yY-VQU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bdF-yY-VQU">
                                 <rect key="frame" x="41" y="525" width="292" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1287,7 +1282,7 @@
                                     <action selector="DoneButtonPressed:" destination="f6B-LX-D03" eventType="touchUpInside" id="JRb-CG-ERQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L1c-to-f0j">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L1c-to-f0j">
                                 <rect key="frame" x="122" y="594" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="computer2.png"/>
@@ -1296,16 +1291,17 @@
                                     <action selector="ChartsButtonPressed:" destination="h3c-rJ-hE7" eventType="touchUpInside" id="V3P-m2-edy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YC2-Mt-6Ba">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YC2-Mt-6Ba">
                                 <rect key="frame" x="211" y="594" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="calendar.png"/>
                                 <connections>
                                     <action selector="CalendarButtonPressed:" destination="h3c-rJ-hE7" eventType="touchUpInside" id="VHt-gl-zAb"/>
                                     <action selector="CalendarButtonPressed:" destination="f6B-LX-D03" eventType="touchUpInside" id="jha-11-idY"/>
+                                    <segue destination="ReH-0K-gAA" kind="modal" identifier="HomeToCalendarSegue" id="Ill-Gj-Nfc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V6Y-EN-w7t">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V6Y-EN-w7t">
                                 <rect key="frame" x="33" y="594" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="home.png"/>
@@ -1313,23 +1309,24 @@
                                     <action selector="HomeButtonPressed:" destination="h3c-rJ-hE7" eventType="touchUpInside" id="BGs-IZ-YS6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L6b-xj-huv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L6b-xj-huv">
                                 <rect key="frame" x="294" y="594" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="notification.png"/>
                                 <connections>
                                     <action selector="NotificationsButtonPressed:" destination="h3c-rJ-hE7" eventType="touchUpInside" id="3iA-AI-622"/>
                                     <action selector="NotificationsButtonPressed:" destination="f6B-LX-D03" eventType="touchUpInside" id="otC-RI-J4x"/>
+                                    <segue destination="F03-hp-v1Y" kind="modal" identifier="HomeToNotificationsSegue" id="6T2-wS-GA7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="To Do" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bTS-N0-KmQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Do" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bTS-N0-KmQ">
                                 <rect key="frame" x="88" y="89" width="198" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bE5-5X-qtS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bE5-5X-qtS">
                                 <rect key="frame" x="37" y="224" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.6217387915" green="0.68232399229999996" blue="0.69922524689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1337,7 +1334,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xeU-Ue-sLm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xeU-Ue-sLm">
                                 <rect key="frame" x="37" y="118" width="300" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.6217387915" green="0.68232399229999996" blue="0.69922524689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1345,7 +1342,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="In Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TjR-fM-l1v">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TjR-fM-l1v">
                                 <rect key="frame" x="88" y="318" width="198" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -1365,7 +1362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKf-zf-BAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1245.5" y="62.5"/>
+            <point key="canvasLocation" x="1992.8" y="56.221889055472268"/>
         </scene>
         <!--Create Task-->
         <scene sceneID="4Ml-Ou-hgU">
@@ -1432,8 +1429,8 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add Task"/>
                                 <connections>
-                                    <action selector="AddTaskButtonPressed:" destination="ZEG-4b-RoF" eventType="touchUpInside" id="u5j-Uo-Vta"/>
                                     <action selector="NextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q6S-R3-2zs"/>
+                                    <segue destination="f6B-LX-D03" kind="modal" identifier="CreateTaskToHomeSegue" id="j5z-vD-6Gy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IPh-Rm-VsD">
@@ -1463,13 +1460,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <segue destination="cfP-as-mOU" kind="modal" identifier="CreateTaskToToDoSegue" id="jQD-KS-YAE"/>
                         <segue destination="h3c-rJ-hE7" kind="modal" identifier="CreateTaskToAddNewSegue" id="mGc-Vh-jjG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJR-Yt-k5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2318.5" y="-103.5"/>
+            <point key="canvasLocation" x="3709.5999999999999" y="-93.103448275862078"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="Q2f-Zr-Q1A">
@@ -1480,7 +1476,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KcF-7c-3Yp">
-                                <rect key="frame" x="35" y="594" width="48" height="53"/>
+                                <rect key="frame" x="285" y="594" width="48" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="notification.png"/>
                             </button>
@@ -1498,14 +1494,6 @@
                                 <state key="normal" title="Button" image="calendar.png"/>
                                 <connections>
                                     <action selector="CalendarButtonPressed:" destination="F03-hp-v1Y" eventType="touchUpInside" id="bIf-iI-dPh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WAo-cz-On4">
-                                <rect key="frame" x="291" y="594" width="48" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="home.png"/>
-                                <connections>
-                                    <action selector="HomeButtonPressed:" destination="F03-hp-v1Y" eventType="touchUpInside" id="KiE-MY-G0n"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LR8-qb-ucu">
@@ -1533,6 +1521,14 @@
                                 <color key="textColor" red="0.29134175179999999" green="0.48377567529999999" blue="0.43507456779999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WAo-cz-On4">
+                                <rect key="frame" x="37" y="594" width="48" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="home.png"/>
+                                <connections>
+                                    <action selector="HomeButtonPressed:" destination="F03-hp-v1Y" eventType="touchUpInside" id="KiE-MY-G0n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -1546,7 +1542,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vym-29-zAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2318.75" y="727.02999999999997"/>
+            <point key="canvasLocation" x="3710" y="654"/>
         </scene>
         <!--Chart-->
         <scene sceneID="gUn-5q-mRB">
@@ -1671,7 +1667,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQe-If-QI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2855.625" y="727.02999999999997"/>
+            <point key="canvasLocation" x="4569" y="654"/>
         </scene>
         <!--Add Utility-->
         <scene sceneID="Kmo-HU-Yuq">
@@ -1716,6 +1712,7 @@
                                 <connections>
                                     <action selector="AddBillButtonPressed:" destination="yhY-On-Ue0" eventType="touchUpInside" id="xtK-Gi-tcb"/>
                                     <action selector="NextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ftn-f3-um2"/>
+                                    <segue destination="f6B-LX-D03" kind="modal" identifier="AddBillToHomeSegue" id="mRH-lW-qrF"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add Comment" textAlignment="natural" id="3OS-8j-fdH">
@@ -1795,12 +1792,11 @@
                     <connections>
                         <segue destination="Sag-2N-83c" kind="modal" identifier="AddBillToSettingsSegue" id="Tic-S9-Mzf"/>
                         <segue destination="h3c-rJ-hE7" kind="modal" identifier="AddBillToAddNewSegue" id="n3Y-uX-ugf"/>
-                        <segue destination="cfP-as-mOU" kind="modal" identifier="AddBillToToDoSegue" id="7Hb-9P-ACa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UqZ-ZH-EWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2855.5" y="-103.5"/>
+            <point key="canvasLocation" x="4568.8000000000002" y="-93.103448275862078"/>
         </scene>
         <!--Add New-->
         <scene sceneID="hIU-wv-31u">
@@ -1905,7 +1901,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDa-hk-ZeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686.25" y="-103.38499999999999"/>
+            <point key="canvasLocation" x="2698" y="-93"/>
         </scene>
         <!--Forgot Confirmation-->
         <scene sceneID="0da-Fo-hyX">
@@ -1970,33 +1966,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XlA-GT-lrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="578.5" y="-996.50000000000011"/>
+            <point key="canvasLocation" x="925.60000000000002" y="-896.40179910044992"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Plus Button" width="512" height="512"/>
+        <image name="Plus Button" width="409.60000610351562" height="409.60000610351562"/>
         <image name="april-2018-calendar.png" width="1047" height="817"/>
         <image name="calendar.png" width="512" height="512"/>
         <image name="cleaning.png" width="512" height="512"/>
         <image name="computer2.png" width="512" height="512"/>
         <image name="home.png" width="512" height="512"/>
-        <image name="locked" width="512" height="512"/>
-        <image name="menu" width="512" height="512"/>
+        <image name="locked" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="menu" width="409.60000610351562" height="409.60000610351562"/>
         <image name="notification.png" width="512" height="512"/>
-        <image name="photo-camera" width="512" height="512"/>
-        <image name="picture1" width="512" height="512"/>
-        <image name="profile" width="512" height="512"/>
-        <image name="star" width="512" height="512"/>
-        <image name="user (1)" width="512" height="512"/>
+        <image name="photo-camera" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="picture1" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="profile" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="star" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="user (1)" width="409.60000610351562" height="409.60000610351562"/>
         <image name="users.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zFD-nD-X3n"/>
-        <segue reference="7DG-bB-ftO"/>
-        <segue reference="Wwr-H2-cXe"/>
-        <segue reference="Iuu-ug-pDE"/>
-        <segue reference="f7a-js-y2h"/>
-        <segue reference="weS-KE-ChI"/>
-        <segue reference="jQD-KS-YAE"/>
+        <segue reference="G6K-Vo-79r"/>
+        <segue reference="lr0-47-0AO"/>
+        <segue reference="w7f-g8-ziU"/>
+        <segue reference="ps1-IW-QEh"/>
+        <segue reference="Vyn-jB-AVF"/>
+        <segue reference="FUm-sO-rA0"/>
     </inferredMetricsTieBreakers>
 </document>

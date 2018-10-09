@@ -22,12 +22,13 @@ class CreateTask: UIViewController {
     
     @IBAction func AddTaskButtonPressed(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "CreateTaskToToDoSegue", sender: self)
+        self.performSegue(withIdentifier: "CreateTaskToHomeSegue", sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
     override func didReceiveMemoryWarning() {
