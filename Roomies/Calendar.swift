@@ -16,9 +16,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     
+    @IBOutlet weak var addButton: UIButton!
+    
     var houseName: String!
     
     @IBOutlet weak var monthLabel: UILabel!
+    var tappedDate: Date!
     
     @IBOutlet weak var dayChoresTable: UITableView!
     var dayChoresDataSource: CalendarDayDataSource!
@@ -44,6 +47,10 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "CalendarToHouseViewSegue", sender: self)
     }
     
+    @IBAction func AddTaskButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "CalendarToAddTaskSegue", sender: self)
+    }
+    
     @IBAction func NotificationsButtonPressed(_ sender: Any) {
         
         self.performSegue(withIdentifier: "CalendarToNotificationsSegue", sender: self)
@@ -56,7 +63,7 @@ class ViewController: UIViewController {
         self.getUser()
         //Color one is bottom right corner and Color two is top left corner
         gradientView.setGradientBackground(colorOne: UIColor(hex: "005F77"), colorTwo: UIColor(hex: "3F8698"))
-        
+        self.addButton.isHidden = true
     }
     
     func getUser() {
@@ -84,6 +91,12 @@ class ViewController: UIViewController {
         if (segue.identifier == "CalendarToHouseViewSegue") {
             let vc = segue.destination as! HouseView
             vc.houseName = self.houseName
+        }
+        if (segue.identifier == "CalendarToAddTaskSegue") {
+            let cc = segue.destination as! CreateTask
+            cc.houseName = self.houseName
+            cc.fromCalendar = true
+            cc.passedDate = self.tappedDate
         }
         if (segue.identifier == "CalendarToHomeSegue") {
             let hc = segue.destination as! Home
@@ -159,12 +172,14 @@ extension ViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDele
     
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        addButton.isHidden = false
         displayEvents(view: cell, cellState: cellState)
         handleCellSelection(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        addButton.isHidden = true
         handleCellSelection(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
         self.dayChoresArray.removeAll()
@@ -175,6 +190,7 @@ extension ViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDele
         guard let myCustomCell = view as? CellView else {
             return
         }
+        tappedDate = formatter.date(from: myCustomCell.formattedDate)
         queryDayEvents(day: myCustomCell.formattedDate)
     }
     

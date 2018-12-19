@@ -22,6 +22,7 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     var bbPressed = false
     
     var fromSingleUser = false
+    var fromCalendar = false
     
     @IBOutlet weak var taskDueDate: UIDatePicker!
     @IBOutlet weak var taskName: UITextField!
@@ -33,6 +34,7 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     //nc listens for select user
     let nc = NotificationCenter.default
     var passedVal: String!
+    var passedDate: Date!
     
     var houseName: String!
     var category: String!
@@ -170,14 +172,14 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBAction func AddTaskButtonPressed(_ sender: Any) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
-        if ((!bbPressed && !sbPressed && !cbPressed) || taskName.text == "" || userName.text == "Assign to") {
+        if ((!bbPressed && !sbPressed && !cbPressed) || taskName.text == "" || userName.text == "") {
             var title = ""
             var message = ""
             if (taskName.text == "") {
                 title = "Invalid Task Name"
                 message = "Fill out a task"
             }
-            if (userName.text == "Assign to") {
+            if (userName.text == "") {
                 title = "Invalid User"
                 message = "Fill out a user"
             }
@@ -249,6 +251,9 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         if (self.fromSingleUser) {
             self.userName.text = self.passedVal
         }
+        if (self.fromCalendar) {
+            self.taskDueDate.date = self.passedDate
+        }
         
         taskName.clipsToBounds = true
         userName.clipsToBounds = true
@@ -311,6 +316,15 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func openGalleryButton(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func openCameraButton(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {

@@ -528,6 +528,29 @@
                                     <segue destination="0zw-f3-nrv" kind="modal" identifier="CancelAddTask" id="v3S-5S-VWO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89l-6E-I1c">
+                                <rect key="frame" x="16" y="477" width="83" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSH-o7-yRE">
+                                <rect key="frame" x="112" y="474" width="27" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="photo-camera"/>
+                                <connections>
+                                    <action selector="openCameraButton:" destination="lEB-da-ZaB" eventType="touchUpInside" id="kDa-hp-QyT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUN-Jd-3wT">
+                                <rect key="frame" x="164" y="474" width="27" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="picture1"/>
+                                <connections>
+                                    <action selector="openGalleryButton:" destination="lEB-da-ZaB" eventType="touchUpInside" id="qE5-Qq-Unf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YMX-kt-7fN"/>
@@ -1136,7 +1159,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcZ-Uf-P0v">
-                                <rect key="frame" x="246" y="476" width="169" height="116"/>
+                                <rect key="frame" x="258" y="460" width="169" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="          " image="add_button.png"/>
                                 <connections>
@@ -1280,11 +1303,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9y-Io-FnF">
+                                <rect key="frame" x="258" y="460" width="169" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="          " image="add_button.png"/>
+                                <connections>
+                                    <action selector="AddTaskButtonPressed:" destination="2Zv-Ve-TJE" eventType="touchUpInside" id="Psm-9n-vBf"/>
+                                    <action selector="addButtonPressed:" destination="wxZ-3E-p15" eventType="touchUpInside" id="uy8-Z8-e0r"/>
+                                    <segue destination="lEB-da-ZaB" kind="modal" identifier="CalendarToAddTaskSegue" id="Kdx-z8-Hmu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wSc-dH-G8R"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="r9y-Io-FnF" id="gPO-U8-jjS"/>
                         <outlet property="calendarView" destination="ka8-Mj-N2p" id="zeu-zo-Iod"/>
                         <outlet property="dayChoresTable" destination="c08-BL-TuA" id="joD-cK-d4E"/>
                         <outlet property="gradientView" destination="zJr-zO-W6C" id="qVd-sE-veU"/>
@@ -1416,6 +1450,8 @@
         <image name="day_view" width="22" height="18"/>
         <image name="home" width="409.60000610351562" height="409.60000610351562"/>
         <image name="notification" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="photo-camera" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="picture1" width="409.60000610351562" height="409.60000610351562"/>
         <image name="profile" width="409.60000610351562" height="409.60000610351562"/>
         <image name="profile.png" width="512" height="512"/>
         <image name="settings_back" width="22" height="19"/>
@@ -1425,12 +1461,12 @@
         <image name="welcome_check" width="140" height="140"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MbU-6N-tfq"/>
-        <segue reference="eXp-Hh-3uQ"/>
-        <segue reference="cZ4-kY-oSa"/>
+        <segue reference="VUj-Vh-Urp"/>
+        <segue reference="eQx-d2-BNi"/>
+        <segue reference="ZMM-g4-ZHy"/>
         <segue reference="zvR-oE-yHX"/>
         <segue reference="Lqb-Id-YAx"/>
-        <segue reference="hCW-Tj-sDe"/>
-        <segue reference="Rnn-2e-fTY"/>
+        <segue reference="sWI-e3-zCG"/>
+        <segue reference="v3S-5S-VWO"/>
     </inferredMetricsTieBreakers>
 </document>
