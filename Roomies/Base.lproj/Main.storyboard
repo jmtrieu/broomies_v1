@@ -827,10 +827,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="vn9-bK-GQZ">
-                                <rect key="frame" x="110" y="140" width="154" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PIA-0P-Xed">
                                 <rect key="frame" x="0.0" y="585" width="385" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -870,7 +866,15 @@
                                 <rect key="frame" x="305" y="600" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="notification"/>
+                                <connections>
+                                    <action selector="notificationsButtonPressed:" destination="wxZ-3E-p15" eventType="touchUpInside" id="pKl-rY-jMw"/>
+                                    <segue destination="65m-ud-h9N" kind="modal" identifier="SingleUserToNotificationsSegue" id="r9d-Yg-ml4"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="vn9-bK-GQZ">
+                                <rect key="frame" x="129" y="140" width="117" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NbO-5B-DF9"/>
@@ -883,7 +887,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N80-8a-JKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="2060"/>
+            <point key="canvasLocation" x="1064.8" y="2059.5202398800602"/>
         </scene>
         <!--Ib Calendar Data Source-->
         <scene sceneID="17h-T4-bm1">
@@ -1151,9 +1155,9 @@
         <image name="week_view" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r1V-m9-mEB"/>
-        <segue reference="eXp-Hh-3uQ"/>
-        <segue reference="ZMM-g4-ZHy"/>
-        <segue reference="gZB-8s-fH5"/>
+        <segue reference="r9d-Yg-ml4"/>
+        <segue reference="rG3-fy-IB4"/>
+        <segue reference="QTf-E4-go6"/>
+        <segue reference="9b7-fm-Mc4"/>
     </inferredMetricsTieBreakers>
 </document>
