@@ -551,6 +551,10 @@
                                     <action selector="openGalleryButton:" destination="lEB-da-ZaB" eventType="touchUpInside" id="qE5-Qq-Unf"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ihy-W8-I83">
+                                <rect key="frame" x="217" y="474" width="30" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YMX-kt-7fN"/>
@@ -560,6 +564,7 @@
                         <outlet property="billsButton" destination="Gx4-4m-hUB" id="l1J-zP-LrM"/>
                         <outlet property="cleaningButton" destination="9WJ-W1-MDj" id="O7c-xb-0SA"/>
                         <outlet property="dropDownButton" destination="TSY-SR-ieQ" id="KlK-B6-FwU"/>
+                        <outlet property="imagePreview" destination="Ihy-W8-I83" id="Dge-p1-tXu"/>
                         <outlet property="shoppingButton" destination="1Km-0h-4OJ" id="poU-YB-Eqo"/>
                         <outlet property="taskDueDate" destination="lxe-5O-t2A" id="MDZ-cp-M4b"/>
                         <outlet property="taskName" destination="Anu-ed-JvB" id="yV3-hr-RcN"/>

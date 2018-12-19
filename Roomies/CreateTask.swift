@@ -53,6 +53,8 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBOutlet weak var assignToBar: UIView!
     var assignToBarTapped = false;
     
+    @IBOutlet weak var imagePreview: UIImageView!
+    
     @objc func getValue(notification: Notification) {
         let userInfo:Dictionary<String, String> = notification.userInfo as! Dictionary<String, String>
         let item = userInfo["user"]! as String
@@ -322,6 +324,7 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             imagePicker.delegate = self
             imagePicker.sourceType = .savedPhotosAlbum
             imagePicker.allowsEditing = false
+            imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .savedPhotosAlbum)!
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
@@ -332,9 +335,21 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             imagePicker.delegate = self
             imagePicker.sourceType = .camera;
             imagePicker.allowsEditing = false
+             imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera)!
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.imagePreview.image = image
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
     
 }
 
