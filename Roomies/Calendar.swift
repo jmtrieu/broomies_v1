@@ -7,22 +7,31 @@
 //
 
 import UIKit
+import JTAppleCalendar
+import FirebaseDatabase
+import FirebaseAuth
 
-class Calendar: UIViewController {
+class ViewController: UIViewController {
+    let formatter = DateFormatter()
     
-    @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var label2: UILabel!
-    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var calendarView: JTAppleCalendarView!
     
-    @IBAction func SettingsButtonPressed(_ sender: Any) {
+    var houseName: String!
+    
+    @IBOutlet weak var monthLabel: UILabel!
+    
+    @IBOutlet weak var dayChoresTable: UITableView!
+    var dayChoresDataSource: CalendarDayDataSource!
+    var dayChoresArray = [String]()
+    
+    @IBOutlet weak var gradientView: UIView!
+    
+    var userEmail: String = ""
+    var userName: String = ""
+    
+    @IBAction func BackButtonPressed(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "CalendarToSettingsSegue", sender: self)
-    }
-    
-    
-    @IBAction func AddNewButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "CalendarToAddNewSegue", sender: self)
+        self.performSegue(withIdentifier: "CalenderToHomeBackSegue", sender: self)
     }
     
     @IBAction func HomeButtonPressed(_ sender: Any) {
@@ -30,32 +39,40 @@ class Calendar: UIViewController {
         self.performSegue(withIdentifier: "CalendarToHomeSegue", sender: self)
     }
     
-    @IBAction func ChartsButtonPressed(_ sender: Any) {
+    @IBAction func HouseViewButtonPressed(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "CalendarToChartsSegue", sender: self)
+        self.performSegue(withIdentifier: "CalendarToHouseViewSegue", sender: self)
     }
     
     @IBAction func NotificationsButtonPressed(_ sender: Any) {
         
         self.performSegue(withIdentifier: "CalendarToNotificationsSegue", sender: self)
     }
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        calendarView.register(UINib(nibName: "CellView", bundle: Bundle.main), forCellWithReuseIdentifier: "CellView")
+        self.getUser()
+        //Color one is bottom right corner and Color two is top left corner
+        gradientView.setGradientBackground(colorOne: UIColor(hex: "005F77"), colorTwo: UIColor(hex: "3F8698"))
         
-        // label1 border set-up
-        label1.layer.borderWidth = 2.0
-        label1.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    func getUser() {
+        self.userEmail = Auth.auth().currentUser!.email!
         
-        // label2 border set-up
-        label2.layer.borderWidth = 2.0
-        label2.layer.borderColor = UIColor.black.cgColor
-        
-        //label3 border set-up
-        label3.layer.borderWidth = 2.0
-        label3.layer.borderColor = UIColor.black.cgColor
-        
+        let houseQuery = Database.database().reference().child("users")
+        houseQuery.observe(.value, with: { snapshot in
+            if snapshot.exists() {
+                for s in snapshot.children {
+                    if (s as! DataSnapshot).childSnapshot(forPath: "/email").value as? String == self.userEmail {
+                        self.userName = ((s as! DataSnapshot).childSnapshot(forPath: "/firstName").value as? String)!
+                    }
+                    
+                }
+            }
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,5 +80,171 @@ class Calendar: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "CalendarToHouseViewSegue") {
+            let vc = segue.destination as! HouseView
+            vc.houseName = self.houseName
+        }
+        if (segue.identifier == "CalendarToHomeSegue") {
+            let hc = segue.destination as! Home
+            hc.houseName = self.houseName
+        }
+        if (segue.identifier == "CalendarToNotificationsSegue") {
+            let nc = segue.destination as! Notifications
+            nc.houseName = self.houseName
+        }
+    }
     
+}
+
+extension ViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
+    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
+        let myCustomCell = cell as! CellView
+        //sharedFunctionToConfigureCell(myCustomCell: myCustomCell, cellState: cellState, date: date)
+        handleCellTextColor(view: cell, cellState: cellState)
+        handleCellSelection(view: cell, cellState: cellState)
+    }
+    
+    func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
+        
+        guard let myCustomCell = view as? CellView  else {
+            return
+        }
+        
+        if cellState.isSelected {
+            if myCustomCell.selectedView.isHidden {
+                myCustomCell.dayLabel.textColor = UIColor.black
+            } else {
+                myCustomCell.dayLabel.textColor = UIColor.white
+            }
+        } else {
+            if cellState.dateBelongsTo == .thisMonth {
+                myCustomCell.dayLabel.textColor = UIColor.black
+            } else {
+                myCustomCell.dayLabel.textColor = UIColor.gray
+            }
+        }
+    }
+    
+    // Function to handle the calendar selection
+    func handleCellSelection(view: JTAppleCell?, cellState: CellState) {
+        guard let myCustomCell = view as? CellView  else {
+            return
+        }
+        if cellState.isSelected {
+            myCustomCell.selectedView.layer.cornerRadius =  5
+            if myCustomCell.selectedView.isHidden {
+                myCustomCell.selectedView.isHidden = false
+            } else {
+                //resets selectionview to hidden
+                myCustomCell.selectedView.isHidden = true
+            }
+        } else {
+            myCustomCell.selectedView.isHidden = true
+        }
+    }
+    
+    func prepareDayChoresTable(){
+        let items1 = dayChoresArray
+        dayChoresDataSource = CalendarDayDataSource()
+        dayChoresDataSource.setHouseName(name: houseName!)
+        dayChoresDataSource.setData(items: items1)
+        self.dayChoresTable.dataSource = dayChoresDataSource
+        self.dayChoresTable.delegate = dayChoresDataSource
+        self.dayChoresTable.register(UITableViewCell.self,
+                                forCellReuseIdentifier:
+            "DayCell")
+        self.dayChoresTable.tableFooterView = UIView()
+    }
+    
+    
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        displayEvents(view: cell, cellState: cellState)
+        handleCellSelection(view: cell, cellState: cellState)
+        handleCellTextColor(view: cell, cellState: cellState)
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        handleCellSelection(view: cell, cellState: cellState)
+        handleCellTextColor(view: cell, cellState: cellState)
+        self.dayChoresArray.removeAll()
+        self.prepareDayChoresTable()
+    }
+    
+    func displayEvents(view: JTAppleCell?, cellState: CellState) {
+        guard let myCustomCell = view as? CellView else {
+            return
+        }
+        queryDayEvents(day: myCustomCell.formattedDate)
+    }
+    
+    func queryDayEvents(day: String) {
+        formatter.dateFormat = "yyyy MM dd"
+        let choresQuery = Database.database().reference().child("houses").child(houseName!).child("chores")
+        choresQuery.observe(.value, with: { snapshot in
+            if snapshot.exists() {
+                self.dayChoresArray.removeAll()
+                print("snaphshot is: ")
+                //clears past data
+                for s in snapshot.children {
+                    if (s as! DataSnapshot).childSnapshot(forPath: "/assignee").value as! String != self.userName {
+                        continue;
+                    }
+                    if (s as! DataSnapshot).childSnapshot(forPath: "/duedate").value as! String == day {
+                        if (((s as! DataSnapshot).childSnapshot(forPath: "/done").value as! String == "f")) {
+                            self.dayChoresArray.append((s as! DataSnapshot).childSnapshot(forPath: "/name").value as! String)
+                        }
+                    }
+                }
+                self.prepareDayChoresTable()
+            }
+        })
+    }
+    
+    func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
+        formatter.dateFormat = "yyyy MM dd"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        let generateInDates: InDateCellGeneration = .forAllMonths
+        let generateOutDates: OutDateCellGeneration = .tillEndOfGrid
+        
+        let startDate = formatter.date(from: "2018 11 01")! // You can use date generated from a formatter
+        let endDate = formatter.date(from: "2019 11 01")!            // You can also use dates created from this function
+        let parameters = ConfigurationParameters(startDate: startDate,
+                                                 endDate: endDate,
+                                                 numberOfRows: 6,
+                                                 calendar: Calendar.current,
+                                                 generateInDates: generateInDates,
+                                                 generateOutDates: generateOutDates,
+                                                 firstDayOfWeek: .sunday,
+                                                 hasStrictBoundaries: true)
+        return parameters
+    }
+    
+    
+    func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
+        //correctly formats months
+        let monthFormatter = DateFormatter()
+        monthFormatter.dateFormat = "LLLL"
+        monthLabel.text = monthFormatter.string(from: Calendar.current.date(byAdding: .month, value: -1, to: cellState.date)!)
+        
+        formatter.dateFormat = "yyyy MM dd"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        let curDate = formatter.string(from: cellState.date)
+        let myCustomCell = calendar.dequeueReusableCell(withReuseIdentifier: "CellView", for: indexPath) as! CellView
+        myCustomCell.dayLabel.text = cellState.text
+        myCustomCell.formattedDate = curDate
+        
+        if cellState.dateBelongsTo == .thisMonth {
+           /* if Calendar.current.isDateInToday(date) {
+                myCustomCell.backgroundColor = UIColor.red
+            }*/
+            myCustomCell.dayLabel.textColor = UIColor.black
+        } else {
+            myCustomCell.dayLabel.textColor = UIColor.gray
+        }
+        myCustomCell.selectedView.isHidden = true
+        return myCustomCell
+    }
 }

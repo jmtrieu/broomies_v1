@@ -3,23 +3,52 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42B2555221A3E80800A306E8 /* UIViewGradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B2555121A3E80800A306E8 /* UIViewGradientExtension.swift */; };
+		42B2555421A4955800A306E8 /* UIImageAlphaExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B2555321A4955800A306E8 /* UIImageAlphaExtension.swift */; };
+		42EF5B4A21A206DA006F0BF3 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF5B4921A206DA006F0BF3 /* WelcomePage.swift */; };
+		741EDC772169F10000815345 /* Icons in Resources */ = {isa = PBXBuildFile; fileRef = 741EDC762169F0FF00815345 /* Icons */; };
+		7427B27B2196A80300F7FECD /* SingleUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7427B27A2196A80300F7FECD /* SingleUserView.swift */; };
+		742EB926217258B400EB4E7A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 742EB925217258B400EB4E7A /* GoogleService-Info.plist */; };
+		7443F6AC21812B1E00B1A3D4 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443F6AB21812B1E00B1A3D4 /* CellView.swift */; };
+		744E9BE321A8C00E00DF0142 /* NotificationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E9BE221A8C00E00DF0142 /* NotificationsDataSource.swift */; };
+		744E9BE521A9423700DF0142 /* ConvenientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E9BE421A9423700DF0142 /* ConvenientColor.swift */; };
+		745BB73121AA68CA00081556 /* ChoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 745BB73021AA68CA00081556 /* ChoreView.xib */; };
+		745BB73321AA693000081556 /* ChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745BB73221AA693000081556 /* ChoreView.swift */; };
+		74772A442190157B006E4DF3 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74772A432190157B006E4DF3 /* UIViewExtension.swift */; };
+		747BE71F21AB8C5100572294 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747BE71E21AB8C5100572294 /* UserCellView.swift */; };
+		747BE72121AB93AF00572294 /* UserCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747BE72021AB93AF00572294 /* UserCellDataSource.swift */; };
+		747BE72421ABC77A00572294 /* UserCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 747BE72321ABC77A00572294 /* UserCellView.xib */; };
+		747DA8FF2182828D00A3772D /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 747DA8FE2182828D00A3772D /* CellView.xib */; };
+		748217A12194C4FA00E23786 /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748217A02194C4FA00E23786 /* HouseView.swift */; };
+		749BD8DD218B932500996825 /* CalendarDayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BD8DC218B932500996825 /* CalendarDayDataSource.swift */; };
+		749BD8E3218B9BE100996825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 749BD8E1218B9BE100996825 /* Main.storyboard */; };
+		74B48DFA2182C6630076ED58 /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = 74B48DF92182C6630076ED58 /* Pods */; };
+		74B62D23217BAA21008B2AC5 /* InProgressDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B62D22217BAA21008B2AC5 /* InProgressDataSource.swift */; };
+		74B62D25217BB146008B2AC5 /* DoneDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B62D24217BB146008B2AC5 /* DoneDataSource.swift */; };
+		74DA921B21AD04B700BB580B /* HomeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74DA921A21AD04B700BB580B /* HomeCellView.xib */; };
+		74DA921D21AD04C800BB580B /* HomeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA921C21AD04C800BB580B /* HomeCellView.swift */; };
+		74DA921F21AD0B1E00BB580B /* HomeCellViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA921E21AD0B1E00BB580B /* HomeCellViewDataSource.swift */; };
+		74E6C7152195659C00C5482F /* AccountInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6C7142195659C00C5482F /* AccountInformation.swift */; };
+		74E6C71B21961DA900C5482F /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E6C71A21961DA900C5482F /* UserView.xib */; };
+		74E6C71D21961E8200C5482F /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6C71C21961E8200C5482F /* UserView.swift */; };
+		74F8FF17219677C800849BAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F8FF16219677C800849BAE /* User.swift */; };
+		74F8FF1D2196799500849BAE /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F8FF1C2196799500849BAE /* UserDataStore.swift */; };
+		74FF5B6D217B169000C05ABA /* ToDoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FF5B6C217B169000C05ABA /* ToDoDataSource.swift */; };
 		BC25A2082137B28B0075322F /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC25A2072137B28B0075322F /* ChangePassword.swift */; };
 		BC25A20A2137B2D20075322F /* ChangeEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC25A2092137B2D20075322F /* ChangeEmail.swift */; };
 		BC25A20C2137B2E70075322F /* ChangeHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC25A20B2137B2E70075322F /* ChangeHouse.swift */; };
 		BCDA7A49211BCCED00891460 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A48211BCCED00891460 /* LoginViewController.swift */; };
-		BCDA7A4C211BCCED00891460 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCDA7A4A211BCCED00891460 /* Main.storyboard */; };
 		BCDA7A4E211BCCF000891460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDA7A4D211BCCF000891460 /* Assets.xcassets */; };
 		BCDA7A51211BCCF000891460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCDA7A4F211BCCF000891460 /* LaunchScreen.storyboard */; };
 		BCDA7A59211E778200891460 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A58211E778200891460 /* ForgotPassword.swift */; };
 		BCDA7A5B2120DB8B00891460 /* ForgotConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A5A2120DB8A00891460 /* ForgotConfirmation.swift */; };
 		BCDA7A5D2120E67C00891460 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A5C2120E67C00891460 /* SignUp.swift */; };
-		BCDA7A5F2120E97C00891460 /* InviteHousemates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A5E2120E97C00891460 /* InviteHousemates.swift */; };
+		BCDA7A5F2120E97C00891460 /* BuildHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A5E2120E97C00891460 /* BuildHouse.swift */; };
 		BCDA7A632125040D00891460 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A622125040D00891460 /* Home.swift */; };
-		BCDA7A6521251B7200891460 /* Icons in Resources */ = {isa = PBXBuildFile; fileRef = BCDA7A6421251B7200891460 /* Icons */; };
 		BCDA7A6D21251C0B00891460 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A6C21251C0B00891460 /* AppDelegate.swift */; };
 		BCDA7A6F21253ED300891460 /* AddNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A6E21253ED300891460 /* AddNew.swift */; };
 		BCDA7A732125524A00891460 /* CreateTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A722125524A00891460 /* CreateTask.swift */; };
@@ -34,26 +63,54 @@
 		BCDA7A852127803200891460 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A842127803200891460 /* Notifications.swift */; };
 		BCDA7A872127805E00891460 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7A862127805E00891460 /* Chart.swift */; };
 		C705E54CBEE4524B3731FAF8 /* Pods_Broomies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF7F831C32DA2ECB3E66FDA1 /* Pods_Broomies.framework */; };
-		D4CD41282123F18A001043D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4CD41272123F18A001043D2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42B2555121A3E80800A306E8 /* UIViewGradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewGradientExtension.swift; sourceTree = "<group>"; };
+		42B2555321A4955800A306E8 /* UIImageAlphaExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageAlphaExtension.swift; sourceTree = "<group>"; };
+		42EF5B4921A206DA006F0BF3 /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
+		741EDC762169F0FF00815345 /* Icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Icons; sourceTree = "<group>"; };
+		7427B27A2196A80300F7FECD /* SingleUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserView.swift; sourceTree = "<group>"; };
+		742EB925217258B400EB4E7A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7443F6AB21812B1E00B1A3D4 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		744E9BE221A8C00E00DF0142 /* NotificationsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsDataSource.swift; sourceTree = "<group>"; };
+		744E9BE421A9423700DF0142 /* ConvenientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenientColor.swift; sourceTree = "<group>"; };
+		745BB73021AA68CA00081556 /* ChoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoreView.xib; sourceTree = "<group>"; };
+		745BB73221AA693000081556 /* ChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreView.swift; sourceTree = "<group>"; };
+		74772A432190157B006E4DF3 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		747BE71E21AB8C5100572294 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
+		747BE72021AB93AF00572294 /* UserCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellDataSource.swift; sourceTree = "<group>"; };
+		747BE72321ABC77A00572294 /* UserCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCellView.xib; sourceTree = "<group>"; };
+		747DA8FE2182828D00A3772D /* CellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		748217A02194C4FA00E23786 /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
+		749BD8DC218B932500996825 /* CalendarDayDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayDataSource.swift; sourceTree = "<group>"; };
+		749BD8E2218B9BE100996825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74B48DF92182C6630076ED58 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
+		74B62D22217BAA21008B2AC5 /* InProgressDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressDataSource.swift; sourceTree = "<group>"; };
+		74B62D24217BB146008B2AC5 /* DoneDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneDataSource.swift; sourceTree = "<group>"; };
+		74DA921A21AD04B700BB580B /* HomeCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCellView.xib; sourceTree = "<group>"; };
+		74DA921C21AD04C800BB580B /* HomeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellView.swift; sourceTree = "<group>"; };
+		74DA921E21AD0B1E00BB580B /* HomeCellViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewDataSource.swift; sourceTree = "<group>"; };
+		74E6C7142195659C00C5482F /* AccountInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformation.swift; sourceTree = "<group>"; };
+		74E6C71A21961DA900C5482F /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
+		74E6C71C21961E8200C5482F /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		74F8FF16219677C800849BAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		74F8FF1C2196799500849BAE /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
+		74FF5B6C217B169000C05ABA /* ToDoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDataSource.swift; sourceTree = "<group>"; };
 		AF7F831C32DA2ECB3E66FDA1 /* Pods_Broomies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Broomies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC25A2072137B28B0075322F /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		BC25A2092137B2D20075322F /* ChangeEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmail.swift; sourceTree = "<group>"; };
 		BC25A20B2137B2E70075322F /* ChangeHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHouse.swift; sourceTree = "<group>"; };
 		BCDA7A43211BCCED00891460 /* Broomies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broomies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDA7A48211BCCED00891460 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		BCDA7A4B211BCCED00891460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCDA7A4D211BCCF000891460 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCDA7A50211BCCF000891460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCDA7A52211BCCF000891460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCDA7A58211E778200891460 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		BCDA7A5A2120DB8A00891460 /* ForgotConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotConfirmation.swift; sourceTree = "<group>"; };
 		BCDA7A5C2120E67C00891460 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
-		BCDA7A5E2120E97C00891460 /* InviteHousemates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteHousemates.swift; sourceTree = "<group>"; };
+		BCDA7A5E2120E97C00891460 /* BuildHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildHouse.swift; sourceTree = "<group>"; };
 		BCDA7A622125040D00891460 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		BCDA7A6421251B7200891460 /* Icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Icons; path = ../../Icons; sourceTree = "<group>"; };
 		BCDA7A6C21251C0B00891460 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCDA7A6E21253ED300891460 /* AddNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNew.swift; sourceTree = "<group>"; };
 		BCDA7A722125524A00891460 /* CreateTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTask.swift; sourceTree = "<group>"; };
@@ -68,7 +125,6 @@
 		BCDA7A842127803200891460 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		BCDA7A862127805E00891460 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		CDAE6C739A4313C8EB15ABB7 /* Pods-Broomies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Broomies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Broomies/Pods-Broomies.debug.xcconfig"; sourceTree = "<group>"; };
-		D4CD41272123F18A001043D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EBAB2E42B0612B476D045D0D /* Pods-Broomies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Broomies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Broomies/Pods-Broomies.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +148,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		745BB73421AA693C00081556 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				747BE72321ABC77A00572294 /* UserCellView.xib */,
+				747BE71E21AB8C5100572294 /* UserCellView.swift */,
+				745BB73021AA68CA00081556 /* ChoreView.xib */,
+				745BB73221AA693000081556 /* ChoreView.swift */,
+				747DA8FE2182828D00A3772D /* CellView.xib */,
+				7443F6AB21812B1E00B1A3D4 /* CellView.swift */,
+				74E6C71A21961DA900C5482F /* UserView.xib */,
+				74E6C71C21961E8200C5482F /* UserView.swift */,
+				74DA921A21AD04B700BB580B /* HomeCellView.xib */,
+				74DA921C21AD04C800BB580B /* HomeCellView.swift */,
+			);
+			path = xibs;
+			sourceTree = "<group>";
+		};
 		A31E88F8C0A6A9BA2E57B28D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +180,7 @@
 				BCDA7A45211BCCED00891460 /* Roomies */,
 				BCDA7A44211BCCED00891460 /* Products */,
 				A31E88F8C0A6A9BA2E57B28D /* Pods */,
+				74B48DF92182C6630076ED58 /* Pods */,
 				3FACE08C6CDCAA6C97B3E15D /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -122,34 +196,52 @@
 		BCDA7A45211BCCED00891460 /* Roomies */ = {
 			isa = PBXGroup;
 			children = (
-				BCDA7A6421251B7200891460 /* Icons */,
-				BCDA7A4A211BCCED00891460 /* Main.storyboard */,
-				BCDA7A6C21251C0B00891460 /* AppDelegate.swift */,
+				741EDC762169F0FF00815345 /* Icons */,
+				749BD8E1218B9BE100996825 /* Main.storyboard */,
+				744E9BE421A9423700DF0142 /* ConvenientColor.swift */,
+				42B2555121A3E80800A306E8 /* UIViewGradientExtension.swift */,
+				42B2555321A4955800A306E8 /* UIImageAlphaExtension.swift */,
+				42EF5B4921A206DA006F0BF3 /* WelcomePage.swift */,
+				74772A432190157B006E4DF3 /* UIViewExtension.swift */,
+				745BB73421AA693C00081556 /* xibs */,
 				BCDA7A48211BCCED00891460 /* LoginViewController.swift */,
 				BCDA7A58211E778200891460 /* ForgotPassword.swift */,
 				BCDA7A5A2120DB8A00891460 /* ForgotConfirmation.swift */,
 				BC25A2072137B28B0075322F /* ChangePassword.swift */,
 				BCDA7A5C2120E67C00891460 /* SignUp.swift */,
+				BCDA7A6C21251C0B00891460 /* AppDelegate.swift */,
+				74E6C7142195659C00C5482F /* AccountInformation.swift */,
+				BCDA7A5E2120E97C00891460 /* BuildHouse.swift */,
 				BC25A2092137B2D20075322F /* ChangeEmail.swift */,
-				BCDA7A5E2120E97C00891460 /* InviteHousemates.swift */,
 				BCDA7A842127803200891460 /* Notifications.swift */,
 				BCDA7A8221277F6400891460 /* Approval.swift */,
+				748217A02194C4FA00E23786 /* HouseView.swift */,
 				BCDA7A622125040D00891460 /* Home.swift */,
 				BC25A20B2137B2E70075322F /* ChangeHouse.swift */,
+				BCDA7A722125524A00891460 /* CreateTask.swift */,
 				BCDA7A6E21253ED300891460 /* AddNew.swift */,
 				BCDA7A862127805E00891460 /* Chart.swift */,
-				BCDA7A722125524A00891460 /* CreateTask.swift */,
 				BCDA7A8021277F3400891460 /* CompletedTask.swift */,
 				BCDA7A7C21277AF500891460 /* InProgress.swift */,
 				BCDA7A7E21277B2000891460 /* ChoresDone.swift */,
 				BCDA7A7A21277ADB00891460 /* ToDo.swift */,
+				742EB925217258B400EB4E7A /* GoogleService-Info.plist */,
 				BCDA7A762126565500891460 /* Settings.swift */,
 				BCDA7A742125525D00891460 /* AddUtility.swift */,
 				BCDA7A782126567000891460 /* Calendar.swift */,
-				BCDA7A4F211BCCF000891460 /* LaunchScreen.storyboard */,
 				BCDA7A4D211BCCF000891460 /* Assets.xcassets */,
+				BCDA7A4F211BCCF000891460 /* LaunchScreen.storyboard */,
 				BCDA7A52211BCCF000891460 /* Info.plist */,
-				D4CD41272123F18A001043D2 /* GoogleService-Info.plist */,
+				74FF5B6C217B169000C05ABA /* ToDoDataSource.swift */,
+				744E9BE221A8C00E00DF0142 /* NotificationsDataSource.swift */,
+				74DA921E21AD0B1E00BB580B /* HomeCellViewDataSource.swift */,
+				747BE72021AB93AF00572294 /* UserCellDataSource.swift */,
+				7427B27A2196A80300F7FECD /* SingleUserView.swift */,
+				74F8FF1C2196799500849BAE /* UserDataStore.swift */,
+				74F8FF16219677C800849BAE /* User.swift */,
+				749BD8DC218B932500996825 /* CalendarDayDataSource.swift */,
+				74B62D22217BAA21008B2AC5 /* InProgressDataSource.swift */,
+				74B62D24217BB146008B2AC5 /* DoneDataSource.swift */,
 			);
 			path = Roomies;
 			sourceTree = "<group>";
@@ -166,6 +258,7 @@
 				BCDA7A40211BCCED00891460 /* Frameworks */,
 				BCDA7A41211BCCED00891460 /* Resources */,
 				88E7A9E5968354E46E586A45 /* [CP] Embed Pods Frameworks */,
+				8D14C8159892D64236E12156 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,11 +281,12 @@
 				TargetAttributes = {
 					BCDA7A42211BCCED00891460 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
 			buildConfigurationList = BCDA7A3E211BCCED00891460 /* Build configuration list for PBXProject "Broomies" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -214,11 +308,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				749BD8E3218B9BE100996825 /* Main.storyboard in Resources */,
+				747BE72421ABC77A00572294 /* UserCellView.xib in Resources */,
 				BCDA7A51211BCCF000891460 /* LaunchScreen.storyboard in Resources */,
-				D4CD41282123F18A001043D2 /* GoogleService-Info.plist in Resources */,
-				BCDA7A6521251B7200891460 /* Icons in Resources */,
+				74B48DFA2182C6630076ED58 /* Pods in Resources */,
+				74DA921B21AD04B700BB580B /* HomeCellView.xib in Resources */,
+				741EDC772169F10000815345 /* Icons in Resources */,
+				745BB73121AA68CA00081556 /* ChoreView.xib in Resources */,
+				742EB926217258B400EB4E7A /* GoogleService-Info.plist in Resources */,
 				BCDA7A4E211BCCF000891460 /* Assets.xcassets in Resources */,
-				BCDA7A4C211BCCED00891460 /* Main.storyboard in Resources */,
+				747DA8FF2182828D00A3772D /* CellView.xib in Resources */,
+				74E6C71B21961DA900C5482F /* UserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,10 +350,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Broomies/Pods-Broomies-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
@@ -262,10 +370,18 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
@@ -277,6 +393,28 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Broomies/Pods-Broomies-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8D14C8159892D64236E12156 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Broomies/Pods-Broomies-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Broomies/Pods-Broomies-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -284,27 +422,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				748217A12194C4FA00E23786 /* HouseView.swift in Sources */,
+				74FF5B6D217B169000C05ABA /* ToDoDataSource.swift in Sources */,
 				BCDA7A872127805E00891460 /* Chart.swift in Sources */,
 				BCDA7A49211BCCED00891460 /* LoginViewController.swift in Sources */,
+				74F8FF17219677C800849BAE /* User.swift in Sources */,
+				747BE72121AB93AF00572294 /* UserCellDataSource.swift in Sources */,
+				74E6C7152195659C00C5482F /* AccountInformation.swift in Sources */,
+				42EF5B4A21A206DA006F0BF3 /* WelcomePage.swift in Sources */,
 				BC25A20C2137B2E70075322F /* ChangeHouse.swift in Sources */,
 				BCDA7A5B2120DB8B00891460 /* ForgotConfirmation.swift in Sources */,
+				744E9BE521A9423700DF0142 /* ConvenientColor.swift in Sources */,
+				74B62D25217BB146008B2AC5 /* DoneDataSource.swift in Sources */,
 				BCDA7A6F21253ED300891460 /* AddNew.swift in Sources */,
-				BCDA7A5F2120E97C00891460 /* InviteHousemates.swift in Sources */,
+				7427B27B2196A80300F7FECD /* SingleUserView.swift in Sources */,
+				BCDA7A5F2120E97C00891460 /* BuildHouse.swift in Sources */,
 				BCDA7A59211E778200891460 /* ForgotPassword.swift in Sources */,
+				74F8FF1D2196799500849BAE /* UserDataStore.swift in Sources */,
 				BCDA7A6D21251C0B00891460 /* AppDelegate.swift in Sources */,
 				BCDA7A5D2120E67C00891460 /* SignUp.swift in Sources */,
+				42B2555421A4955800A306E8 /* UIImageAlphaExtension.swift in Sources */,
 				BCDA7A792126567000891460 /* Calendar.swift in Sources */,
+				747BE71F21AB8C5100572294 /* UserCellView.swift in Sources */,
 				BCDA7A7F21277B2000891460 /* ChoresDone.swift in Sources */,
 				BCDA7A732125524A00891460 /* CreateTask.swift in Sources */,
 				BCDA7A8321277F6400891460 /* Approval.swift in Sources */,
 				BC25A2082137B28B0075322F /* ChangePassword.swift in Sources */,
+				74DA921D21AD04C800BB580B /* HomeCellView.swift in Sources */,
 				BCDA7A752125525D00891460 /* AddUtility.swift in Sources */,
+				749BD8DD218B932500996825 /* CalendarDayDataSource.swift in Sources */,
+				744E9BE321A8C00E00DF0142 /* NotificationsDataSource.swift in Sources */,
+				74772A442190157B006E4DF3 /* UIViewExtension.swift in Sources */,
 				BCDA7A852127803200891460 /* Notifications.swift in Sources */,
 				BCDA7A772126565500891460 /* Settings.swift in Sources */,
+				745BB73321AA693000081556 /* ChoreView.swift in Sources */,
 				BCDA7A7B21277ADB00891460 /* ToDo.swift in Sources */,
+				42B2555221A3E80800A306E8 /* UIViewGradientExtension.swift in Sources */,
 				BCDA7A632125040D00891460 /* Home.swift in Sources */,
+				74B62D23217BAA21008B2AC5 /* InProgressDataSource.swift in Sources */,
+				7443F6AC21812B1E00B1A3D4 /* CellView.swift in Sources */,
 				BCDA7A8121277F3400891460 /* CompletedTask.swift in Sources */,
+				74E6C71D21961E8200C5482F /* UserView.swift in Sources */,
 				BCDA7A7D21277AF500891460 /* InProgress.swift in Sources */,
+				74DA921F21AD0B1E00BB580B /* HomeCellViewDataSource.swift in Sources */,
 				BC25A20A2137B2D20075322F /* ChangeEmail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,10 +472,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BCDA7A4A211BCCED00891460 /* Main.storyboard */ = {
+		749BD8E1218B9BE100996825 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BCDA7A4B211BCCED00891460 /* Base */,
+				749BD8E2218B9BE100996825 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -450,15 +610,18 @@
 			baseConfigurationReference = CDAE6C739A4313C8EB15ABB7 /* Pods-Broomies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBUYVW78P7;
+				DEVELOPMENT_TEAM = WWMHYYP3SJ;
 				INFOPLIST_FILE = Roomies/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.broomies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -469,15 +632,18 @@
 			baseConfigurationReference = EBAB2E42B0612B476D045D0D /* Pods-Broomies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SBUYVW78P7;
+				DEVELOPMENT_TEAM = WWMHYYP3SJ;
 				INFOPLIST_FILE = Roomies/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.broomies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

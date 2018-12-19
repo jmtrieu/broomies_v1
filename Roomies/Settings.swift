@@ -6,54 +6,23 @@
 //  Copyright © 2018 Nathan Tu. All rights reserved.
 //
 
+//TODO CREATE SEGUES AND PAGES FROM SEGUES & CONNECT SEGUES
+
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class Settings: UIViewController {
     
-    @IBAction func AddNewButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "SettingsToAddNewSegue", sender: self)
-    }
-    
-    @IBAction func HomeButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "SettingsToHomeSegue", sender: self)
-    }
-    
-    @IBAction func CalendarButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "SettingsToCalendarSegue", sender: self)
-    }
-    
-    @IBAction func ChartsButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "SettingsToChartsSegue", sender: self)
-    }
-    
-    @IBAction func NotificationsButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "SettingsToNotificationsSegue", sender: self)
-    }
-    
-    @IBAction func ChangeHouseButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "SettingsToChangePasswordSegue", sender: self)
-    }
-    
-    @IBAction func ChangeEmailButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "SettingsToChangeEmailSegue", sender: self)
-    }
-    
-    @IBAction func ChangePasswordButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "SettingsToChangePasswordSegue", sender: self)
-    }
+    @IBOutlet weak var gradientView: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Color one is bottom right corner and Color two is top left corner
+        gradientView.setGradientBackground(colorOne: UIColor(red: 0, green: 0.37, blue: 0.47, alpha: 1.0), colorTwo: UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8))
     }
     
     override func didReceiveMemoryWarning() {

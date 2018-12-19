@@ -12,7 +12,7 @@ class ChangeHouse: UIViewController {
     
     @IBAction func DoneButtonPressed(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "ChangeHouseToSettingsSegue", sender: self)
+        self.performSegue(withIdentifier: "ChangeHouseToHomeSegue", sender: self)
     }
     
     override func viewDidLoad() {
