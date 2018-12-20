@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import CoreGraphics
+import PhotosUI
 
 class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
@@ -54,6 +55,7 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     var assignToBarTapped = false;
     
     @IBOutlet weak var imagePreview: UIImageView!
+    var imageURL: URL!
     
     @objc func getValue(notification: Notification) {
         let userInfo:Dictionary<String, String> = notification.userInfo as! Dictionary<String, String>
@@ -198,7 +200,8 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         else {
             self.assignCategory()
             let choresDB = Database.database().reference().child("houses").child(houseName!).child("chores")
-            let choresDictionary : NSDictionary = ["assignee" : userName.text!,
+            if ((imageURL) != nil) {
+                let choresDictionary : NSDictionary = ["assignee" : userName.text!,
                                                    "assigner" : self.curUserName,
                                                    "category" : category!,
                                                    "done" : "f",
@@ -207,18 +210,44 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                                                    "enumID" : 2,
                                                    "id" : 2,
                                                    "inProgress" : "f",
+                                                   "image" : imageURL.absoluteString,
                                                    "name" : taskName.text!,
                                                    "toDo" : "t",
                                                    "whenMade" : Date.init().description
-            ]
-            choresDB.child(Date.init().description).setValue(choresDictionary) {
-                (error, ref) in
-                if error != nil {
-                    print(error!)
-                } else {
-                    print("Message saved successfully!")
+                ]
+                choresDB.child(Date.init().description).setValue(choresDictionary) {
+                    (error, ref) in
+                    if error != nil {
+                        print(error!)
+                    } else {
+                        print("Message saved successfully!")
+                    }
                 }
             }
+            else {
+                let choresDictionary : NSDictionary = ["assignee" : userName.text!,
+                                                       "assigner" : self.curUserName,
+                                                       "category" : category!,
+                                                       "done" : "f",
+                                                       "house" : houseName!,
+                                                       "duedate" : formatter.string(from: taskDueDate.date),
+                                                       "enumID" : 2,
+                                                       "id" : 2,
+                                                       "inProgress" : "f",
+                                                       "image" : "no image",
+                                                       "name" : taskName.text!,
+                                                       "toDo" : "t",
+                                                       "whenMade" : Date.init().description]
+                choresDB.child(Date.init().description).setValue(choresDictionary) {
+                    (error, ref) in
+                    if error != nil {
+                        print(error!)
+                    } else {
+                        print("Message saved successfully!")
+                    }
+                }
+            }
+            
             self.performSegue(withIdentifier: "CreateTaskToHomeSegue", sender: self)
         }
     }
@@ -343,6 +372,8 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.imagePreview.image = image
+        let url = info[UIImagePickerControllerReferenceURL] as? URL
+        imageURL = url;
         picker.dismiss(animated: true, completion: nil)
     }
     

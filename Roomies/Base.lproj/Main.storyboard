@@ -233,6 +233,7 @@
                                             <outlet property="catImage" destination="250-By-wnP" id="fkN-rv-YWN"/>
                                             <outlet property="choreLabel" destination="pVn-AY-gH7" id="WDw-C3-MmA"/>
                                             <outlet property="completedCheck" destination="mo0-Kl-Ppt" id="7Z9-ME-ewr"/>
+                                            <segue destination="jep-m4-wWr" kind="modal" identifier="HomeToChoreSegue" id="FUW-I5-XCn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -305,7 +306,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Wz-qa-cAA">
-                                <rect key="frame" x="0.0" y="0.0" width="294" height="433"/>
+                                <rect key="frame" x="0.0" y="507" width="294" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.2901960784" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -1067,7 +1068,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2wl-ge-Vi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="2060.4197901049479"/>
+            <point key="canvasLocation" x="76" y="2603"/>
+        </scene>
+        <!--Chore-->
+        <scene sceneID="Tfp-lq-9Zo">
+            <objects>
+                <viewController storyboardIdentifier="Chore" id="jep-m4-wWr" customClass="Chore" customModule="Broomies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="71v-0E-P79">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVJ-CQ-fdY">
+                                <rect key="frame" x="166" y="131" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fdZ-UR-enn"/>
+                    </view>
+                    <connections>
+                        <outlet property="choreName" destination="WVJ-CQ-fdY" id="08P-or-IAl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TI9-5w-1aC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88" y="1867"/>
         </scene>
         <!--Single User View-->
         <scene sceneID="AUa-yW-9xH">
@@ -1332,7 +1360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhT-Q6-Yv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="2860.1199400299852"/>
+            <point key="canvasLocation" x="76" y="3267"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="Da9-am-tjV">
@@ -1444,7 +1472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OCy-wZ-zTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71.200000000000003" y="3628.3358320839584"/>
+            <point key="canvasLocation" x="76" y="3941"/>
         </scene>
     </scenes>
     <resources>
@@ -1466,12 +1494,12 @@
         <image name="welcome_check" width="140" height="140"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VUj-Vh-Urp"/>
-        <segue reference="eQx-d2-BNi"/>
+        <segue reference="r1V-m9-mEB"/>
+        <segue reference="hZ1-0v-mWx"/>
         <segue reference="ZMM-g4-ZHy"/>
         <segue reference="zvR-oE-yHX"/>
         <segue reference="Lqb-Id-YAx"/>
         <segue reference="sWI-e3-zCG"/>
-        <segue reference="v3S-5S-VWO"/>
+        <segue reference="dlW-er-j47"/>
     </inferredMetricsTieBreakers>
 </document>

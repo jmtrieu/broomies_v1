@@ -33,6 +33,7 @@ class ToDoDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let ref = Database.database().reference().child("houses").child(self.houseName).child("/chores").child(self.toDoArray[indexPath.row])
         let delete = UITableViewRowAction(style: .destructive, title: "Done") { (action, indexPath) in

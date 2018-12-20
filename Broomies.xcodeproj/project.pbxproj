@@ -35,6 +35,7 @@
 		74E6C7152195659C00C5482F /* AccountInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6C7142195659C00C5482F /* AccountInformation.swift */; };
 		74E6C71B21961DA900C5482F /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E6C71A21961DA900C5482F /* UserView.xib */; };
 		74E6C71D21961E8200C5482F /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6C71C21961E8200C5482F /* UserView.swift */; };
+		74F740F721CB0F1600F15252 /* Chore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F740F621CB0F1600F15252 /* Chore.swift */; };
 		74F8FF17219677C800849BAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F8FF16219677C800849BAE /* User.swift */; };
 		74F8FF1D2196799500849BAE /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F8FF1C2196799500849BAE /* UserDataStore.swift */; };
 		74FF5B6D217B169000C05ABA /* ToDoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FF5B6C217B169000C05ABA /* ToDoDataSource.swift */; };
@@ -94,6 +95,7 @@
 		74E6C7142195659C00C5482F /* AccountInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformation.swift; sourceTree = "<group>"; };
 		74E6C71A21961DA900C5482F /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
 		74E6C71C21961E8200C5482F /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		74F740F621CB0F1600F15252 /* Chore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chore.swift; sourceTree = "<group>"; };
 		74F8FF16219677C800849BAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		74F8FF1C2196799500849BAE /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
 		74FF5B6C217B169000C05ABA /* ToDoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDataSource.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				BCDA7A8221277F6400891460 /* Approval.swift */,
 				748217A02194C4FA00E23786 /* HouseView.swift */,
 				BCDA7A622125040D00891460 /* Home.swift */,
+				74F740F621CB0F1600F15252 /* Chore.swift */,
 				BC25A20B2137B2E70075322F /* ChangeHouse.swift */,
 				BCDA7A722125524A00891460 /* CreateTask.swift */,
 				BCDA7A6E21253ED300891460 /* AddNew.swift */,
@@ -434,6 +437,7 @@
 				BCDA7A5B2120DB8B00891460 /* ForgotConfirmation.swift in Sources */,
 				744E9BE521A9423700DF0142 /* ConvenientColor.swift in Sources */,
 				74B62D25217BB146008B2AC5 /* DoneDataSource.swift in Sources */,
+				74F740F721CB0F1600F15252 /* Chore.swift in Sources */,
 				BCDA7A6F21253ED300891460 /* AddNew.swift in Sources */,
 				7427B27B2196A80300F7FECD /* SingleUserView.swift in Sources */,
 				BCDA7A5F2120E97C00891460 /* BuildHouse.swift in Sources */,

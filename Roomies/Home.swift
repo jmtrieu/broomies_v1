@@ -11,7 +11,10 @@ import Firebase
 import FirebaseAuth
 
 class Home: UIViewController {
-    
+    //notications center
+    let nc = NotificationCenter.default
+    var ip: IndexPath!
+    var ipTapped = false
    
     @IBOutlet weak var gradientView: UIView!
     
@@ -129,6 +132,10 @@ class Home: UIViewController {
             let vc = segue.destination as! CreateTask
             vc.houseName = self.houseName
         }
+        if (segue.identifier == "HomeToChoreSegue") {
+            let chc = segue.destination as! Chore
+            chc.passedChoreName = (sender as! HomeCellView).choreLabel.text
+        }
         if (segue.identifier == "HomeToHouseViewSegue") {
             let ac = segue.destination as! HouseView
             ac.houseName = self.houseName
@@ -184,10 +191,23 @@ class Home: UIViewController {
         let img = UIImage(named: "week_view")!.alpha(0.6)
         weekButton.setImage(img, for: .normal)
         
+        //sets up notifications center
+        nc.addObserver(self, selector: #selector(self.getValue(notification:)), name: Notification.Name(rawValue: "assigner"), object: nil)
+        
         //Color one is bottom right corner and Color two is top left corner
         gradientView.setGradientBackground(colorOne: UIColor(hex: "005F77"), colorTwo: UIColor(hex: "3F8698"))
         
     }
+    
+    //gets value sent from notificationcenter
+    @objc func getValue(notification: Notification) {
+        let userInfo:Dictionary<String, IndexPath> = notification.userInfo as! Dictionary<String, IndexPath>
+        let item = userInfo["ip"]! as IndexPath
+        self.ip = item
+        let cell = self.toDoTable.cellForRow(at: ip) as! HomeCellView
+        self.performSegue(withIdentifier: "HomeToChoreSegue", sender: cell)
+    }
+
     
     func getUser() {
         self.userEmail = Auth.auth().currentUser!.email!

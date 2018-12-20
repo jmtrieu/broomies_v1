@@ -54,6 +54,11 @@ class HomeCellViewDataSource: NSObject, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nc = NotificationCenter.default
+        nc.post(name: Notification.Name(rawValue: "assigner"), object: nil, userInfo: ["ip" : indexPath])
+    }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let ref = Database.database().reference().child("houses").child(self.houseName).child("/chores").child(self.timesArray[indexPath.row])
         if (self.isToDo) {
