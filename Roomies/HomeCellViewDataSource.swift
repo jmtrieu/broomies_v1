@@ -14,6 +14,7 @@ class HomeCellViewDataSource: NSObject, UITableViewDataSource, UITableViewDelega
     var giverArray: [String] = []
     var categoriesArray: [String] = []
     var timesArray: [String] = []
+    var idArray: [Int] = []
     var houseName: String
     
     var isToDo = true
@@ -24,11 +25,12 @@ class HomeCellViewDataSource: NSObject, UITableViewDataSource, UITableViewDelega
         super.init()
     }
     
-    func setData(chores:[String], givers:[String], categories:[String], times:[String]) {
+    func setData(chores:[String], givers:[String], categories:[String], times:[String], ids: [Int]) {
         self.choresArray = chores
         self.giverArray = givers
         self.categoriesArray = categories
         self.timesArray = times
+        self.idArray = ids
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,6 +41,7 @@ class HomeCellViewDataSource: NSObject, UITableViewDataSource, UITableViewDelega
         let cell:HomeCellView! = (tableView.dequeueReusableCell(withIdentifier: "HomeCellView") as! HomeCellView)
         cell.choreLabel!.text = choresArray[indexPath.row]
         cell.assignerLabel!.text = "Assigned by " + giverArray[indexPath.row]
+        cell.id = idArray[indexPath.row]
         cell.backgroundColor = UIColor(hex: "E5E5E5")
         let cat = self.categoriesArray[indexPath.row]
         if (cat == "user") {
@@ -56,7 +59,7 @@ class HomeCellViewDataSource: NSObject, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nc = NotificationCenter.default
-        nc.post(name: Notification.Name(rawValue: "assigner"), object: nil, userInfo: ["ip" : indexPath])
+        nc.post(name: Notification.Name(rawValue: "chore"), object: nil, userInfo: ["ip" : indexPath])
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

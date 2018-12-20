@@ -10,7 +10,10 @@ import UIKit
 
 class Chore: UIViewController {
     @IBOutlet weak var choreName: UILabel!
+    @IBOutlet weak var choreId: UILabel!
     var passedChoreName: String!
+    var id: Int!
+    
     
     @IBAction func SettingsButtonPressed(_ sender: Any) {
         
@@ -52,6 +55,7 @@ class Chore: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.choreName.text = self.passedChoreName
+        self.choreId.text = String(self.id)
     }
     
     override func didReceiveMemoryWarning() {

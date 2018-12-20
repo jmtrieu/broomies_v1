@@ -12,6 +12,8 @@ import CoreGraphics
 import PhotosUI
 
 class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+    //deallocs the observer
+    
     
     //buttons
     @IBOutlet weak var dropDownButton: UIButton!
@@ -208,7 +210,7 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                                                    "house" : houseName!,
                                                    "duedate" : formatter.string(from: taskDueDate.date),
                                                    "enumID" : 2,
-                                                   "id" : 2,
+                                                   "id" : UUID().hashValue,
                                                    "inProgress" : "f",
                                                    "image" : imageURL.absoluteString,
                                                    "name" : taskName.text!,
@@ -232,7 +234,7 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                                                        "house" : houseName!,
                                                        "duedate" : formatter.string(from: taskDueDate.date),
                                                        "enumID" : 2,
-                                                       "id" : 2,
+                                                       "id" : UUID().hashValue,
                                                        "inProgress" : "f",
                                                        "image" : "no image",
                                                        "name" : taskName.text!,
@@ -273,6 +275,10 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             assignToBarTapped = false
             assignToBar.frame.size.height = 1
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidLoad() {

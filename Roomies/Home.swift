@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 
 class Home: UIViewController {
+    
     //notications center
     let nc = NotificationCenter.default
     var ip: IndexPath!
@@ -28,10 +29,12 @@ class Home: UIViewController {
     var giverArray = [String]()
     var categoriesArray = [String]()
     var timesArray = [String]()
+    var idArray = [Int]()
     
     var doneGiverArray = [String]()
     var doneCategoriesArray = [String]()
     var doneTimesArray = [String]()
+    var doneIdArray = [Int]()
     
     var houseName: String!
     var user: User!
@@ -60,8 +63,9 @@ class Home: UIViewController {
         let itemsG = giverArray
         let itemsC = categoriesArray
         let itemsT = timesArray
+        let itemsI = idArray
         toDoDataSource = HomeCellViewDataSource(house: self.houseName!, isToDo: true)
-        toDoDataSource.setData(chores: itemsN, givers: itemsG, categories: itemsC, times: itemsT)
+        toDoDataSource.setData(chores: itemsN, givers: itemsG, categories: itemsC, times: itemsT, ids: itemsI)
         self.toDoTable.dataSource = toDoDataSource
         self.toDoTable.delegate = toDoDataSource
         self.toDoTable.register(UINib(nibName: "HomeCellView", bundle: Bundle.main), forCellReuseIdentifier: "HomeCellView")
@@ -74,8 +78,9 @@ class Home: UIViewController {
         let itemsG = doneGiverArray
         let itemsC = doneCategoriesArray
         let itemsT = doneTimesArray
+        let itemsI = doneIdArray
         doneDataSource = HomeCellViewDataSource(house: self.houseName!, isToDo: false)
-        doneDataSource.setData(chores: itemsN, givers: itemsG, categories: itemsC, times: itemsT)
+        doneDataSource.setData(chores: itemsN, givers: itemsG, categories: itemsC, times: itemsT, ids: itemsI)
         self.doneTable.dataSource = doneDataSource
         self.doneTable.delegate = doneDataSource
         self.doneTable.register(UINib(nibName: "HomeCellView", bundle: Bundle.main), forCellReuseIdentifier: "HomeCellView")
@@ -135,6 +140,7 @@ class Home: UIViewController {
         if (segue.identifier == "HomeToChoreSegue") {
             let chc = segue.destination as! Chore
             chc.passedChoreName = (sender as! HomeCellView).choreLabel.text
+            chc.id = (sender as! HomeCellView).id
         }
         if (segue.identifier == "HomeToHouseViewSegue") {
             let ac = segue.destination as! HouseView
@@ -171,7 +177,14 @@ class Home: UIViewController {
             }
         })
     }
+    override func viewDidAppear(_ animated: Bool) {
+        //sets up notifications center
+        nc.addObserver(self, selector: #selector(self.getValue(notification:)), name: Notification.Name(rawValue: "chore"), object: nil)
+    }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -190,9 +203,6 @@ class Home: UIViewController {
         //sets week image to gray
         let img = UIImage(named: "week_view")!.alpha(0.6)
         weekButton.setImage(img, for: .normal)
-        
-        //sets up notifications center
-        nc.addObserver(self, selector: #selector(self.getValue(notification:)), name: Notification.Name(rawValue: "assigner"), object: nil)
         
         //Color one is bottom right corner and Color two is top left corner
         gradientView.setGradientBackground(colorOne: UIColor(hex: "005F77"), colorTwo: UIColor(hex: "3F8698"))
@@ -231,6 +241,7 @@ class Home: UIViewController {
         self.giverArray.removeAll()
         self.categoriesArray.removeAll()
         self.timesArray.removeAll()
+        self.idArray.removeAll()
         
         self.doneGiverArray.removeAll()
         self.doneCategoriesArray.removeAll()
@@ -265,6 +276,7 @@ class Home: UIViewController {
                             self.giverArray.append((s as! DataSnapshot).childSnapshot(forPath: "/assigner").value as! String)
                             self.categoriesArray.append((s as! DataSnapshot).childSnapshot(forPath: "/category").value as! String)
                             self.timesArray.append((s as! DataSnapshot).childSnapshot(forPath: "/whenMade").value as! String)
+                            self.idArray.append((s as! DataSnapshot).childSnapshot(forPath: "/id").value as! Int)
                         /// go to inprogress
                         } else {
                             if self.toDoArray.contains(doneString) {
@@ -279,6 +291,7 @@ class Home: UIViewController {
                         self.doneGiverArray.append((s as! DataSnapshot).childSnapshot(forPath: "/assigner").value as! String)
                         self.doneCategoriesArray.append((s as! DataSnapshot).childSnapshot(forPath: "/category").value as! String)
                         self.doneTimesArray.append((s as! DataSnapshot).childSnapshot(forPath: "/whenMade").value as! String)
+                        self.doneIdArray.append((s as! DataSnapshot).childSnapshot(forPath: "/id").value as! Int)
                     }
                     
                 }
@@ -322,6 +335,7 @@ class Home: UIViewController {
                             self.giverArray.append((s as! DataSnapshot).childSnapshot(forPath: "/assigner").value as! String)
                             self.categoriesArray.append((s as! DataSnapshot).childSnapshot(forPath: "/category").value as! String)
                             self.timesArray.append((s as! DataSnapshot).childSnapshot(forPath: "/whenMade").value as! String)
+                            self.idArray.append((s as! DataSnapshot).childSnapshot(forPath: "/id").value as! Int)
                             /// go to inprogress
                         } else {
                             if self.toDoArray.contains(doneString) {
@@ -337,6 +351,7 @@ class Home: UIViewController {
                         self.doneGiverArray.append((s as! DataSnapshot).childSnapshot(forPath: "/assigner").value as! String)
                         self.doneCategoriesArray.append((s as! DataSnapshot).childSnapshot(forPath: "/category").value as! String)
                         self.doneTimesArray.append((s as! DataSnapshot).childSnapshot(forPath: "/whenMade").value as! String)
+                        self.doneIdArray.append((s as! DataSnapshot).childSnapshot(forPath: "/id").value as! Int)
                     }
                     
                 }

@@ -13,5 +13,6 @@ class HomeCellView: UITableViewCell {
     @IBOutlet weak var choreLabel: UILabel!
     @IBOutlet weak var assignerLabel: UILabel!
     @IBOutlet weak var completedCheck: UIImageView!
+    var id: Int!
     
 }
