@@ -141,6 +141,7 @@ class Home: UIViewController {
             let chc = segue.destination as! Chore
             chc.passedChoreName = (sender as! HomeCellView).choreLabel.text
             chc.id = (sender as! HomeCellView).id
+            chc.houseName = self.houseName
         }
         if (segue.identifier == "HomeToHouseViewSegue") {
             let ac = segue.destination as! HouseView

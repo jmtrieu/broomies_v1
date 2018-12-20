@@ -1078,32 +1078,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVJ-CQ-fdY">
-                                <rect key="frame" x="166" y="131" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVJ-CQ-fdY">
+                                <rect key="frame" x="0.0" y="78" width="375" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.37254901959999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Z5-zs-Jcr">
+                                <rect key="frame" x="0.0" y="105" width="375" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ij-Ub-0Lu">
-                                <rect key="frame" x="166" y="160" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TW6-bY-DfN">
+                                <rect key="frame" x="0.0" y="353" width="375" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNJ-hp-Xxw">
+                                <rect key="frame" x="0.0" y="385" width="375" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dC2-hc-gay">
+                                <rect key="frame" x="82" y="137" width="211" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qb9-cf-jqe">
+                                <rect key="frame" x="16" y="48" width="76" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="back_button"/>
+                                <connections>
+                                    <action selector="BackButtonPressed:" destination="jep-m4-wWr" eventType="touchUpInside" id="48Z-fk-SLw"/>
+                                    <action selector="backButtonPressed:" destination="Syk-0c-zLU" eventType="touchUpInside" id="2GH-po-oNp"/>
+                                    <action selector="backButtonPressed:" destination="QJq-tC-bY8" eventType="touchUpInside" id="COE-bE-2ih"/>
+                                    <segue destination="0zw-f3-nrv" kind="modal" identifier="ChoreToHomeSegue" id="cBE-xU-DTF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06u-Kr-76W">
+                                <rect key="frame" x="16" y="485" width="343" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.43921568630000002" blue="0.82352941180000006" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Mark As Completed">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="CompletedButtonPressed:" destination="jep-m4-wWr" eventType="touchUpInside" id="gsO-mp-z4s"/>
+                                    <action selector="SignInButtonPressed:" destination="sdj-P3-YN2" eventType="touchUpInside" id="VdH-CA-y6f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fdZ-UR-enn"/>
                     </view>
                     <connections>
-                        <outlet property="choreId" destination="3Ij-Ub-0Lu" id="Mth-mO-gWs"/>
+                        <outlet property="assignedByLabel" destination="5Z5-zs-Jcr" id="eCA-eH-2rl"/>
                         <outlet property="choreName" destination="WVJ-CQ-fdY" id="08P-or-IAl"/>
+                        <outlet property="dueDateLabel" destination="TW6-bY-DfN" id="K1S-uV-GZ0"/>
+                        <outlet property="imageView" destination="dC2-hc-gay" id="Pim-b3-o03"/>
+                        <outlet property="typeLabel" destination="hNJ-hp-Xxw" id="RXj-VI-jdd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TI9-5w-1aC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="88" y="1867"/>
+            <point key="canvasLocation" x="87.200000000000003" y="1866.1169415292354"/>
         </scene>
         <!--Single User View-->
         <scene sceneID="AUa-yW-9xH">
@@ -1502,12 +1551,12 @@
         <image name="welcome_check" width="140" height="140"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r1V-m9-mEB"/>
-        <segue reference="hZ1-0v-mWx"/>
-        <segue reference="ZMM-g4-ZHy"/>
+        <segue reference="r9d-Yg-ml4"/>
+        <segue reference="rG3-fy-IB4"/>
+        <segue reference="QTf-E4-go6"/>
         <segue reference="zvR-oE-yHX"/>
-        <segue reference="Lqb-Id-YAx"/>
-        <segue reference="sWI-e3-zCG"/>
-        <segue reference="dlW-er-j47"/>
+        <segue reference="ufe-gp-KaK"/>
+        <segue reference="hCW-Tj-sDe"/>
+        <segue reference="cBE-xU-DTF"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,55 +7,110 @@
 //
 
 import UIKit
+import Firebase
 
 class Chore: UIViewController {
     @IBOutlet weak var choreName: UILabel!
-    @IBOutlet weak var choreId: UILabel!
     var passedChoreName: String!
     var id: Int!
     
+    var houseName: String!
+    var timeID: String!
     
-    @IBAction func SettingsButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "ApprovalToSettingsSegue", sender: self)
+    @IBOutlet weak var assignedByLabel: UILabel!
+    var assigner: String!
+    
+    var dueDate: Date!
+    @IBOutlet weak var dueDateLabel: UILabel!
+    
+    @IBOutlet weak var typeLabel: UILabel!
+    var type: String!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    var imageURL: String!
+    
+
+    @IBAction func BackButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "ChoreToHomeSegue", sender: self)
     }
     
-    @IBAction func AddNewButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "ApprovalToAddNewSegue", sender: self)
+    @IBAction func CompletedButtonPressed(_ sender: Any) {
+        let ref = Database.database().reference().child("houses").child(self.houseName).child("/chores").child(self.timeID)
+        let changes = [
+            "inProgress": "f",
+            "done": "t"]
+        ref.updateChildValues(changes, withCompletionBlock: { (err, ref) in
+            if err != nil {
+                return
+            }
+        })
+        self.performSegue(withIdentifier: "ChoreToHomeSegue", sender: self)
     }
     
-    @IBAction func HomeButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "ApprovalToHomeSegue", sender: self)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ChoreToHomeSegue") {
+            let hc = segue.destination as! Home
+            hc.houseName = self.houseName
+        }
     }
-    
-    @IBAction func CalendarButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "ApprovalToCalendarSegue", sender: self)
-    }
-    
-    @IBAction func ChartsButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "ApprovalToChartsSegue", sender: self)
-    }
-    
-    @IBAction func NotificationsButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "ApprovalToNotificationsSegue", sender: self)
-    }
-    
-    @IBAction func RateButtonPressed(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "ApprovalToHomeSegue", sender: self)
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.choreName.text = self.passedChoreName
-        self.choreId.text = String(self.id)
+        self.getInfo();
+    }
+    
+    func getInfo() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        let ref = Database.database().reference().child("houses").child(self.houseName!).child("chores")
+        ref.observe(.value, with: { snapshot in
+            if snapshot.exists() {
+                for s in snapshot.children {
+                    if (s as! DataSnapshot).childSnapshot(forPath: "/id").value as? Int == self.id {
+                        self.assigner = (s as! DataSnapshot).childSnapshot(forPath: "/assigner").value as? String
+                        self.type = (s as! DataSnapshot).childSnapshot(forPath: "/category").value as? String
+                        self.typeLabel.text = "Type: " + self.type
+                        self.imageURL = (s as! DataSnapshot).childSnapshot(forPath: "/image").value as? String
+                        self.timeID = (s as! DataSnapshot).childSnapshot(forPath: "/whenMade").value as? String
+                        //takes care of duedate
+                        self.dueDate = formatter.date(from: ((s as! DataSnapshot).childSnapshot(forPath: "/duedate").value as? String)!)
+                        self.dueDateLabel.text = "Due on " + dateFormatter.string(from: self.dueDate)
+                    }
+                    
+                }
+                self.assignedByLabel.text = "Assigned by " + self.assigner
+                if (self.imageURL == "no image") {
+                    if (self.type == "Cleaning") {
+                        self.imageView.image = UIImage(named: "cleaning")
+                    } else if (self.type == "Shopping") {
+                        self.imageView.image = UIImage(named: "Vector")
+                    } else {
+                        self.imageView.image = UIImage(named: "sidebar_payments")                }
+                } else {
+                    
+                    
+                    let url = URL(string: self.imageURL)
+                    if let data = try? Data(contentsOf: url!)
+                    {
+                        self.imageView.image = UIImage(data: data)
+                    } else {
+                        if (self.type == "Cleaning") {
+                            self.imageView.image = UIImage(named: "cleaning")
+                        } else if (self.type == "Shopping") {
+                            self.imageView.image = UIImage(named: "Vector")
+                        } else {
+                            self.imageView.image = UIImage(named: "sidebar_payments")                }
+                    }
+                }
+            }
+        })
     }
     
     override func didReceiveMemoryWarning() {
