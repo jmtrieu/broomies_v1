@@ -13,6 +13,9 @@ import FirebaseAuth
 
 class ViewController: UIViewController {
     let formatter = DateFormatter()
+    let nc = NotificationCenter.default
+    var ip: IndexPath!
+    var ipTapped = false
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     
@@ -26,6 +29,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var dayChoresTable: UITableView!
     var dayChoresDataSource: CalendarDayDataSource!
     var dayChoresArray = [String]()
+    var giverArray: [String] = []
+    var categoriesArray: [String] = []
+    var timesArray: [String] = []
+    var idArray: [Int] = []
     
     @IBOutlet weak var gradientView: UIView!
     
@@ -55,8 +62,25 @@ class ViewController: UIViewController {
         
         self.performSegue(withIdentifier: "CalendarToNotificationsSegue", sender: self)
     }
+    
+    //gets value sent from notificationcenter
+    @objc func getValue(notification: Notification) {
+        let userInfo:Dictionary<String, IndexPath> = notification.userInfo as! Dictionary<String, IndexPath>
+        let item = userInfo["dateIP"]! as IndexPath
+        self.ip = item
+        let cell = self.dayChoresTable.cellForRow(at: ip) as! HomeCellView
+        self.performSegue(withIdentifier: "CalendarToChoreSegue", sender: cell)
+    }
 
-
+    override func viewDidAppear(_ animated: Bool) {
+        //sets up notifications center
+        nc.addObserver(self, selector: #selector(self.getValue(notification:)), name: Notification.Name(rawValue: "calendarChore"), object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarView.register(UINib(nibName: "CellView", bundle: Bundle.main), forCellWithReuseIdentifier: "CellView")
@@ -91,6 +115,12 @@ class ViewController: UIViewController {
         if (segue.identifier == "CalendarToHouseViewSegue") {
             let vc = segue.destination as! HouseView
             vc.houseName = self.houseName
+        }
+        if (segue.identifier == "CalendarToChoreSegue") {
+            let chc = segue.destination as! Chore
+            chc.passedChoreName = (sender as! HomeCellView).choreLabel.text
+            chc.id = (sender as! HomeCellView).id
+            chc.houseName = self.houseName
         }
         if (segue.identifier == "CalendarToAddTaskSegue") {
             let cc = segue.destination as! CreateTask
@@ -158,16 +188,26 @@ extension ViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDele
     }
     
     func prepareDayChoresTable(){
-        let items1 = dayChoresArray
+        let itemsD = self.dayChoresArray
+        let itemsG = self.giverArray
+        let itemsC = self.categoriesArray
+        let itemsT = self.timesArray
+        let itemsI = self.idArray
         dayChoresDataSource = CalendarDayDataSource()
         dayChoresDataSource.setHouseName(name: houseName!)
-        dayChoresDataSource.setData(items: items1)
+        dayChoresDataSource.setData(itemsD: itemsD, itemsG: itemsG, itemsC: itemsC, itemsT: itemsT, itemsI: itemsI)
         self.dayChoresTable.dataSource = dayChoresDataSource
         self.dayChoresTable.delegate = dayChoresDataSource
-        self.dayChoresTable.register(UITableViewCell.self,
-                                forCellReuseIdentifier:
-            "DayCell")
+        self.dayChoresTable.register(UINib(nibName: "HomeCellView", bundle: Bundle.main), forCellReuseIdentifier: "HomeCellView")
         self.dayChoresTable.tableFooterView = UIView()
+    }
+    
+    func removeAll() {
+        self.dayChoresArray.removeAll()
+        self.giverArray.removeAll()
+        self.categoriesArray.removeAll()
+        self.timesArray.removeAll()
+        self.idArray.removeAll()
     }
     
     
@@ -182,7 +222,7 @@ extension ViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDele
         addButton.isHidden = true
         handleCellSelection(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
-        self.dayChoresArray.removeAll()
+        self.removeAll()
         self.prepareDayChoresTable()
     }
     
@@ -199,7 +239,7 @@ extension ViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDele
         let choresQuery = Database.database().reference().child("houses").child(houseName!).child("chores")
         choresQuery.observe(.value, with: { snapshot in
             if snapshot.exists() {
-                self.dayChoresArray.removeAll()
+                self.removeAll()
                 print("snaphshot is: ")
                 //clears past data
                 for s in snapshot.children {
@@ -209,6 +249,10 @@ extension ViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDele
                     if (s as! DataSnapshot).childSnapshot(forPath: "/duedate").value as! String == day {
                         if (((s as! DataSnapshot).childSnapshot(forPath: "/done").value as! String == "f")) {
                             self.dayChoresArray.append((s as! DataSnapshot).childSnapshot(forPath: "/name").value as! String)
+                            self.giverArray.append((s as! DataSnapshot).childSnapshot(forPath: "/assigner").value as! String)
+                            self.categoriesArray.append((s as! DataSnapshot).childSnapshot(forPath: "/category").value as! String)
+                            self.timesArray.append((s as! DataSnapshot).childSnapshot(forPath: "/whenMade").value as! String)
+                            self.idArray.append((s as! DataSnapshot).childSnapshot(forPath: "/id").value as! Int)
                         }
                     }
                 }

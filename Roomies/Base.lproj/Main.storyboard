@@ -1310,6 +1310,47 @@
                                 <rect key="frame" x="16" y="427" width="343" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCellView" id="8ys-oz-k4d" customClass="HomeCellView" customModule="Broomies" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ys-oz-k4d" id="2Xf-YT-ELM">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ctJ-8O-Nsc">
+                                                    <rect key="frame" x="15" y="11" width="24" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3km-7h-ebc">
+                                                    <rect key="frame" x="47" y="0.0" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKl-7B-2Lf">
+                                                    <rect key="frame" x="47" y="22" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bm1-89-RDF">
+                                                    <rect key="frame" x="260" y="11" width="31" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="assignerLabel" destination="SKl-7B-2Lf" id="XVg-cz-eWx"/>
+                                            <outlet property="catImage" destination="ctJ-8O-Nsc" id="dLD-gZ-ULW"/>
+                                            <outlet property="choreLabel" destination="3km-7h-ebc" id="nOs-J1-cBb"/>
+                                            <outlet property="completedCheck" destination="bm1-89-RDF" id="yny-1L-9cJ"/>
+                                            <segue destination="jep-m4-wWr" kind="modal" identifier="CalendarToChoreSegue" trigger="accessoryAction" id="o6c-EL-551"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ka8-Mj-N2p" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
                                 <rect key="frame" x="16" y="170" width="343" height="220"/>
@@ -1417,7 +1458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhT-Q6-Yv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="3267"/>
+            <point key="canvasLocation" x="76" y="3266.7166416791606"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="Da9-am-tjV">
@@ -1553,10 +1594,11 @@
     <inferredMetricsTieBreakers>
         <segue reference="r9d-Yg-ml4"/>
         <segue reference="rG3-fy-IB4"/>
+        <segue reference="o6c-EL-551"/>
         <segue reference="QTf-E4-go6"/>
         <segue reference="zvR-oE-yHX"/>
         <segue reference="ufe-gp-KaK"/>
-        <segue reference="hCW-Tj-sDe"/>
+        <segue reference="Kdx-z8-Hmu"/>
         <segue reference="cBE-xU-DTF"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,10 @@ import Firebase
 
 class CalendarDayDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     var dayArray: [String] = []
+    var giverArray: [String] = []
+    var categoriesArray: [String] = []
+    var timesArray: [String] = []
+    var idArray: [Int] = []
     var houseString: String = ""
     
     override init() {
@@ -21,8 +25,12 @@ class CalendarDayDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
         self.houseString = name
     }
     
-    func setData(items:[String]) {
-        self.dayArray = items
+    func setData(itemsD:[String], itemsG:[String], itemsC:[String], itemsT:[String], itemsI: [Int]) {
+        self.dayArray = itemsD
+        self.giverArray = itemsG
+        self.categoriesArray = itemsC
+        self.timesArray = itemsT
+        self.idArray = itemsI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,10 +38,28 @@ class CalendarDayDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "DayCell")
-        cell.textLabel!.text = dayArray[indexPath.row]
-        
+        let cell:HomeCellView! = (tableView.dequeueReusableCell(withIdentifier: "HomeCellView") as! HomeCellView)
+        cell.choreLabel!.text = dayArray[indexPath.row]
+        cell.assignerLabel!.text = "Assigned by " + giverArray[indexPath.row]
+        cell.id = idArray[indexPath.row]
+        cell.backgroundColor = UIColor(hex: "E5E5E5")
+        let cat = self.categoriesArray[indexPath.row]
+        if (cat == "user") {
+            cell.catImage.image = UIImage(named: "profile")
+        } else if (cat == "Cleaning") {
+            cell.catImage.image = UIImage(named: "cleaning")
+        } else if (cat == "Shopping") {
+            cell.catImage.image = UIImage(named: "Vector")
+        } else {
+            cell.catImage.image = UIImage(named: "sidebar_payments")
+        }
+        cell.backgroundColor = UIColor.white
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nc = NotificationCenter.default
+        nc.post(name: Notification.Name(rawValue: "calendarChore"), object: nil, userInfo: ["dateIP" : indexPath])
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

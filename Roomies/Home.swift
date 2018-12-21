@@ -37,6 +37,7 @@ class Home: UIViewController {
     var doneIdArray = [Int]()
     
     var houseName: String!
+    var houseID: Int!
     var user: User!
     
     @IBOutlet weak var curDate: UILabel!
@@ -158,7 +159,7 @@ class Home: UIViewController {
     }
     
     
-    func getHouseName() {
+    func getHouseNameAndID() {
         self.user = Auth.auth().currentUser!
         self.userEmail = user.email as String!
         
@@ -168,6 +169,7 @@ class Home: UIViewController {
                 for s in snapshot.children {
                     if (s as! DataSnapshot).childSnapshot(forPath: "/email").value as! String == self.userEmail {
                         self.houseName = (s as! DataSnapshot).childSnapshot(forPath: "/house").value as? String
+                        self.houseID = (s as! DataSnapshot).childSnapshot(forPath: "/houseID").value as? Int
                     }
                 }
             }
@@ -196,7 +198,7 @@ class Home: UIViewController {
         homeFormatter.timeStyle = .none
         homeFormatter.locale = Locale(identifier: "en_US")
         getUser()
-        getHouseName()
+        getHouseNameAndID()
         curDate.text = homeFormatter.string(from: Date())
         settingsMenu.isHidden = true;
         blackMenu.isHidden = true;

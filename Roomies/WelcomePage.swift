@@ -48,6 +48,7 @@ class WelcomePage: UIViewController {
     func buildUser() {
         let usersDB = Database.database().reference().child("users")
         let usersDictionary : NSDictionary = ["house" : houseName!,
+                                              "houseID" : UUID().hashValue,
                                               "firstName" : firstName!,
                                               "lastName" : lastName!,
                                               "email" : curUserEmail!,
