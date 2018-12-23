@@ -18,6 +18,7 @@
 		744E9BE521A9423700DF0142 /* ConvenientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E9BE421A9423700DF0142 /* ConvenientColor.swift */; };
 		745BB73121AA68CA00081556 /* ChoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 745BB73021AA68CA00081556 /* ChoreView.xib */; };
 		745BB73321AA693000081556 /* ChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745BB73221AA693000081556 /* ChoreView.swift */; };
+		746BE5D921CF654200C070DC /* SettingsChangeValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746BE5D821CF654200C070DC /* SettingsChangeValue.swift */; };
 		74772A442190157B006E4DF3 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74772A432190157B006E4DF3 /* UIViewExtension.swift */; };
 		747BE71F21AB8C5100572294 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747BE71E21AB8C5100572294 /* UserCellView.swift */; };
 		747BE72121AB93AF00572294 /* UserCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747BE72021AB93AF00572294 /* UserCellDataSource.swift */; };
@@ -79,6 +80,7 @@
 		744E9BE421A9423700DF0142 /* ConvenientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenientColor.swift; sourceTree = "<group>"; };
 		745BB73021AA68CA00081556 /* ChoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoreView.xib; sourceTree = "<group>"; };
 		745BB73221AA693000081556 /* ChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreView.swift; sourceTree = "<group>"; };
+		746BE5D821CF654200C070DC /* SettingsChangeValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChangeValue.swift; sourceTree = "<group>"; };
 		74772A432190157B006E4DF3 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		747BE71E21AB8C5100572294 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
 		747BE72021AB93AF00572294 /* UserCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellDataSource.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				BCDA7A7A21277ADB00891460 /* ToDo.swift */,
 				742EB925217258B400EB4E7A /* GoogleService-Info.plist */,
 				BCDA7A762126565500891460 /* Settings.swift */,
+				746BE5D821CF654200C070DC /* SettingsChangeValue.swift */,
 				BCDA7A742125525D00891460 /* AddUtility.swift */,
 				BCDA7A782126567000891460 /* Calendar.swift */,
 				BCDA7A4D211BCCF000891460 /* Assets.xcassets */,
@@ -466,6 +469,7 @@
 				745BB73321AA693000081556 /* ChoreView.swift in Sources */,
 				BCDA7A7B21277ADB00891460 /* ToDo.swift in Sources */,
 				42B2555221A3E80800A306E8 /* UIViewGradientExtension.swift in Sources */,
+				746BE5D921CF654200C070DC /* SettingsChangeValue.swift in Sources */,
 				BCDA7A632125040D00891460 /* Home.swift in Sources */,
 				74B62D23217BAA21008B2AC5 /* InProgressDataSource.swift in Sources */,
 				7443F6AC21812B1E00B1A3D4 /* CellView.swift in Sources */,

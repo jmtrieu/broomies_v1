@@ -136,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="76" y="-83.208395802098963"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings-->
         <scene sceneID="qbg-Nr-fvG">
             <objects>
-                <viewController id="tJV-ys-8Yr" sceneMemberID="viewController">
+                <viewController id="tJV-ys-8Yr" customClass="Settings" customModule="Broomies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qh0-Vl-luA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,7 +153,8 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="settings_back"/>
                                         <connections>
-                                            <segue destination="0zw-f3-nrv" kind="modal" id="5Bq-gK-QBs"/>
+                                            <action selector="BackButtonPressed:" destination="tJV-ys-8Yr" eventType="touchUpInside" id="m8f-et-gJt"/>
+                                            <segue destination="0zw-f3-nrv" kind="modal" identifier="SettingsToHomeSegue" id="5Bq-gK-QBs"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vrq-Uh-Obb">
@@ -183,9 +184,13 @@
                                 <state key="normal" title="name">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="nameButtonPressed:" destination="tJV-ys-8Yr" eventType="touchUpInside" id="lGb-IW-wfD"/>
+                                    <segue destination="RN6-4g-98c" kind="modal" identifier="SettingsToChangeNameSegue" id="Qiu-nf-UHV"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="xzH-Mv-PEQ">
-                                <rect key="frame" x="10" y="300" width="15" height="13"/>
+                                <rect key="frame" x="10" y="300" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0F-Q4-oES">
@@ -202,10 +207,11 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="SettingsButtonPressed:" destination="0zw-f3-nrv" eventType="touchUpInside" id="lcK-1s-trj"/>
+                                    <action selector="emailButtonPressed:" destination="tJV-ys-8Yr" eventType="touchUpInside" id="ppX-8h-Jyv"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings_email" translatesAutoresizingMaskIntoConstraints="NO" id="4Vf-Cz-nLk">
-                                <rect key="frame" x="10" y="334" width="15" height="13"/>
+                                <rect key="frame" x="10" y="334" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="bFk-8c-eWP">
@@ -221,10 +227,11 @@
                                 </state>
                                 <connections>
                                     <action selector="SettingsButtonPressed:" destination="0zw-f3-nrv" eventType="touchUpInside" id="8sH-bY-SAf"/>
+                                    <action selector="phoneButtonPressed:" destination="tJV-ys-8Yr" eventType="touchUpInside" id="LWn-dy-oXy"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings_phone" translatesAutoresizingMaskIntoConstraints="NO" id="mnF-ox-Tvt">
-                                <rect key="frame" x="10" y="370" width="15" height="13"/>
+                                <rect key="frame" x="10" y="370" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5aA-RE-eGo">
@@ -257,7 +264,7 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings_home" translatesAutoresizingMaskIntoConstraints="NO" id="X9J-hh-X6a">
-                                <rect key="frame" x="10" y="454" width="15" height="13"/>
+                                <rect key="frame" x="10" y="454" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="z7E-3D-pOb">
@@ -281,7 +288,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings_bell" translatesAutoresizingMaskIntoConstraints="NO" id="GYy-3f-5c8">
-                                <rect key="frame" x="10" y="488" width="15" height="13"/>
+                                <rect key="frame" x="10" y="488" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="bjU-xI-At6">
@@ -310,10 +317,87 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="be9-Ai-kV9"/>
                     </view>
+                    <connections>
+                        <outlet property="emailButton" destination="Y0F-Q4-oES" id="e0H-Tm-MYT"/>
+                        <outlet property="gradientView" destination="gpP-Ct-aEh" id="kXL-rk-ezw"/>
+                        <outlet property="nameButton" destination="E1U-88-mg8" id="PhL-Hk-Nzv"/>
+                        <outlet property="phoneButton" destination="4ge-bi-6gN" id="I3x-dn-0d2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MhV-S7-rja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-791.20000000000005" y="1175.2623688155923"/>
+            <point key="canvasLocation" x="76" y="1400"/>
+        </scene>
+        <!--Settings Change Value-->
+        <scene sceneID="d0w-Sw-UJJ">
+            <objects>
+                <viewController id="RN6-4g-98c" customClass="SettingsChangeValue" customModule="Broomies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="poG-7Q-IJn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Fa-aa-48U">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rci-sA-vXf">
+                                        <rect key="frame" x="24" y="43" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="settings_back"/>
+                                        <connections>
+                                            <action selector="BackButtonPressed:" destination="RN6-4g-98c" eventType="touchUpInside" id="jEk-2x-1Vn"/>
+                                            <segue destination="tJV-ys-8Yr" kind="modal" identifier="ChangeNameToSettingsSegue" id="opR-kw-Tbw"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKB-em-deU">
+                                        <rect key="frame" x="67" y="54" width="241" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.37254901959999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-2O-Upe">
+                                <rect key="frame" x="15" y="131" width="129" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.37254901959999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="myName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="08i-dS-Fun">
+                                <rect key="frame" x="13" y="163" width="346" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDl-74-EAg">
+                                <rect key="frame" x="25" y="555" width="329" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.43921568630000002" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="SaveButtonPressed:" destination="RN6-4g-98c" eventType="touchUpInside" id="07d-az-oGF"/>
+                                    <segue destination="tJV-ys-8Yr" kind="modal" identifier="SaveChangeNameToSettingsSegue" id="Sx6-FH-SbO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="M5B-v0-nX3"/>
+                    </view>
+                    <connections>
+                        <outlet property="gradientView" destination="5Fa-aa-48U" id="YMa-bZ-9Ci"/>
+                        <outlet property="textField" destination="08i-dS-Fun" id="5Fb-yP-KOf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="daX-Am-MA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="864.79999999999995" y="1400.1499250374814"/>
         </scene>
         <!--Home-->
         <scene sceneID="fsY-qD-GUn">
@@ -566,7 +650,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="76" y="1168.9655172413793"/>
+            <point key="canvasLocation" x="76" y="653"/>
         </scene>
         <!--Create Task-->
         <scene sceneID="lkd-rk-6s7">
@@ -678,7 +762,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXk-hb-pu1">
-                                <rect key="frame" x="16" y="591" width="329" height="30"/>
+                                <rect key="frame" x="25" y="555" width="329" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.43921568630000002" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
@@ -790,7 +874,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqt-SV-aMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064.8" y="1169.865067466267"/>
+            <point key="canvasLocation" x="879" y="653"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="HeC-k7-y9f">
@@ -1364,7 +1448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2wl-ge-Vi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="2603"/>
+            <point key="canvasLocation" x="76" y="2880"/>
         </scene>
         <!--Chore-->
         <scene sceneID="Tfp-lq-9Zo">
@@ -1448,7 +1532,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TI9-5w-1aC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="87.200000000000003" y="1866.1169415292354"/>
+            <point key="canvasLocation" x="76" y="2111"/>
         </scene>
         <!--Single User View-->
         <scene sceneID="AUa-yW-9xH">
@@ -1565,7 +1649,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N80-8a-JKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064.8" y="2059.5202398800602"/>
+            <point key="canvasLocation" x="961" y="3560"/>
         </scene>
         <!--Ib Calendar Data Source-->
         <scene sceneID="17h-T4-bm1">
@@ -1808,7 +1892,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhT-Q6-Yv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="3266.7166416791606"/>
+            <point key="canvasLocation" x="76" y="3560"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="Da9-am-tjV">
@@ -1920,7 +2004,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OCy-wZ-zTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="3941"/>
+            <point key="canvasLocation" x="76" y="4231"/>
         </scene>
     </scenes>
     <resources>
@@ -1948,15 +2032,15 @@
         <image name="welcome_check" width="140" height="140"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="off-0N-heD"/>
-        <segue reference="MbU-6N-tfq"/>
-        <segue reference="eQx-d2-BNi"/>
-        <segue reference="FUW-I5-XCn"/>
-        <segue reference="V65-l1-KIF"/>
+        <segue reference="r1V-m9-mEB"/>
+        <segue reference="hZ1-0v-mWx"/>
+        <segue reference="o6c-EL-551"/>
+        <segue reference="QTf-E4-go6"/>
         <segue reference="Mgi-71-Mc4"/>
-        <segue reference="g8d-nq-0MY"/>
+        <segue reference="zvR-oE-yHX"/>
         <segue reference="Lqb-Id-YAx"/>
-        <segue reference="sWI-e3-zCG"/>
-        <segue reference="5Bq-gK-QBs"/>
+        <segue reference="hCW-Tj-sDe"/>
+        <segue reference="v3S-5S-VWO"/>
+        <segue reference="Sx6-FH-SbO"/>
     </inferredMetricsTieBreakers>
 </document>
