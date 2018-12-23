@@ -19,6 +19,9 @@ class WelcomePage: UIViewController {
     var lastName: String!
     var phoneNumber: String!
     var curUserEmail: String!
+    var uid: Int!
+    
+    var fromJoin =  false
     
     @IBAction func getStartedButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "WelcomePagetoHome", sender: self)
@@ -47,22 +50,44 @@ class WelcomePage: UIViewController {
     
     func buildUser() {
         let usersDB = Database.database().reference().child("users")
-        let usersDictionary : NSDictionary = ["house" : houseName!,
-                                              "houseID" : UUID().hashValue,
-                                              "firstName" : firstName!,
-                                              "lastName" : lastName!,
-                                              "email" : curUserEmail!,
-                                              "phoneNumber" : phoneNumber!,
-                                              "enumID" : 2,
-                                              "id" : 2,
-                                              ]
-        usersDB.child(firstName!).setValue(usersDictionary) {
-            (error, ref) in
-            if error != nil {
-                print(error!)
+        if (fromJoin) {
+            let usersDictionary : NSDictionary = ["house" : houseName!,
+                                                  "houseID" : self.uid,
+                                                  "firstName" : firstName!,
+                                                  "lastName" : lastName!,
+                                                  "email" : curUserEmail!,
+                                                  "phoneNumber" : phoneNumber!,
+                                                  "enumID" : 2,
+                                                  "id" : 2,
+                                                  ]
+            usersDB.child(firstName!).setValue(usersDictionary) {
+                (error, ref) in
+                if error != nil {
+                    print(error!)
+                } else {
+                    print("Message saved successfully!")
+                }
+              }
             } else {
-                print("Message saved successfully!")
+                let usersDictionary : NSDictionary = ["house" : houseName!,
+                                                      "houseID" : UUID().hashValue,
+                                                      "firstName" : firstName!,
+                                                      "lastName" : lastName!,
+                                                      "email" : curUserEmail!,
+                                                      "phoneNumber" : phoneNumber!,
+                                                      "enumID" : 2,
+                                                      "id" : 2,
+                                                      ]
+                usersDB.child(firstName!).setValue(usersDictionary) {
+                    (error, ref) in
+                    if error != nil {
+                        print(error!)
+                    } else {
+                        print("Message saved successfully!")
+                    }
             }
+        
+       
         }
     }
 }

@@ -59,6 +59,8 @@ class Home: UIViewController {
     
     var isDay = true;
     
+    @IBOutlet weak var hamburgerName: UILabel!
+    
     func prepareToDoTable(){
         let itemsN = toDoArray
         let itemsG = giverArray
@@ -231,6 +233,7 @@ class Home: UIViewController {
                 for s in snapshot.children {
                     if (s as! DataSnapshot).childSnapshot(forPath: "/email").value as? String == self.userEmail {
                         self.userName = ((s as! DataSnapshot).childSnapshot(forPath: "/firstName").value as? String)!
+                        self.hamburgerName.text = self.userName
                     }
                     
                 }

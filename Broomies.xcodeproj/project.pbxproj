@@ -32,6 +32,7 @@
 		74DA921B21AD04B700BB580B /* HomeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74DA921A21AD04B700BB580B /* HomeCellView.xib */; };
 		74DA921D21AD04C800BB580B /* HomeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA921C21AD04C800BB580B /* HomeCellView.swift */; };
 		74DA921F21AD0B1E00BB580B /* HomeCellViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA921E21AD0B1E00BB580B /* HomeCellViewDataSource.swift */; };
+		74E5178121CCC1D000E5E0A1 /* JoinHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5178021CCC1D000E5E0A1 /* JoinHouse.swift */; };
 		74E6C7152195659C00C5482F /* AccountInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6C7142195659C00C5482F /* AccountInformation.swift */; };
 		74E6C71B21961DA900C5482F /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E6C71A21961DA900C5482F /* UserView.xib */; };
 		74E6C71D21961E8200C5482F /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6C71C21961E8200C5482F /* UserView.swift */; };
@@ -92,6 +93,7 @@
 		74DA921A21AD04B700BB580B /* HomeCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCellView.xib; sourceTree = "<group>"; };
 		74DA921C21AD04C800BB580B /* HomeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellView.swift; sourceTree = "<group>"; };
 		74DA921E21AD0B1E00BB580B /* HomeCellViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewDataSource.swift; sourceTree = "<group>"; };
+		74E5178021CCC1D000E5E0A1 /* JoinHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinHouse.swift; sourceTree = "<group>"; };
 		74E6C7142195659C00C5482F /* AccountInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformation.swift; sourceTree = "<group>"; };
 		74E6C71A21961DA900C5482F /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
 		74E6C71C21961E8200C5482F /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				BCDA7A6C21251C0B00891460 /* AppDelegate.swift */,
 				74E6C7142195659C00C5482F /* AccountInformation.swift */,
 				BCDA7A5E2120E97C00891460 /* BuildHouse.swift */,
+				74E5178021CCC1D000E5E0A1 /* JoinHouse.swift */,
 				BC25A2092137B2D20075322F /* ChangeEmail.swift */,
 				BCDA7A842127803200891460 /* Notifications.swift */,
 				BCDA7A8221277F6400891460 /* Approval.swift */,
@@ -449,6 +452,7 @@
 				BCDA7A792126567000891460 /* Calendar.swift in Sources */,
 				747BE71F21AB8C5100572294 /* UserCellView.swift in Sources */,
 				BCDA7A7F21277B2000891460 /* ChoresDone.swift in Sources */,
+				74E5178121CCC1D000E5E0A1 /* JoinHouse.swift in Sources */,
 				BCDA7A732125524A00891460 /* CreateTask.swift in Sources */,
 				BCDA7A8321277F6400891460 /* Approval.swift in Sources */,
 				BC25A2082137B28B0075322F /* ChangePassword.swift in Sources */,

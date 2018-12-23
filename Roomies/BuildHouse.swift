@@ -27,6 +27,9 @@ class BuildHouse: UIViewController {
     @IBAction func backButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "backSegue", sender: self)
     }
+    @IBAction func joinButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "joinHouseSegue", sender: self)
+    }
     
     //Build house invite housemates not yet implemented use housemateEmail & housemateNumber
     @IBAction func nextButtonPressed(_ sender: Any) {
@@ -85,6 +88,13 @@ class BuildHouse: UIViewController {
             vc.lastName = lastName!
             vc.phoneNumber = phoneNumber!
             vc.curUserEmail = curUserEmail!
+        }
+        if (segue.identifier == "joinHouseSegue") {
+            let jc = segue.destination as! JoinHouse
+            jc.firstName = firstName!
+            jc.lastName = lastName!
+            jc.phoneNumber = phoneNumber!
+            jc.curUserEmail = curUserEmail!
         }
     }
     
