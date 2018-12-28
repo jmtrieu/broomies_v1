@@ -22,11 +22,13 @@ class Settings: UIViewController {
     var userName: String!
     var email: String!
     var phoneNumber: String!
-    var key: String!
+    var houseName: String!
+    var type: Int!
     
     var user: User!
     
     @IBAction func nameButtonPressed(_ sender: Any) {
+        self.type = 0
         self.performSegue(withIdentifier: "SettingsToChangeNameSegue", sender: self)
     }
     
@@ -34,6 +36,8 @@ class Settings: UIViewController {
     }
     
     @IBAction func phoneButtonPressed(_ sender: Any) {
+        self.type = 1
+        self.performSegue(withIdentifier: "SettingsToChangeNameSegue", sender: self)
     }
     
     override func viewDidLoad() {
@@ -55,7 +59,6 @@ class Settings: UIViewController {
                     if ((s as! DataSnapshot).childSnapshot(forPath: "/email").value as? String != self.email) {
                         continue;
                     }
-                    self.key = (s as! DataSnapshot).key
                     self.userName = (s as! DataSnapshot).childSnapshot(forPath: "/firstName").value as? String
                     self.nameButton.setTitle(self.userName, for: .normal)
                     self.emailButton.setTitle(self.email, for: .normal)
@@ -72,9 +75,13 @@ class Settings: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "SettingsToChangeNameSegue") {
             let vc = segue.destination as! SettingsChangeValue
-            vc.value = self.userName
-            vc.type = 0
-            vc.key = self.key
+            if (type == 0) {
+                vc.value = self.userName
+            } else if (type == 1) {
+                vc.value = self.phoneNumber
+            }
+            vc.type = self.type
+            vc.houseName = self.houseName
         }
     }
     

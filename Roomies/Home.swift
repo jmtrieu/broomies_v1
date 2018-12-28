@@ -140,6 +140,10 @@ class Home: UIViewController {
             let vc = segue.destination as! CreateTask
             vc.houseName = self.houseName
         }
+        if (segue.identifier == "HomeToSettingsSegue") {
+            let sc = segue.destination as! Settings
+            sc.houseName = self.houseName
+        }
         if (segue.identifier == "HomeToChoreSegue") {
             let chc = segue.destination as! Chore
             chc.passedChoreName = (sender as! HomeCellView).choreLabel.text

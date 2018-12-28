@@ -227,7 +227,7 @@
                                 </state>
                                 <connections>
                                     <action selector="SettingsButtonPressed:" destination="0zw-f3-nrv" eventType="touchUpInside" id="8sH-bY-SAf"/>
-                                    <action selector="phoneButtonPressed:" destination="tJV-ys-8Yr" eventType="touchUpInside" id="LWn-dy-oXy"/>
+                                    <action selector="phoneButtonPressed:" destination="tJV-ys-8Yr" eventType="touchUpInside" id="us5-yw-pTb"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings_phone" translatesAutoresizingMaskIntoConstraints="NO" id="mnF-ox-Tvt">
@@ -350,7 +350,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKB-em-deU">
-                                        <rect key="frame" x="67" y="54" width="241" height="47"/>
+                                        <rect key="frame" x="0.0" y="54" width="375" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -392,6 +392,8 @@
                     </view>
                     <connections>
                         <outlet property="gradientView" destination="5Fa-aa-48U" id="YMa-bZ-9Ci"/>
+                        <outlet property="mySubTitle" destination="Fnx-2O-Upe" id="sgZ-sU-93s"/>
+                        <outlet property="myTitle" destination="iKB-em-deU" id="0z2-Jh-YSh"/>
                         <outlet property="textField" destination="08i-dS-Fun" id="5Fb-yP-KOf"/>
                     </connections>
                 </viewController>
@@ -2039,8 +2041,8 @@
         <segue reference="Mgi-71-Mc4"/>
         <segue reference="zvR-oE-yHX"/>
         <segue reference="Lqb-Id-YAx"/>
-        <segue reference="hCW-Tj-sDe"/>
-        <segue reference="v3S-5S-VWO"/>
+        <segue reference="sWI-e3-zCG"/>
+        <segue reference="5Bq-gK-QBs"/>
         <segue reference="Sx6-FH-SbO"/>
     </inferredMetricsTieBreakers>
 </document>
