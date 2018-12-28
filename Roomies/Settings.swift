@@ -33,6 +33,8 @@ class Settings: UIViewController {
     }
     
     @IBAction func emailButtonPressed(_ sender: Any) {
+        self.type = 2
+        self.performSegue(withIdentifier: "SettingsToChangeNameSegue", sender: self)
     }
     
     @IBAction func phoneButtonPressed(_ sender: Any) {
@@ -51,7 +53,6 @@ class Settings: UIViewController {
     }
     
     func getUser() {
-        self.email = self.user.email
         let ref = Database.database().reference().child("/users")
         ref.observe(.value, with: { snapshot in
             if (snapshot.exists()) {
@@ -79,9 +80,17 @@ class Settings: UIViewController {
                 vc.value = self.userName
             } else if (type == 1) {
                 vc.value = self.phoneNumber
+            } else if (type == 2) {
+                vc.value = self.email
             }
             vc.type = self.type
             vc.houseName = self.houseName
+            vc.email = self.email
+        }
+        if (segue.identifier == "SettingsToHomeSegue") {
+            let vc = segue.destination as! Home
+            vc.fromSettings = true
+            vc.userEmail = self.email
         }
     }
     

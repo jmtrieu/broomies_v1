@@ -207,7 +207,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="SettingsButtonPressed:" destination="0zw-f3-nrv" eventType="touchUpInside" id="lcK-1s-trj"/>
-                                    <action selector="emailButtonPressed:" destination="tJV-ys-8Yr" eventType="touchUpInside" id="ppX-8h-Jyv"/>
+                                    <action selector="emailButtonPressed:" destination="tJV-ys-8Yr" eventType="touchUpInside" id="s3z-74-nk2"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings_email" translatesAutoresizingMaskIntoConstraints="NO" id="4Vf-Cz-nLk">
@@ -346,7 +346,7 @@
                                         <state key="normal" image="settings_back"/>
                                         <connections>
                                             <action selector="BackButtonPressed:" destination="RN6-4g-98c" eventType="touchUpInside" id="jEk-2x-1Vn"/>
-                                            <segue destination="tJV-ys-8Yr" kind="modal" identifier="ChangeNameToSettingsSegue" id="opR-kw-Tbw"/>
+                                            <segue destination="tJV-ys-8Yr" kind="modal" identifier="BackToSettingsSegue" id="opR-kw-Tbw"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKB-em-deU">
@@ -2034,10 +2034,10 @@
         <image name="welcome_check" width="140" height="140"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r1V-m9-mEB"/>
-        <segue reference="hZ1-0v-mWx"/>
-        <segue reference="o6c-EL-551"/>
-        <segue reference="QTf-E4-go6"/>
+        <segue reference="MbU-6N-tfq"/>
+        <segue reference="eQx-d2-BNi"/>
+        <segue reference="FUW-I5-XCn"/>
+        <segue reference="V65-l1-KIF"/>
         <segue reference="Mgi-71-Mc4"/>
         <segue reference="zvR-oE-yHX"/>
         <segue reference="Lqb-Id-YAx"/>

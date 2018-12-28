@@ -15,6 +15,7 @@ import FirebaseAuth
 class SettingsChangeValue: UIViewController {
     
     @IBOutlet weak var gradientView: UIView!
+    var email: String!
     var value: String!
     @IBOutlet weak var textField: UITextField!
     var type: Int!
@@ -35,14 +36,17 @@ class SettingsChangeValue: UIViewController {
             self.myTitle.text = "Change Name"
             self.mySubTitle.text = "Profile Name"
         } else if (self.type == 1) {
-            self.myTitle.text = "Mobile Number"
+            self.myTitle.text = "Change Number"
             self.mySubTitle.text = "Phone Number"
             self.textField.keyboardType = UIKeyboardType.numberPad
+        } else if (self.type == 2) {
+            self.myTitle.text = "Change Email"
+            self.mySubTitle.text = "Email Address"
         }
     }
  
     @IBAction func BackButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "ChangeNameToSettingsSegue", sender: self)
+        self.performSegue(withIdentifier: "BackToSettingsSegue", sender: self)
     }
     
     func changeAssignNames() {
@@ -73,6 +77,17 @@ class SettingsChangeValue: UIViewController {
         })
     }
     
+    func changeEmail() {
+        let user = Auth.auth().currentUser
+        user?.updateEmail(to: self.textField.text!) { error in
+            if let error = error {
+                print(error)
+            } else {
+                print("completed")
+            }
+        }
+    }
+    
     @IBAction func SaveButtonPressed(_ sender: Any) {
         var category: String!
         if (self.type == 0) {
@@ -80,6 +95,9 @@ class SettingsChangeValue: UIViewController {
             category = "firstName"
         } else if (self.type == 1) {
             category = "phoneNumber"
+        } else if (self.type == 2) {
+            self.changeEmail()
+            category = "email"
         }
         let ref = Database.database().reference().child("/users")
         ref.observe(.value, with: {snapshot in
@@ -104,6 +122,16 @@ class SettingsChangeValue: UIViewController {
         if (segue.identifier == "SaveChangeNameToSettingsSegue") {
             let sc = segue.destination as? Settings
             sc?.houseName = self.houseName
+            if (self.type == 2) {
+                sc?.email = self.textField.text!
+            } else {
+                sc?.email = self.email
+            }
+        }
+        if (segue.identifier == "BackToSettingsSegue") {
+            let sc = segue.destination as? Settings
+            sc?.houseName = self.houseName
+            sc?.email = self.email
         }
     }
     

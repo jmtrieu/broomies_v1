@@ -16,6 +16,8 @@ class Home: UIViewController {
     let nc = NotificationCenter.default
     var ip: IndexPath!
     var ipTapped = false
+    
+    var fromSettings = false
    
     @IBOutlet weak var gradientView: UIView!
     
@@ -143,6 +145,7 @@ class Home: UIViewController {
         if (segue.identifier == "HomeToSettingsSegue") {
             let sc = segue.destination as! Settings
             sc.houseName = self.houseName
+            sc.email = self.user.email
         }
         if (segue.identifier == "HomeToChoreSegue") {
             let chc = segue.destination as! Chore
@@ -167,8 +170,9 @@ class Home: UIViewController {
     
     func getHouseNameAndID() {
         self.user = Auth.auth().currentUser!
-        self.userEmail = user.email as String!
-        
+        if (!fromSettings) {
+            self.userEmail = user.email as String!
+        }
         let houseQuery = Database.database().reference().child("users")
         houseQuery.observe(.value, with: { snapshot in
             if snapshot.exists() {
@@ -229,8 +233,9 @@ class Home: UIViewController {
 
     
     func getUser() {
-        self.userEmail = Auth.auth().currentUser!.email!
-        
+        if (!fromSettings) {
+            self.userEmail = Auth.auth().currentUser!.email!
+        }
         let houseQuery = Database.database().reference().child("users")
         houseQuery.observe(.value, with: { snapshot in
             if snapshot.exists() {
