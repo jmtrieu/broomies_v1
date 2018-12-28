@@ -16,6 +16,7 @@ target 'Broomies' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
   pod 'Firebase/Database'
   pod 'JTAppleCalendar', '~> 7.0'
 

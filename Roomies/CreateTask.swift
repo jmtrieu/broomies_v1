@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import CoreGraphics
 import PhotosUI
+import FirebaseStorage
 
 class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     //deallocs the observer
@@ -57,7 +58,7 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     var assignToBarTapped = false;
     
     @IBOutlet weak var imagePreview: UIImageView!
-    var imageURL: URL!
+    var imageURL = false
     
     @objc func getValue(notification: Notification) {
         let userInfo:Dictionary<String, String> = notification.userInfo as! Dictionary<String, String>
@@ -202,28 +203,24 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         else {
             self.assignCategory()
             let choresDB = Database.database().reference().child("houses").child(houseName!).child("chores")
-            if ((imageURL) != nil) {
-                let choresDictionary : NSDictionary = ["assignee" : userName.text!,
-                                                   "assigner" : self.curUserName,
-                                                   "category" : category!,
-                                                   "done" : "f",
-                                                   "house" : houseName!,
-                                                   "duedate" : formatter.string(from: taskDueDate.date),
-                                                   "enumID" : 2,
-                                                   "id" : UUID().hashValue,
-                                                   "inProgress" : "f",
-                                                   "image" : imageURL.absoluteString,
-                                                   "name" : taskName.text!,
-                                                   "toDo" : "t",
-                                                   "whenMade" : Date.init().description
-                ]
-                choresDB.child(Date.init().description).setValue(choresDictionary) {
-                    (error, ref) in
-                    if error != nil {
-                        print(error!)
-                    } else {
-                        print("Message saved successfully!")
-                    }
+            if (imageURL) {
+                self.uploadMedia() { url in
+                    guard let url = url else { return }
+                    choresDB.child(Date.init().description).setValue([
+                        "assignee" : self.userName.text!,
+                        "assigner" : self.curUserName,
+                        "category" : self.category!,
+                        "done" : "f",
+                        "house" : self.houseName!,
+                        "duedate" : formatter.string(from: self.taskDueDate.date),
+                        "enumID" : 2,
+                        "id" : UUID().hashValue,
+                        "inProgress" : "f",
+                        "image" : url,
+                        "name" : self.taskName.text!,
+                        "toDo" : "t",
+                        "whenMade" : Date.init().description
+                        ])
                 }
             }
             else {
@@ -378,8 +375,7 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.imagePreview.image = image
-        let url = info[UIImagePickerControllerReferenceURL] as? URL
-        imageURL = url;
+        imageURL = true;
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -387,6 +383,26 @@ class CreateTask: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         picker.dismiss(animated: true, completion: nil)
     }
 
+    func uploadMedia(completion: @escaping (_ url: String?) -> Void) {
+        let storageRef = Storage.storage().reference().child("myImage.png")
+        guard let imageData = UIImageJPEGRepresentation(self.imagePreview.image!, 0.75) else { return }
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if error == nil, metaData != nil {
+                
+                storageRef.downloadURL { url, error in
+                    completion(url?.absoluteString)
+                    // success!
+                }
+            } else {
+                // failed
+                completion(nil)
+            }
+        }
+    }
     
 }
 
