@@ -42,6 +42,10 @@ class Settings: UIViewController {
         self.performSegue(withIdentifier: "SettingsToChangeNameSegue", sender: self)
     }
     
+    @IBAction func houseButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "HouseSettingsSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         user = Auth.auth().currentUser
@@ -91,6 +95,11 @@ class Settings: UIViewController {
             let vc = segue.destination as! Home
             vc.fromSettings = true
             vc.userEmail = self.email
+        }
+        if (segue.identifier == "HouseSettingsSegue") {
+            let vc = segue.destination as! HouseSettings
+            vc.houseName = self.houseName
+            vc.email = self.email
         }
     }
     

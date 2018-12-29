@@ -25,6 +25,7 @@
 		747BE72421ABC77A00572294 /* UserCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 747BE72321ABC77A00572294 /* UserCellView.xib */; };
 		747DA8FF2182828D00A3772D /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 747DA8FE2182828D00A3772D /* CellView.xib */; };
 		748217A12194C4FA00E23786 /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748217A02194C4FA00E23786 /* HouseView.swift */; };
+		7494165721D6FC3200E8C1B9 /* HouseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7494165621D6FC3200E8C1B9 /* HouseSettings.swift */; };
 		749BD8DD218B932500996825 /* CalendarDayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749BD8DC218B932500996825 /* CalendarDayDataSource.swift */; };
 		749BD8E3218B9BE100996825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 749BD8E1218B9BE100996825 /* Main.storyboard */; };
 		74B48DFA2182C6630076ED58 /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = 74B48DF92182C6630076ED58 /* Pods */; };
@@ -87,6 +88,7 @@
 		747BE72321ABC77A00572294 /* UserCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCellView.xib; sourceTree = "<group>"; };
 		747DA8FE2182828D00A3772D /* CellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		748217A02194C4FA00E23786 /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
+		7494165621D6FC3200E8C1B9 /* HouseSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseSettings.swift; sourceTree = "<group>"; };
 		749BD8DC218B932500996825 /* CalendarDayDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayDataSource.swift; sourceTree = "<group>"; };
 		749BD8E2218B9BE100996825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74B48DF92182C6630076ED58 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				BCDA7A7A21277ADB00891460 /* ToDo.swift */,
 				742EB925217258B400EB4E7A /* GoogleService-Info.plist */,
 				BCDA7A762126565500891460 /* Settings.swift */,
+				7494165621D6FC3200E8C1B9 /* HouseSettings.swift */,
 				746BE5D821CF654200C070DC /* SettingsChangeValue.swift */,
 				BCDA7A742125525D00891460 /* AddUtility.swift */,
 				BCDA7A782126567000891460 /* Calendar.swift */,
@@ -450,6 +453,7 @@
 				BCDA7A59211E778200891460 /* ForgotPassword.swift in Sources */,
 				74F8FF1D2196799500849BAE /* UserDataStore.swift in Sources */,
 				BCDA7A6D21251C0B00891460 /* AppDelegate.swift in Sources */,
+				7494165721D6FC3200E8C1B9 /* HouseSettings.swift in Sources */,
 				BCDA7A5D2120E67C00891460 /* SignUp.swift in Sources */,
 				42B2555421A4955800A306E8 /* UIImageAlphaExtension.swift in Sources */,
 				BCDA7A792126567000891460 /* Calendar.swift in Sources */,
