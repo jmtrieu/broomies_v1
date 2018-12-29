@@ -23,6 +23,7 @@ class JoinHouse: UIViewController {
     var uid: Int!
 
     @IBOutlet weak var houseID: UITextField!
+    var fromPriorAccount = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,7 @@ class JoinHouse: UIViewController {
                         self.houseName = (s as! DataSnapshot).childSnapshot(forPath: "/house").value as? String
                     }
                 }
-                if (self.houseName != nil) {
+                if (self.houseName != nil && self.houseName != "NA") {
                     self.performSegue(withIdentifier: "JoinHouseToWelcomeSegue", sender: self)
                 } else {
                     let alertController = UIAlertController(title: "Invalid HouseID", message: "Please enter a different ID.", preferredStyle: .alert)
@@ -76,6 +77,7 @@ class JoinHouse: UIViewController {
             wc.curUserEmail = curUserEmail!
             wc.uid = uid!
             wc.fromJoin = true
+            wc.fromPriorAccount = self.fromPriorAccount
         }
     }
    

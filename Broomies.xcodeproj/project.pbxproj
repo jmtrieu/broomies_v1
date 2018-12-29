@@ -31,6 +31,7 @@
 		74B48DFA2182C6630076ED58 /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = 74B48DF92182C6630076ED58 /* Pods */; };
 		74B62D23217BAA21008B2AC5 /* InProgressDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B62D22217BAA21008B2AC5 /* InProgressDataSource.swift */; };
 		74B62D25217BB146008B2AC5 /* DoneDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B62D24217BB146008B2AC5 /* DoneDataSource.swift */; };
+		74B7683B21D73F9900A6064B /* NoHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7683A21D73F9900A6064B /* NoHouse.swift */; };
 		74DA921B21AD04B700BB580B /* HomeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74DA921A21AD04B700BB580B /* HomeCellView.xib */; };
 		74DA921D21AD04C800BB580B /* HomeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA921C21AD04C800BB580B /* HomeCellView.swift */; };
 		74DA921F21AD0B1E00BB580B /* HomeCellViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA921E21AD0B1E00BB580B /* HomeCellViewDataSource.swift */; };
@@ -94,6 +95,7 @@
 		74B48DF92182C6630076ED58 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
 		74B62D22217BAA21008B2AC5 /* InProgressDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressDataSource.swift; sourceTree = "<group>"; };
 		74B62D24217BB146008B2AC5 /* DoneDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneDataSource.swift; sourceTree = "<group>"; };
+		74B7683A21D73F9900A6064B /* NoHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoHouse.swift; sourceTree = "<group>"; };
 		74DA921A21AD04B700BB580B /* HomeCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCellView.xib; sourceTree = "<group>"; };
 		74DA921C21AD04C800BB580B /* HomeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellView.swift; sourceTree = "<group>"; };
 		74DA921E21AD0B1E00BB580B /* HomeCellViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewDataSource.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				BCDA7A5C2120E67C00891460 /* SignUp.swift */,
 				BCDA7A6C21251C0B00891460 /* AppDelegate.swift */,
 				74E6C7142195659C00C5482F /* AccountInformation.swift */,
+				74B7683A21D73F9900A6064B /* NoHouse.swift */,
 				BCDA7A5E2120E97C00891460 /* BuildHouse.swift */,
 				74E5178021CCC1D000E5E0A1 /* JoinHouse.swift */,
 				BC25A2092137B2D20075322F /* ChangeEmail.swift */,
@@ -457,6 +460,7 @@
 				BCDA7A5D2120E67C00891460 /* SignUp.swift in Sources */,
 				42B2555421A4955800A306E8 /* UIImageAlphaExtension.swift in Sources */,
 				BCDA7A792126567000891460 /* Calendar.swift in Sources */,
+				74B7683B21D73F9900A6064B /* NoHouse.swift in Sources */,
 				747BE71F21AB8C5100572294 /* UserCellView.swift in Sources */,
 				BCDA7A7F21277B2000891460 /* ChoresDone.swift in Sources */,
 				74E5178121CCC1D000E5E0A1 /* JoinHouse.swift in Sources */,

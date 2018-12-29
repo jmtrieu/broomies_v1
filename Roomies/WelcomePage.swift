@@ -22,8 +22,10 @@ class WelcomePage: UIViewController {
     var uid: Int!
     
     var fromJoin =  false
+    var fromPriorAccount = false
     
     @IBAction func getStartedButtonPressed(_ sender: Any) {
+        self.buildUser()
         self.performSegue(withIdentifier: "WelcomePagetoHome", sender: self)
     }
     
@@ -32,7 +34,6 @@ class WelcomePage: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         user = Auth.auth().currentUser
         ref = Database.database().reference()
-        buildUser()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
@@ -51,24 +52,48 @@ class WelcomePage: UIViewController {
     func buildUser() {
         let usersDB = Database.database().reference().child("users")
         if (fromJoin) {
-            let usersDictionary : NSDictionary = ["house" : houseName!,
-                                                  "houseID" : self.uid,
-                                                  "firstName" : firstName!,
-                                                  "lastName" : lastName!,
-                                                  "email" : curUserEmail!,
-                                                  "phoneNumber" : phoneNumber!,
-                                                  "enumID" : 2,
-                                                  "id" : 2,
-                                                  ]
-            usersDB.child(firstName!).setValue(usersDictionary) {
-                (error, ref) in
-                if error != nil {
-                    print(error!)
-                } else {
-                    print("Message saved successfully!")
+            if (fromPriorAccount) {
+                let ref = Database.database().reference().child("/users")
+                ref.observe(.value, with: { snapshot in
+                    if (snapshot.exists()) {
+                        for s in snapshot.children {
+                            if (s as! DataSnapshot).childSnapshot(forPath: "/email").value as? String == Auth.auth().currentUser?.email {
+                                let key = (s as! DataSnapshot).key
+                                let changes : [String: Any] = [
+                                "house": self.houseName!,
+                                "houseID": self.uid]
+                                ref.child(key).updateChildValues(changes, withCompletionBlock: { (err, ref) in
+                                if err != nil {
+                                    return
+                                }
+                                })
+                                break;
+                            }
+                        }
+                    }
+                })
+            }
+            else {
+                let usersDictionary : NSDictionary = ["house" : houseName!,
+                                                      "houseID" : self.uid,
+                                                      "firstName" : firstName!,
+                                                      "lastName" : lastName!,
+                                                      "email" : curUserEmail!,
+                                                      "phoneNumber" : phoneNumber!,
+                                                      "enumID" : 2,
+                                                      "id" : 2,
+                                                      ]
+                usersDB.child(firstName!).setValue(usersDictionary) {
+                    (error, ref) in
+                    if error != nil {
+                        print(error!)
+                    } else {
+                        print("Message saved successfully!")
+                    }
                 }
-              }
-            } else {
+            }
+            
+        } else {
                 let usersDictionary : NSDictionary = ["house" : houseName!,
                                                       "houseID" : UUID().hashValue,
                                                       "firstName" : firstName!,

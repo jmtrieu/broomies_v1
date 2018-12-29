@@ -423,7 +423,7 @@
                                         <state key="normal" image="settings_back"/>
                                         <connections>
                                             <action selector="BackButtonPressed:" destination="RN6-4g-98c" eventType="touchUpInside" id="Mtd-GZ-JE9"/>
-                                            <action selector="backButtonPressed:" destination="57U-lD-ncG" eventType="touchUpInside" id="Lkr-li-IAv"/>
+                                            <action selector="backButtonPressed:" destination="57U-lD-ncG" eventType="touchUpInside" id="QFg-Sb-VEf"/>
                                             <segue destination="tJV-ys-8Yr" kind="modal" identifier="HouseToSettingsSegue" id="ou2-Bx-9jT"/>
                                         </connections>
                                     </button>
@@ -467,7 +467,15 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveButtonPressed:" destination="57U-lD-ncG" eventType="touchUpInside" id="3Vz-n0-fk5"/>
+                                    <action selector="saveButtonPressed:" destination="57U-lD-ncG" eventType="touchUpInside" id="RSM-Ki-WhI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NE8-Ak-Kmx">
+                                <rect key="frame" x="0.0" y="243" width="144" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="leaveButtonPressed:" destination="57U-lD-ncG" eventType="touchUpInside" id="0Zv-oJ-cB3"/>
+                                    <segue destination="e66-QK-rXb" kind="modal" identifier="LeaveHouseSegue" id="QT4-LQ-OI9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -481,7 +489,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qqp-Hg-3I1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1649" y="1402"/>
+            <point key="canvasLocation" x="1648.8" y="1401.9490254872564"/>
+        </scene>
+        <!--No House-->
+        <scene sceneID="3W1-AU-j4I">
+            <objects>
+                <viewController id="e66-QK-rXb" customClass="NoHouse" customModule="Broomies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gVX-vZ-u2F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="chor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtL-y3-s66">
+                                <rect key="frame" x="123" y="155" width="129" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="60"/>
+                                <color key="textColor" red="0.0" green="0.37254901959999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You're not in a house!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JH1-lv-mOM">
+                                <rect key="frame" x="75" y="245" width="224" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AH5-X8-pWF">
+                                <rect key="frame" x="16" y="368" width="143" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.43921568630000002" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Join a house">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="joinButtonPressed:" destination="e66-QK-rXb" eventType="touchUpInside" id="Pdk-eM-wqu"/>
+                                    <segue destination="Fzd-Jb-Mp3" kind="modal" identifier="JoinHouseSegue" id="yKi-Zx-XMC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ox-ZU-Onv">
+                                <rect key="frame" x="216" y="368" width="143" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.43921568630000002" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Build a House">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1ue-55-hsB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AXZ-Ad-OlL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2420" y="1397.4512743628186"/>
         </scene>
         <!--Home-->
         <scene sceneID="fsY-qD-GUn">
@@ -1410,7 +1471,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.37254901959999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <collectionView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" restorationIdentifier="UserView" delaysContentTouches="NO" canCancelContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9AG-bD-T5i">
+                            <collectionView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" restorationIdentifier="UserView" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9AG-bD-T5i">
                                 <rect key="frame" x="16" y="244" width="343" height="323"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2116,15 +2177,16 @@
         <image name="welcome_check" width="140" height="140"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MbU-6N-tfq"/>
-        <segue reference="eQx-d2-BNi"/>
+        <segue reference="r1V-m9-mEB"/>
+        <segue reference="hZ1-0v-mWx"/>
         <segue reference="FUW-I5-XCn"/>
         <segue reference="V65-l1-KIF"/>
-        <segue reference="Mgi-71-Mc4"/>
+        <segue reference="HKN-F6-uX3"/>
+        <segue reference="yKi-Zx-XMC"/>
         <segue reference="zvR-oE-yHX"/>
-        <segue reference="Lqb-Id-YAx"/>
+        <segue reference="ufe-gp-KaK"/>
         <segue reference="sWI-e3-zCG"/>
-        <segue reference="5Bq-gK-QBs"/>
+        <segue reference="dlW-er-j47"/>
         <segue reference="ou2-Bx-9jT"/>
     </inferredMetricsTieBreakers>
 </document>

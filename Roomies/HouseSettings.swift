@@ -42,12 +42,31 @@ class HouseSettings: UIViewController {
     @IBAction func saveButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "HouseToSettingsSegue", sender: self)
     }
+    @IBAction func leaveButtonPressed(_ sender: Any) {
+        let defaultAction = UIAlertAction(title: "Leave", style: .default, handler: { _  in
+                self.performSegue(withIdentifier: "LeaveHouseSegue", sender: self)
+            })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            { (action) in
+                print("cancel")
+            }
+        let alert = UIAlertController(title: "Leave House",
+                                      message: "Are you sure you want to leave?",
+                                      preferredStyle: .alert)
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "HouseToSettingsSegue") {
             let vc = segue.destination as! Settings
             vc.houseName = self.houseName
             vc.email = self.email
+        }
+        if (segue.identifier == "LeaveHouseSegue") {
+            let vc = segue.destination as! NoHouse
+            vc.fromSettings = true
         }
     }
     
