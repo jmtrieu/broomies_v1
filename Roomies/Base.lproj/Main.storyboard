@@ -125,6 +125,7 @@
                         <outlet property="signIn" destination="aXl-dU-Hxq" id="VGe-No-9qY"/>
                         <outlet property="signInButton" destination="EMv-SH-BpZ" id="Qi9-03-Naq"/>
                         <segue destination="0zw-f3-nrv" kind="modal" identifier="SignInSegue" id="Hcn-2k-tfY"/>
+                        <segue destination="e66-QK-rXb" kind="modal" identifier="NoHouseSegue" id="A3m-EX-PZ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BA7-dR-kyT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -475,7 +476,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="leaveButtonPressed:" destination="57U-lD-ncG" eventType="touchUpInside" id="0Zv-oJ-cB3"/>
-                                    <segue destination="e66-QK-rXb" kind="modal" identifier="LeaveHouseSegue" id="QT4-LQ-OI9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -485,6 +485,7 @@
                     <connections>
                         <outlet property="gradientView" destination="QED-DJ-fC9" id="nI3-h0-U2d"/>
                         <outlet property="textField" destination="XgM-yn-hcH" id="5WO-t0-lRX"/>
+                        <segue destination="e66-QK-rXb" kind="modal" identifier="LeaveHouseSegue" id="BN6-RY-wdG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qqp-Hg-3I1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -534,6 +535,10 @@
                                 <state key="normal" title="Build a House">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buildButtonPressed:" destination="e66-QK-rXb" eventType="touchUpInside" id="AGu-kM-ZPm"/>
+                                    <segue destination="iCg-3R-xpz" kind="modal" identifier="BuildHouseSegue" id="ARM-xB-JEQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1423,13 +1428,15 @@
                                     <action selector="NextButtonPressed:" destination="Syk-0c-zLU" eventType="touchUpInside" id="Kzs-kp-chJ"/>
                                     <action selector="getStartedButtonPressed:" destination="R0c-aN-C0o" eventType="touchUpInside" id="atw-VQ-7a1"/>
                                     <action selector="nextButtonPressed:" destination="QJq-tC-bY8" eventType="touchUpInside" id="Ise-0P-07C"/>
-                                    <segue destination="0zw-f3-nrv" kind="modal" identifier="WelcomePagetoHome" id="Rnn-2e-fTY"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qzo-yQ-XHJ"/>
                     </view>
+                    <connections>
+                        <segue destination="0zw-f3-nrv" kind="modal" identifier="WelcomePagetoHome" id="dZL-QM-U7F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPu-zy-nms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2182,11 +2189,13 @@
         <segue reference="FUW-I5-XCn"/>
         <segue reference="V65-l1-KIF"/>
         <segue reference="HKN-F6-uX3"/>
+        <segue reference="ARM-xB-JEQ"/>
         <segue reference="yKi-Zx-XMC"/>
         <segue reference="zvR-oE-yHX"/>
         <segue reference="ufe-gp-KaK"/>
         <segue reference="sWI-e3-zCG"/>
-        <segue reference="dlW-er-j47"/>
+        <segue reference="dZL-QM-U7F"/>
+        <segue reference="BN6-RY-wdG"/>
         <segue reference="ou2-Bx-9jT"/>
     </inferredMetricsTieBreakers>
 </document>

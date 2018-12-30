@@ -19,6 +19,7 @@ class BuildHouse: UIViewController {
     var lastName: String!
     var phoneNumber: String!
     var curUserEmail: String!
+    var fromLogin = false
     
     @IBOutlet weak var houseName: UITextField!
     @IBOutlet weak var housemateEmail: UITextField!
@@ -80,6 +81,7 @@ class BuildHouse: UIViewController {
             vc.lastName = lastName!
             vc.phoneNumber = phoneNumber!
             vc.curUserEmail = curUserEmail!
+            vc.fromLogin = self.fromLogin
         }
         if (segue.identifier == "skipBuild") {
             let vc = segue.destination as! WelcomePage
@@ -88,6 +90,7 @@ class BuildHouse: UIViewController {
             vc.lastName = lastName!
             vc.phoneNumber = phoneNumber!
             vc.curUserEmail = curUserEmail!
+            vc.fromLogin = self.fromLogin
         }
         if (segue.identifier == "joinHouseSegue") {
             let jc = segue.destination as! JoinHouse

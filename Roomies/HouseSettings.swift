@@ -43,9 +43,10 @@ class HouseSettings: UIViewController {
         self.performSegue(withIdentifier: "HouseToSettingsSegue", sender: self)
     }
     @IBAction func leaveButtonPressed(_ sender: Any) {
-        let defaultAction = UIAlertAction(title: "Leave", style: .default, handler: { _  in
+        let defaultAction = UIAlertAction(title: "Leave", style: .default) { (action) in
+                self.leaveHouse()
                 self.performSegue(withIdentifier: "LeaveHouseSegue", sender: self)
-            })
+            }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
             { (action) in
                 print("cancel")
@@ -58,15 +59,36 @@ class HouseSettings: UIViewController {
         self.present(alert, animated: true)
     }
     
+    func leaveHouse() {
+        var found = false
+        let ref = Database.database().reference().child("/users")
+        ref.observe(.value, with: {snapshot in
+            if (snapshot.exists() && !found) {
+                for s in snapshot.children {
+                    let id = (s as! DataSnapshot).childSnapshot(forPath: "/houseID").value as? Int
+                    if ((s as! DataSnapshot).childSnapshot(forPath: "/email").value as? String == Auth.auth().currentUser?.email && id != 0) {
+                        let key = (s as! DataSnapshot).key
+                        let changes : [String: Any] = [
+                            "house": "NA",
+                            "houseID": 0]
+                        ref.child(key).updateChildValues(changes, withCompletionBlock: { (err, ref) in
+                            if err != nil {
+                                return
+                            }
+                        })
+                        found = true
+                    }
+                }
+            }
+        })
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "HouseToSettingsSegue") {
             let vc = segue.destination as! Settings
             vc.houseName = self.houseName
             vc.email = self.email
-        }
-        if (segue.identifier == "LeaveHouseSegue") {
-            let vc = segue.destination as! NoHouse
-            vc.fromSettings = true
         }
     }
     

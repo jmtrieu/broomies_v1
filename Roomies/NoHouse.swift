@@ -26,35 +26,8 @@ class NoHouse: UIViewController {
         super.viewDidLoad()
         self.getUserInfo()
         // Do any additional setup after loading the view, typically from a nib.
-        if (fromSettings) {
-            self.leaveHouse()
-        }
     }
 
-    func leaveHouse() {
-        let ref = Database.database().reference().child("/users")
-        ref.observe(.value, with: {snapshot in
-            if (snapshot.exists()) {
-                for s in snapshot.children {
-                    if (self.found) {
-                        return;
-                    }
-                    if (s as! DataSnapshot).childSnapshot(forPath: "/email").value as? String == Auth.auth().currentUser?.email {
-                        let key = (s as! DataSnapshot).key
-                        let changes : [String: Any] = [
-                            "house": "NA",
-                            "houseID": 0]
-                        ref.child(key).updateChildValues(changes, withCompletionBlock: { (err, ref) in
-                            if err != nil {
-                                return
-                            }
-                        })
-                        self.found = true;
-                    }
-                }
-            }
-        })
-    }
     
     func getUserInfo() {
         let ref = Database.database().reference().child("/users")
@@ -81,6 +54,10 @@ class NoHouse: UIViewController {
         self.performSegue(withIdentifier: "JoinHouseSegue", sender: self)
     }
     
+    @IBAction func buildButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "BuildHouseSegue", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "JoinHouseSegue") {
             let jc = segue.destination as! JoinHouse
@@ -89,6 +66,14 @@ class NoHouse: UIViewController {
             jc.phoneNumber = self.phoneNumber
             jc.curUserEmail = self.curUserEmail
             jc.fromPriorAccount = true
+        }
+        if (segue.identifier == "BuildHouseSegue") {
+            let vc = segue.destination as! BuildHouse
+            vc.curUserEmail = curUserEmail
+            vc.phoneNumber = self.phoneNumber
+            vc.firstName = self.firstName
+            vc.lastName = self.lastName
+            vc.fromLogin = true
         }
     }
     

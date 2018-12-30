@@ -20,6 +20,7 @@ class WelcomePage: UIViewController {
     var phoneNumber: String!
     var curUserEmail: String!
     var uid: Int!
+    var fromLogin = false
     
     var fromJoin =  false
     var fromPriorAccount = false
@@ -50,24 +51,24 @@ class WelcomePage: UIViewController {
     }
     
     func buildUser() {
-        let usersDB = Database.database().reference().child("users")
+        let ref = Database.database().reference().child("/users")
         if (fromJoin) {
             if (fromPriorAccount) {
-                let ref = Database.database().reference().child("/users")
                 ref.observe(.value, with: { snapshot in
                     if (snapshot.exists()) {
                         for s in snapshot.children {
-                            if (s as! DataSnapshot).childSnapshot(forPath: "/email").value as? String == Auth.auth().currentUser?.email {
+                            if ((s as! DataSnapshot).childSnapshot(forPath: "/email").value as? String == Auth.auth().currentUser?.email) {
                                 let key = (s as! DataSnapshot).key
-                                let changes : [String: Any] = [
-                                "house": self.houseName!,
-                                "houseID": self.uid]
+                                let changes : [String : Any] = [
+                                    "/house": self.houseName!,
+                                    "/houseID": self.uid!
+                                ]
                                 ref.child(key).updateChildValues(changes, withCompletionBlock: { (err, ref) in
-                                if err != nil {
-                                    return
-                                }
+                                    if err != nil {
+                                        return
+                                    }
                                 })
-                                break;
+                                break
                             }
                         }
                     }
@@ -83,7 +84,7 @@ class WelcomePage: UIViewController {
                                                       "enumID" : 2,
                                                       "id" : 2,
                                                       ]
-                usersDB.child(firstName!).setValue(usersDictionary) {
+                ref.child(firstName!).setValue(usersDictionary) {
                     (error, ref) in
                     if error != nil {
                         print(error!)
@@ -92,7 +93,25 @@ class WelcomePage: UIViewController {
                     }
                 }
             }
-            
+        } else if (fromLogin) {
+            ref.observe(.value, with: { snapshot in
+                if (snapshot.exists()) {
+                    for s in snapshot.children {
+                        if ((s as! DataSnapshot).childSnapshot(forPath: "/email").value as? String == Auth.auth().currentUser?.email) {
+                            let key = (s as! DataSnapshot).key
+                            let changes : [String: Any] = [
+                                "house": self.houseName!,
+                                "houseID": UUID().hashValue]
+                            ref.child(key).updateChildValues(changes, withCompletionBlock: { (err, ref) in
+                                if err != nil {
+                                    return
+                                }
+                            })
+                            break
+                        }
+                    }
+                }
+            })
         } else {
                 let usersDictionary : NSDictionary = ["house" : houseName!,
                                                       "houseID" : UUID().hashValue,
@@ -103,7 +122,7 @@ class WelcomePage: UIViewController {
                                                       "enumID" : 2,
                                                       "id" : 2,
                                                       ]
-                usersDB.child(firstName!).setValue(usersDictionary) {
+                ref.child(firstName!).setValue(usersDictionary) {
                     (error, ref) in
                     if error != nil {
                         print(error!)
@@ -111,8 +130,6 @@ class WelcomePage: UIViewController {
                         print("Message saved successfully!")
                     }
             }
-        
-       
         }
     }
 }

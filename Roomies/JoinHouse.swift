@@ -48,7 +48,7 @@ class JoinHouse: UIViewController {
         self.uid = myId
         let ref = Database.database().reference().child("/users")
         ref.observe(.value, with: { snapshot in
-            if snapshot.exists() {
+            if snapshot.exists() && myId != 0 {
                 for s in snapshot.children {
                     if (s as! DataSnapshot).childSnapshot(forPath: "/houseID").value as? Int == myId {
                         self.houseName = (s as! DataSnapshot).childSnapshot(forPath: "/house").value as? String
@@ -70,12 +70,13 @@ class JoinHouse: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "JoinHouseToWelcomeSegue") {
             let wc = segue.destination as! WelcomePage
+            let myID = uid!
             wc.houseName = houseName
             wc.firstName = firstName!
             wc.lastName = lastName!
             wc.phoneNumber = phoneNumber!
             wc.curUserEmail = curUserEmail!
-            wc.uid = uid!
+            wc.uid = myID
             wc.fromJoin = true
             wc.fromPriorAccount = self.fromPriorAccount
         }

@@ -25,7 +25,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         Auth.auth().signIn(withEmail: email.text!, password: password.text!) {
             (user, error) in
             if error == nil {
-                self.performSegue(withIdentifier: "SignInSegue", sender: self)
+                //segues to home or no house view, depending on houseid
+                self.getHouseName()
             } else {
                 let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -81,18 +82,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         self.performSegue(withIdentifier: "ForgotPasswordSegue", sender: self)
     }
     
-    func queryUser(email: String) {
-        let choresQuery = Database.database().reference().child("users")
-        choresQuery.observe(.value, with: { snapshot in
-            if snapshot.exists() {
-                for s in snapshot.children {
-                    if (s as! DataSnapshot).childSnapshot(forPath: "/email").value as! String == email {
-                       self.houseName! = (s as! DataSnapshot).childSnapshot(forPath: "/house").value as! String
-                    }
-                }
-            }
-        })
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +90,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         signIn.clipsToBounds = true
         self.view.addGestureRecognizer(UITapGestureRecognizer(target:
             self.view, action: #selector(UIView.endEditing(_:))))
+    }
+    
+    func getHouseName() {
+        let ref = Database.database().reference().child("/users")
+        ref.observe(.value, with: {snapshot in
+            if (snapshot.exists()) {
+                for s in snapshot.children {
+                    if (s as! DataSnapshot).childSnapshot(forPath: "/email").value as? String == self.email.text! {
+                        let houseID = (s as! DataSnapshot).childSnapshot(forPath: "/houseID").value as? Int
+                        if houseID == 0 {
+                            self.performSegue(withIdentifier: "NoHouseSegue", sender: self)
+                        } else {
+                            self.performSegue(withIdentifier: "SignInSegue", sender: self)
+                        }
+                    }
+                }
+            }
+        })
     }
     
     @IBAction func ButtonPressed(_ sender: Any) {
