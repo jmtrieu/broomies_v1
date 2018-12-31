@@ -97,7 +97,8 @@ class WelcomePage: UIViewController {
             ref.observe(.value, with: { snapshot in
                 if (snapshot.exists()) {
                     for s in snapshot.children {
-                        if ((s as! DataSnapshot).childSnapshot(forPath: "/email").value as? String == Auth.auth().currentUser?.email) {
+                        let name = (s as! DataSnapshot).childSnapshot(forPath: "/house").value as? String
+                        if ((s as! DataSnapshot).childSnapshot(forPath: "/email").value as? String == Auth.auth().currentUser?.email && name != self.houseName!) {
                             let key = (s as! DataSnapshot).key
                             let changes : [String: Any] = [
                                 "house": self.houseName!,

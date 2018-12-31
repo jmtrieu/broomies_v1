@@ -111,13 +111,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Roomies/HouseSettings.swift"
-            timestampString = "567860060.059721"
+            filePath = "Roomies/WelcomePage.swift"
+            timestampString = "567935822.707087"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "leaveButtonPressed(_:)"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "buildUser()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

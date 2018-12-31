@@ -13,6 +13,7 @@
 		741EDC772169F10000815345 /* Icons in Resources */ = {isa = PBXBuildFile; fileRef = 741EDC762169F0FF00815345 /* Icons */; };
 		7427B27B2196A80300F7FECD /* SingleUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7427B27A2196A80300F7FECD /* SingleUserView.swift */; };
 		742EB926217258B400EB4E7A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 742EB925217258B400EB4E7A /* GoogleService-Info.plist */; };
+		743014DE21D9F96E00E35D06 /* ArchivedTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743014DD21D9F96E00E35D06 /* ArchivedTasks.swift */; };
 		7443F6AC21812B1E00B1A3D4 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443F6AB21812B1E00B1A3D4 /* CellView.swift */; };
 		744E9BE321A8C00E00DF0142 /* NotificationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E9BE221A8C00E00DF0142 /* NotificationsDataSource.swift */; };
 		744E9BE521A9423700DF0142 /* ConvenientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E9BE421A9423700DF0142 /* ConvenientColor.swift */; };
@@ -77,6 +78,7 @@
 		741EDC762169F0FF00815345 /* Icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Icons; sourceTree = "<group>"; };
 		7427B27A2196A80300F7FECD /* SingleUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserView.swift; sourceTree = "<group>"; };
 		742EB925217258B400EB4E7A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		743014DD21D9F96E00E35D06 /* ArchivedTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedTasks.swift; sourceTree = "<group>"; };
 		7443F6AB21812B1E00B1A3D4 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		744E9BE221A8C00E00DF0142 /* NotificationsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsDataSource.swift; sourceTree = "<group>"; };
 		744E9BE421A9423700DF0142 /* ConvenientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenientColor.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				BCDA7A842127803200891460 /* Notifications.swift */,
 				BCDA7A8221277F6400891460 /* Approval.swift */,
 				748217A02194C4FA00E23786 /* HouseView.swift */,
+				743014DD21D9F96E00E35D06 /* ArchivedTasks.swift */,
 				BCDA7A622125040D00891460 /* Home.swift */,
 				74F740F621CB0F1600F15252 /* Chore.swift */,
 				BC25A20B2137B2E70075322F /* ChangeHouse.swift */,
@@ -463,6 +466,7 @@
 				74B7683B21D73F9900A6064B /* NoHouse.swift in Sources */,
 				747BE71F21AB8C5100572294 /* UserCellView.swift in Sources */,
 				BCDA7A7F21277B2000891460 /* ChoresDone.swift in Sources */,
+				743014DE21D9F96E00E35D06 /* ArchivedTasks.swift in Sources */,
 				74E5178121CCC1D000E5E0A1 /* JoinHouse.swift in Sources */,
 				BCDA7A732125524A00891460 /* CreateTask.swift in Sources */,
 				BCDA7A8321277F6400891460 /* Approval.swift in Sources */,
