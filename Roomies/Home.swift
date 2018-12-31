@@ -456,6 +456,11 @@ class Home: UIViewController {
     @IBAction func archivedTasksButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "HomeToArchivedTasksSegue", sender: self)
     }
+    
+    @IBAction func changePasswordButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "HomeToChangePasswordSegue", sender: self)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -19,10 +19,10 @@ class ChangePassword: UIViewController {
     
     @IBAction func BackButtonPressed(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "BackButtonToHome", sender: self)
+        self.performSegue(withIdentifier: "ChangePasswordToHomeSegue", sender: self)
     }
     
-    @IBAction func DoneButtonPressed(_ sender: Any) {
+    @IBAction func saveButtonPressed(_ sender: Any) {
         let newPass = newPassword.text
         let newPassConfirm = newPasswordConfirm.text
         
@@ -45,19 +45,43 @@ class ChangePassword: UIViewController {
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
         }
-        
-        //Error checks complete save the new password name
+            
+            //Error checks complete save the new password name
         else {
-            self.performSegue(withIdentifier: "ChangePasswordToHomeSegue", sender: self)
+            let myUser = Auth.auth().currentUser
+            let email = myUser?.email
+           // let credential = EmailAuthProvider.credential(withEmail: email!, password: newPass!)
+            Auth.auth().signIn(withEmail: email!, password: currentPassword.text!) {
+                (user, error) in
+         //   user?.reauthenticate(with: credential, completion: { (error) in
+                if error != nil{
+                    let alertController = UIAlertController(title: "Password Incorrect", message: "Current Password is incorrect, please re-enter.", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }else{
+                    //change to new password
+                    myUser?.updatePassword(to: newPass!) { (error) in
+                        if error != nil {
+                            print("error")
+                            return
+                        } else {
+                            self.performSegue(withIdentifier: "ChangePasswordToHomeSegue", sender: self)
+                        }
+                    }
+                }
+            }
         }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         //Color one is bottom right corner and Color two is top left corner
-        gradientView.setGradientBackground(colorOne: UIColor(red: 0, green: 0.37, blue: 0.47, alpha: 1.0), colorTwo: UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8))
+        gradientView.setGradientBackground(colorOne: UIColor(hex: "005F77"), colorTwo: UIColor(hex: "3F8698"))
     }
     
     override func didReceiveMemoryWarning() {
