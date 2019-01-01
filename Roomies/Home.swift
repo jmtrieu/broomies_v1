@@ -18,6 +18,7 @@ class Home: UIViewController {
     var ipTapped = false
     
     var fromSettings = false
+    var fromDoneTable = false
    
     @IBOutlet weak var gradientView: UIView!
     
@@ -49,7 +50,7 @@ class Home: UIViewController {
     var inProgressArray = [String]()
     
     @IBOutlet weak var doneTable: UITableView!
-    var doneDataSource: HomeCellViewDataSource!
+    var doneDataSource: HomeDoneDataSource!
     var doneArray = [String]()
     
     @IBOutlet weak var settingsMenu: UIView!
@@ -84,11 +85,11 @@ class Home: UIViewController {
         let itemsC = doneCategoriesArray
         let itemsT = doneTimesArray
         let itemsI = doneIdArray
-        doneDataSource = HomeCellViewDataSource(house: self.houseName!, isToDo: false)
+        doneDataSource = HomeDoneDataSource(house: self.houseName!, isToDo: false)
         doneDataSource.setData(chores: itemsN, givers: itemsG, categories: itemsC, times: itemsT, ids: itemsI)
         self.doneTable.dataSource = doneDataSource
         self.doneTable.delegate = doneDataSource
-        self.doneTable.register(UINib(nibName: "HomeCellView", bundle: Bundle.main), forCellReuseIdentifier: "HomeCellView")
+        self.doneTable.register(UINib(nibName: "HomeCellView", bundle: Bundle.main), forCellReuseIdentifier: "DoneCellView")
         self.doneTable.tableFooterView = UIView()
     }
     
@@ -152,6 +153,7 @@ class Home: UIViewController {
             chc.passedChoreName = (sender as! HomeCellView).choreLabel.text
             chc.id = (sender as! HomeCellView).id
             chc.houseName = self.houseName
+            chc.done = self.fromDoneTable
         }
         if (segue.identifier == "HomeToHouseViewSegue") {
             let ac = segue.destination as! HouseView
@@ -193,6 +195,7 @@ class Home: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         //sets up notifications center
         nc.addObserver(self, selector: #selector(self.getValue(notification:)), name: Notification.Name(rawValue: "chore"), object: nil)
+        nc.addObserver(self, selector: #selector(self.getValue(notification:)), name: Notification.Name(rawValue: "done"), object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -227,8 +230,16 @@ class Home: UIViewController {
         let userInfo:Dictionary<String, IndexPath> = notification.userInfo as! Dictionary<String, IndexPath>
         let item = userInfo["ip"]! as IndexPath
         self.ip = item
-        let cell = self.toDoTable.cellForRow(at: ip) as! HomeCellView
-        self.performSegue(withIdentifier: "HomeToChoreSegue", sender: cell)
+        if notification.name.rawValue == "chore" {
+            let cell = self.toDoTable.cellForRow(at: ip) as! HomeCellView
+            self.fromDoneTable = false
+            self.performSegue(withIdentifier: "HomeToChoreSegue", sender: cell)
+        }
+        if notification.name.rawValue == "done" {
+            let cell = self.doneTable.cellForRow(at: ip) as! HomeCellView
+            self.fromDoneTable = true
+            self.performSegue(withIdentifier: "HomeToChoreSegue", sender: cell)
+        }
     }
 
     

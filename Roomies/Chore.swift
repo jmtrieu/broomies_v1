@@ -29,22 +29,58 @@ class Chore: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     var imageURL: String!
     
-
+    @IBOutlet weak var myButton: UIButton!
+    var done = false
+    
     @IBAction func BackButtonPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "ChoreToHomeSegue", sender: self)
     }
     
     @IBAction func CompletedButtonPressed(_ sender: Any) {
         let ref = Database.database().reference().child("houses").child(self.houseName).child("/chores").child(self.timeID)
-        let changes = [
-            "inProgress": "f",
-            "done": "t"]
-        ref.updateChildValues(changes, withCompletionBlock: { (err, ref) in
-            if err != nil {
-                return
+        if (!done) {
+            let defaultAction = UIAlertAction(title: "Confirm", style: .default) { (action) in
+                let changes = [
+                    "inProgress": "f",
+                    "done": "t"]
+                ref.updateChildValues(changes, withCompletionBlock: { (err, ref) in
+                    if err != nil {
+                        return
+                    }
+                })
+                self.performSegue(withIdentifier: "ChoreToHomeSegue", sender: self)
             }
-        })
-        self.performSegue(withIdentifier: "ChoreToHomeSegue", sender: self)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            { (action) in
+                print("cancel")
+            }
+            let alert = UIAlertController(title: "Done",
+                                          message: "Are you sure this chore is done?",
+                                          preferredStyle: .alert)
+            alert.addAction(defaultAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true)
+        } else {
+            let defaultAction = UIAlertAction(title: "Delete", style: .default) { (action) in
+                ref.removeValue() { (error, ref) in
+                    if error != nil {
+                        print("error")
+                        return
+                    }
+                }
+                self.performSegue(withIdentifier: "ChoreToHomeSegue", sender: self)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            { (action) in
+                print("cancel")
+            }
+            let alert = UIAlertController(title: "Done",
+                                          message: "Are you sure you want to delete this chore?",
+                                          preferredStyle: .alert)
+            alert.addAction(defaultAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,6 +94,10 @@ class Chore: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.choreName.text = self.passedChoreName
+        if (done) {
+            self.myButton.setGradientBackground(colorOne: UIColor(hex: "EB5757"), colorTwo: UIColor(hex: "EB5757"))
+            self.myButton.setTitle("Delete Task", for: .normal)
+        }
         self.getInfo();
     }
     

@@ -14,6 +14,7 @@
 		7427B27B2196A80300F7FECD /* SingleUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7427B27A2196A80300F7FECD /* SingleUserView.swift */; };
 		742EB926217258B400EB4E7A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 742EB925217258B400EB4E7A /* GoogleService-Info.plist */; };
 		743014DE21D9F96E00E35D06 /* ArchivedTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743014DD21D9F96E00E35D06 /* ArchivedTasks.swift */; };
+		743014E021DB428800E35D06 /* HomeDoneDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743014DF21DB428800E35D06 /* HomeDoneDataSource.swift */; };
 		7443F6AC21812B1E00B1A3D4 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443F6AB21812B1E00B1A3D4 /* CellView.swift */; };
 		744E9BE321A8C00E00DF0142 /* NotificationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E9BE221A8C00E00DF0142 /* NotificationsDataSource.swift */; };
 		744E9BE521A9423700DF0142 /* ConvenientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E9BE421A9423700DF0142 /* ConvenientColor.swift */; };
@@ -79,6 +80,7 @@
 		7427B27A2196A80300F7FECD /* SingleUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserView.swift; sourceTree = "<group>"; };
 		742EB925217258B400EB4E7A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		743014DD21D9F96E00E35D06 /* ArchivedTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedTasks.swift; sourceTree = "<group>"; };
+		743014DF21DB428800E35D06 /* HomeDoneDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDoneDataSource.swift; sourceTree = "<group>"; };
 		7443F6AB21812B1E00B1A3D4 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		744E9BE221A8C00E00DF0142 /* NotificationsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsDataSource.swift; sourceTree = "<group>"; };
 		744E9BE421A9423700DF0142 /* ConvenientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenientColor.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				74FF5B6C217B169000C05ABA /* ToDoDataSource.swift */,
 				744E9BE221A8C00E00DF0142 /* NotificationsDataSource.swift */,
 				74DA921E21AD0B1E00BB580B /* HomeCellViewDataSource.swift */,
+				743014DF21DB428800E35D06 /* HomeDoneDataSource.swift */,
 				747BE72021AB93AF00572294 /* UserCellDataSource.swift */,
 				7427B27A2196A80300F7FECD /* SingleUserView.swift */,
 				74F8FF1C2196799500849BAE /* UserDataStore.swift */,
@@ -472,6 +475,7 @@
 				BCDA7A8321277F6400891460 /* Approval.swift in Sources */,
 				BC25A2082137B28B0075322F /* ChangePassword.swift in Sources */,
 				74DA921D21AD04C800BB580B /* HomeCellView.swift in Sources */,
+				743014E021DB428800E35D06 /* HomeDoneDataSource.swift in Sources */,
 				BCDA7A752125525D00891460 /* AddUtility.swift in Sources */,
 				749BD8DD218B932500996825 /* CalendarDayDataSource.swift in Sources */,
 				744E9BE321A8C00E00DF0142 /* NotificationsDataSource.swift in Sources */,
