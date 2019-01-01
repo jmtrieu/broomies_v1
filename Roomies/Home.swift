@@ -228,6 +228,9 @@ class Home: UIViewController {
         
         //Color one is bottom right corner and Color two is top left corner
         gradientView.setGradientBackground(colorOne: UIColor(hex: "005F77"), colorTwo: UIColor(hex: "3F8698"))
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .left
+        view.addGestureRecognizer(edgePan)
         
     }
     
@@ -409,6 +412,23 @@ class Home: UIViewController {
         })
     }
     
+    //calls view Settings to show hamburger menu
+    @IBAction func gestureSwipe(_ sender: Any) {
+        if settingsMenu.isHidden == true {
+            self.viewSettings()
+        } else {
+            self.hideSettings()
+        }
+    }
+    
+    //side swipe allowed
+    @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            if settingsMenu.isHidden == true {
+                self.viewSettings()
+            }
+        }
+    }
     
     //calls view Settings to show hamburger menu
     @IBAction func gestureTap(_ sender: UITapGestureRecognizer) {

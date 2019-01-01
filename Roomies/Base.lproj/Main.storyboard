@@ -911,6 +911,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="28P-43-crI" appends="YES" id="LvA-Fz-Phc"/>
+                                    <outletCollection property="gestureRecognizers" destination="kRG-Lm-fCO" appends="YES" id="7hk-om-BI0"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Wz-qa-cAA">
@@ -1048,6 +1049,11 @@
                         <action selector="blackViewTapped:" destination="0zw-f3-nrv" id="ce6-oE-sbC"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="kRG-Lm-fCO">
+                    <connections>
+                        <action selector="gestureSwipe:" destination="0zw-f3-nrv" id="v9H-xW-SfH"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="76" y="652.62368815592208"/>
         </scene>
