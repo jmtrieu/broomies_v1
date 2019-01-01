@@ -2095,12 +2095,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K59-eh-Gmk">
-                                        <rect key="frame" x="8" y="42" width="63" height="57"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <gestureRecognizers/>
-                                        <state key="normal" image="sidebar"/>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7G-21-Mf9">
                                         <rect key="frame" x="116" y="42" width="143" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2471,17 +2465,17 @@
         <image name="welcome_check" width="140" height="140"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MbU-6N-tfq"/>
+        <segue reference="VUj-Vh-Urp"/>
         <segue reference="eQx-d2-BNi"/>
-        <segue reference="FUW-I5-XCn"/>
-        <segue reference="V65-l1-KIF"/>
+        <segue reference="o6c-EL-551"/>
+        <segue reference="ZMM-g4-ZHy"/>
         <segue reference="HKN-F6-uX3"/>
         <segue reference="ARM-xB-JEQ"/>
         <segue reference="yKi-Zx-XMC"/>
         <segue reference="zvR-oE-yHX"/>
         <segue reference="ufe-gp-KaK"/>
-        <segue reference="sWI-e3-zCG"/>
-        <segue reference="cBE-xU-DTF"/>
+        <segue reference="Kdx-z8-Hmu"/>
+        <segue reference="cMD-1K-m8W"/>
         <segue reference="BN6-RY-wdG"/>
         <segue reference="off-0N-heD"/>
     </inferredMetricsTieBreakers>
