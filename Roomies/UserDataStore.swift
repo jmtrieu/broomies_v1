@@ -38,6 +38,7 @@ final class UserDataStore {
                         self.users.append(myUser(first: first!, last: last!, email: email!, phone: phoneNumber!, house: house!))
                     }
                 }
+                completion()
             }
         })
     }

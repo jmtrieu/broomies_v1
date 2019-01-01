@@ -97,21 +97,21 @@ class HouseView: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        self.houseLabel.text = houseName!
         self.store = UserDataStore(name: houseName!)
-        store.getUsers {
+        store.getUsers(completion: { () in
+            self.houseLabel.text = self.houseName!
+            //get curDate
+            let homeFormatter = DateFormatter()
+            homeFormatter.dateStyle = .medium
+            homeFormatter.timeStyle = .none
+            homeFormatter.locale = Locale(identifier: "en_US")
+            self.curDate.text = homeFormatter.string(from: Date())
+            
+            // Do any additional setup after loading the view.
+            //Color one is bottom right corner and Color two is top left corner
+            self.gradientView.setGradientBackground(colorOne: UIColor(hex: "005F77"), colorTwo: UIColor(hex: "3F8698"))
             self.collectionView.reloadSections(IndexSet(integer: 0))
-        }
-        //get curDate
-        let homeFormatter = DateFormatter()
-        homeFormatter.dateStyle = .medium
-        homeFormatter.timeStyle = .none
-        homeFormatter.locale = Locale(identifier: "en_US")
-        curDate.text = homeFormatter.string(from: Date())
-        
-        // Do any additional setup after loading the view.
-        //Color one is bottom right corner and Color two is top left corner
-        gradientView.setGradientBackground(colorOne: UIColor(hex: "005F77"), colorTwo: UIColor(hex: "3F8698"))
+        })
     }
     
     @IBAction func HomeButtonPressed(_ sender: Any) {
