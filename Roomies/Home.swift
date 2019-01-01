@@ -204,6 +204,11 @@ class Home: UIViewController {
         nc.addObserver(self, selector: #selector(self.getValue(notification:)), name: Notification.Name(rawValue: "done"), object: nil)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
