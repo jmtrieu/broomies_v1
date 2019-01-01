@@ -860,6 +860,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="users.png"/>
                                 <connections>
+                                    <action selector="ChangeHouseViewButtonPressed:" destination="0zw-f3-nrv" eventType="touchUpInside" id="aQg-VP-1K8"/>
                                     <segue destination="8RM-Ss-IDl" kind="modal" identifier="HomeToHouseViewSegue" id="V65-l1-KIF"/>
                                 </connections>
                             </button>
