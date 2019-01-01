@@ -64,6 +64,12 @@ class Home: UIViewController {
     
     @IBOutlet weak var hamburgerName: UILabel!
     
+    @IBOutlet var progressBar: UIView!
+    @IBOutlet weak var fullBar: UIView!
+    var doneCount = 0
+    var allCount = 0
+    @IBOutlet weak var progressLabel: UILabel!
+    
     func prepareToDoTable(){
         let itemsN = toDoArray
         let itemsG = giverArray
@@ -225,6 +231,15 @@ class Home: UIViewController {
         
     }
     
+    func formatProgressBar() {
+        self.doneCount = self.doneArray.count
+        self.allCount = self.doneArray.count + self.toDoArray.count
+        let percentage = Float(Float(self.doneCount) / Float(self.allCount))
+        self.progressLabel.text = "\(Int(percentage*100))% completed"
+        let newWidth = self.fullBar.frame.size.width
+        self.progressBar.frame.size.width = CGFloat(percentage) * newWidth
+    }
+    
     //gets value sent from notificationcenter
     @objc func getValue(notification: Notification) {
         let userInfo:Dictionary<String, IndexPath> = notification.userInfo as! Dictionary<String, IndexPath>
@@ -329,6 +344,7 @@ class Home: UIViewController {
             }
             self.prepareToDoTable()
             self.prepareDoneTable()
+            self.formatProgressBar()
         })
     }
     
@@ -389,6 +405,7 @@ class Home: UIViewController {
             }
             self.prepareToDoTable()
             self.prepareDoneTable()
+            self.formatProgressBar()
         })
     }
     
@@ -431,6 +448,7 @@ class Home: UIViewController {
         }
         self.prepareToDoTable()
         self.prepareDoneTable()
+        self.formatProgressBar()
     }
     
     

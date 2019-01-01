@@ -47,11 +47,11 @@ class HomeCellViewDataSource: NSObject, UITableViewDataSource, UITableViewDelega
         if (cat == "user") {
             cell.catImage.image = UIImage(named: "profile")
         } else if (cat == "Cleaning") {
-            cell.catImage.image = UIImage(named: "cleaning")
+            cell.catImage.image = UIImage(named: "myCleaning")
         } else if (cat == "Shopping") {
-            cell.catImage.image = UIImage(named: "Vector")
+            cell.catImage.image = UIImage(named: "myShopping")
         } else {
-            cell.catImage.image = UIImage(named: "sidebar_payments")
+            cell.catImage.image = UIImage(named: "myBill")
         }
         cell.backgroundColor = UIColor.white
         return cell

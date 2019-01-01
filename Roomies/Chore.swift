@@ -128,11 +128,11 @@ class Chore: UIViewController {
                 self.assignedByLabel.text = "Assigned by " + self.assigner
                 if (self.imageURL == "no image") {
                     if (self.type == "Cleaning") {
-                        self.imageView.image = UIImage(named: "cleaning")
+                        self.imageView.image = UIImage(named: "myCleaning")
                     } else if (self.type == "Shopping") {
-                        self.imageView.image = UIImage(named: "Vector")
+                        self.imageView.image = UIImage(named: "myShopping")
                     } else {
-                        self.imageView.image = UIImage(named: "sidebar_payments")                }
+                        self.imageView.image = UIImage(named: "myBill")                }
                 } else {
                     
                     
@@ -142,11 +142,11 @@ class Chore: UIViewController {
                         self.imageView.image = UIImage(data: data)
                     } else {
                         if (self.type == "Cleaning") {
-                            self.imageView.image = UIImage(named: "cleaning")
+                            self.imageView.image = UIImage(named: "myCleaning")
                         } else if (self.type == "Shopping") {
-                            self.imageView.image = UIImage(named: "Vector")
+                            self.imageView.image = UIImage(named: "myShopping")
                         } else {
-                            self.imageView.image = UIImage(named: "sidebar_payments")                }
+                            self.imageView.image = UIImage(named: "myBill")                }
                     }
                 }
             }

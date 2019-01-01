@@ -753,7 +753,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAl-Dd-zll">
-                                        <rect key="frame" x="28" y="144" width="137" height="36"/>
+                                        <rect key="frame" x="28" y="124" width="137" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -775,6 +775,13 @@
                                             <outletCollection property="gestureRecognizers" destination="zNX-Xi-DR1" appends="YES" id="adu-3x-BZZ"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRr-zv-HkY">
+                                        <rect key="frame" x="119" y="152" width="137" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.37254901959999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -882,6 +889,21 @@
                                     <segue destination="lEB-da-ZaB" kind="modal" identifier="AddSegue" id="sWI-e3-zCG"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gni-Yb-tG9">
+                                <rect key="frame" x="0.0" y="585" width="385" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vWp-iM-bDO">
+                                <rect key="frame" x="0.0" y="188" width="375" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.60047680139541626" green="0.71372228860855103" blue="0.73922967910766602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LY6-SV-pCs">
+                                <rect key="frame" x="0.0" y="188" width="0.0" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.38475389163840762" green="0.64443226211804516" blue="0.10094050414593848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3uW-xy-Qik">
                                 <rect key="frame" x="285" y="0.0" width="90" height="586"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -986,11 +1008,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gni-Yb-tG9">
-                                <rect key="frame" x="0.0" y="585" width="385" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZdQ-hu-gJa"/>
@@ -1000,8 +1017,11 @@
                         <outlet property="curDate" destination="tAl-Dd-zll" id="qQu-xH-Mwp"/>
                         <outlet property="dayButton" destination="Oja-ij-Gyc" id="Su5-aQ-yCb"/>
                         <outlet property="doneTable" destination="o0C-Yj-cHK" id="iqG-88-1mi"/>
+                        <outlet property="fullBar" destination="vWp-iM-bDO" id="UUt-dz-IJu"/>
                         <outlet property="gradientView" destination="xKy-PY-h9Z" id="1ON-gO-e7J"/>
                         <outlet property="hamburgerName" destination="bgI-Ub-P2I" id="J0y-fe-Mc2"/>
+                        <outlet property="progressBar" destination="LY6-SV-pCs" id="ykX-8E-4Sg"/>
+                        <outlet property="progressLabel" destination="GRr-zv-HkY" id="eeS-xv-myl"/>
                         <outlet property="settingsMenu" destination="4Wz-qa-cAA" id="dml-1I-3G0"/>
                         <outlet property="toDoTable" destination="Nde-wT-zvb" id="HYB-fJ-aMi"/>
                         <outlet property="weekButton" destination="vdB-rN-qBb" id="VsH-Vc-59w"/>
@@ -1029,7 +1049,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="76" y="653"/>
+            <point key="canvasLocation" x="76" y="652.62368815592208"/>
         </scene>
         <!--Create Task-->
         <scene sceneID="lkd-rk-6s7">
@@ -1203,11 +1223,11 @@
                                 <rect key="frame" x="107" y="280" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myShopping" translatesAutoresizingMaskIntoConstraints="NO" id="X9A-pE-VsX">
-                                <rect key="frame" x="107" y="318" width="40" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myCleaning" translatesAutoresizingMaskIntoConstraints="NO" id="X9A-pE-VsX">
+                                <rect key="frame" x="110" y="318" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myShopping" translatesAutoresizingMaskIntoConstraints="NO" id="r5d-XF-SLJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myBill" translatesAutoresizingMaskIntoConstraints="NO" id="r5d-XF-SLJ">
                                 <rect key="frame" x="107" y="359" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -2419,6 +2439,8 @@
         <image name="calendar" width="409.60000610351562" height="409.60000610351562"/>
         <image name="day_view" width="22" height="18"/>
         <image name="home" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="myBill" width="218" height="181"/>
+        <image name="myCleaning" width="190" height="173"/>
         <image name="myShopping" width="214" height="172"/>
         <image name="notification" width="409.60000610351562" height="409.60000610351562"/>
         <image name="photo-camera" width="409.60000610351562" height="409.60000610351562"/>
@@ -2451,8 +2473,8 @@
         <segue reference="yKi-Zx-XMC"/>
         <segue reference="zvR-oE-yHX"/>
         <segue reference="ufe-gp-KaK"/>
-        <segue reference="hCW-Tj-sDe"/>
-        <segue reference="sEN-qo-Pud"/>
+        <segue reference="sWI-e3-zCG"/>
+        <segue reference="cBE-xU-DTF"/>
         <segue reference="BN6-RY-wdG"/>
         <segue reference="off-0N-heD"/>
     </inferredMetricsTieBreakers>

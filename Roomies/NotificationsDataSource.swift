@@ -45,12 +45,12 @@ class NotificationsDataSource: NSObject, UITableViewDataSource, UITableViewDeleg
         if (cat == "user") {
             cell.choreImage.image = UIImage(named: "profile")
         } else if (cat == "Cleaning") {
-            cell.choreImage.image = UIImage(named: "cleaning")
+            cell.choreImage.image = UIImage(named: "myCleaning")
         } else if (cat == "Shopping") {
-            cell.choreImage.image = UIImage(named: "Vector")
+            cell.choreImage.image = UIImage(named: "myShopping")
         }
         else {
-            cell.choreImage.image = UIImage(named: "sidebar_payments")
+            cell.choreImage.image = UIImage(named: "myBill")
         }
         cell.backgroundColor = UIColor.white
         return cell
